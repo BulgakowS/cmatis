@@ -1,0 +1,17 @@
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        cmatis
+#    description:  
+#    keywords:     
+#    language:     ru, ua, en
+    robots:       index, follow
+
+  stylesheets:    [jquery-ui.css, bootstrap.min.css, main.css ]
+
+  javascripts:    [jquery/jquery.min.js, jquery/jquery-ui.js, bootstrap/bootstrap.min.js, bootstrap/bootstrap-modal.js, ckeditor/ckeditor.js, main.js]
+
+  has_layout:     true
+  layout:         layout

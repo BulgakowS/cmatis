@@ -1,0 +1,514 @@
+header, footer, article, section, nav, menu, hgroup, aside {  
+   display: block; 
+}
+
+* { margin:0; padding:0; }
+
+body, html {
+    font-family: 'Lucida Grande', Helvetica, Arial;/*Arial, Helvetica, sans-serif;*/
+    font-size: 12px;
+    min-height: 100% !important;
+    height: 100%;
+    color: #333;
+    /*background: url(images/body_bg.png) repeat-x;*/
+    /*overflow-x: hidden;*/
+}
+
+.clr{
+    clear: both;
+}
+
+.form{
+    margin: 10px auto;
+}
+.buttons {
+    width: 50%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+h1{
+    font-size: 24px;
+}
+
+h2{
+    font-size: 22px;
+}
+
+h3{
+    font-size: 20px;
+}
+
+.cke_reset{
+    margin: 0 auto !important;
+}
+/*******************************
+-------------HEADER-------------
+*******************************/
+header {
+    height: 60px;
+    min-width: 960px;
+    width: 960px;
+/*    background: URL(images/header_bg.png) repeat-x;
+    background-size: auto 150px;*/
+/*    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;*/
+    
+    background: #297024 /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIlIiBzdG9wLWNvbG9yPSIjMmI2NzI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOCUiIHN0b3AtY29sb3I9IiMyYjY3MjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI2NCUiIHN0b3AtY29sb3I9IiM1ZGI0MjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI4NCUiIHN0b3AtY29sb3I9IiM2M2MxMjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzZkNzJmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+    background: -moz-linear-gradient(top,  #000000 0%, #297024 2%, #297024 8%, #5db429 64%, #63c125 84%, #76d72f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(2%,#297024), color-stop(8%,#297024), color-stop(64%,#5db429), color-stop(84%,#63c125), color-stop(100%,#76d72f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #000000 0%,#297024 2%,#297024 8%,#5db429 64%,#63c125 84%,#76d72f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #000000 0%,#297024 2%,#297024 8%,#5db429 64%,#63c125 84%,#76d72f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #000000 0%,#297024 2%,#297024 8%,#5db429 64%,#63c125 84%,#76d72f 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #000000 0%,#297024 2%,#297024 8%,#5db429 64%,#63c125 84%,#76d72f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#76d72f',GradientType=0 ); /* IE6-8 */
+}
+
+header a#logo {
+    display: block;
+    /*float: left;*/
+    position: absolute;
+    width: 111px;
+    height: 70px;
+    background: URL(images/logo1.png) center center;
+    background-size: 111px 70px;
+    margin: 6px 5px;
+    text-decoration: none;
+}
+
+header #alerts{
+    width: 100%;
+    top: 15px;
+    position: absolute;
+    min-width: 960px;
+    width: 960px;
+}
+
+header #contacts{
+    color: #333;
+    float: right;
+    margin: 5px 120px 0 0;
+    font-weight: bold;
+}
+
+footer #contacts{
+    color: #333;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+header #contacts span, footer #contacts span {
+    display: inline-block;
+    padding-left: 20px;
+    margin-right: 5px;
+}
+
+#contacts .contact-mail{
+    background: url("images/icon_mail.png") no-repeat left center;
+    background-size: 18px 18px;
+}
+
+#contacts .contact-fax{
+    background: url("images/icon_fax.png") no-repeat left center;
+    background-size: 18px 18px;
+}
+
+#contacts .contact-phone{
+    background: url("images/icon_phone.png") no-repeat left center;
+    background-size: 18px 18px;
+}
+
+#contacts .contact-skype{
+    background: url("images/icon_skype.png") no-repeat left center;
+    background-size: 18px 18px;
+}
+
+#contacts .contact-icq{
+    background: url("images/icq_icon.png") no-repeat left center;
+    background-size: 18px 18px;
+}
+
+
+
+/*******************************
+-----------CONTENT-------------
+*******************************/
+* html #wrapper {
+    height: 100%;
+}
+
+.page-buffer {
+    height: 52px;
+}
+
+#wrapper {
+    min-width: 960px;
+    width: 960px;
+    max-width: 960px;
+    margin: 0 auto;
+    height: auto; 
+    min-height: 100%;
+    margin-bottom: -52px;
+}
+
+* html .page-wrapper {
+    height: 100%;
+}
+
+#content{
+    margin: 10px auto;
+    min-height: 100% !important;
+    height: auto;
+    text-align: justify;
+    /*padding: 15px 5px;*/
+}
+
+footer{
+    color: red;
+    min-width: 960px;
+    width: 960px;
+    max-width: 960px;
+    margin: 0 auto;
+    height: 50px;
+    background: URL(images/footer_bg.png) repeat-x;
+    box-sizing: border-box;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+h2.title {
+    padding-left: 25px;
+}
+
+#subCats {
+    width: 80%;
+    margin: 5px auto;
+}
+
+#subCats ul {
+    list-style: none;
+}
+
+#subCats ul li {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding: 5px 0;
+}
+
+#subCats ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+#subCats ul li a:hover {
+    color: #297024;
+}
+
+.description, .cat_articles {
+    width: 95%;
+    margin: 10px auto;
+}
+
+.description, .cat_articles ul li {
+    list-style: none;
+    font-size: 14px;
+    margin: 10px 15px;
+}
+
+.description, .cat_articles ul li a {
+    color: #333;
+    text-decoration: none;
+}
+
+.cat_articles ul li a:hover{
+    color: #297024;
+}
+
+#about .contacts {
+    /*padding-left: 40px;*/
+}
+
+#about .contacts div {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 70px;
+    padding-top: 25px;
+    height: 40px;
+}
+#about .contacts .phone{
+    background: url(images/icon_phone.png) no-repeat left center;
+    background-size: 40px 40px;
+}
+#about .contacts .fax{
+    background: url(images/icon_fax.png) no-repeat left center;
+    background-size: 40px 40px;
+}
+#about .contacts .address{
+    background: url(images/icon_home.png) no-repeat left center;
+    background-size: 40px 40px;
+}
+#about .contacts .skype{
+    background: url(images/icon_skype.png) no-repeat left center;
+    background-size: 40px 40px;
+}
+#about .contacts .icq{
+    background: url(images/icq_icon.png) no-repeat left center;
+    background-size: 40px 40px;
+}
+#about .contacts .email{
+    background: url(images/icon_mail.png) no-repeat left center;
+    background-size: 40px 40px;
+}
+
+/*******************************
+----------LANGUAGES-------------
+*******************************/
+header #languages{
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+    height: 30px;
+}
+
+header #languages .flag{
+    display: block;
+    float: left;
+    width: 25px;
+    height: 25px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+header #languages .flag:hover, header #languages .flag.active{
+    opacity: 0.7;
+    margin-top: 3px;
+}
+
+header #languages .flag.uk{
+    background: url(images/ua.png) top left no-repeat;
+    background-size: 25px 25px;
+}
+
+header #languages .flag.en{
+    background: url(images/en.png) top left no-repeat;
+    background-size: 25px 25px;
+}
+
+header #languages .flag.ru{
+    background: url(images/ru.png) top left no-repeat;
+    background-size: 25px 25px;
+}
+
+/*******************************
+-------------MENU--------------
+*******************************/
+nav#menu_nav {
+    font-size: 14px;
+    background: url(images/topnav_bg.gif) repeat-x;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+}
+
+ul.topnav {
+    list-style: none;
+    padding: 0 20px 0 115px;	
+    margin: 0 auto;
+/*  float: left;
+    width: 984px;*/
+    background: #222;
+    background: url(images/topnav_bg.gif) repeat-x;
+    height: 26px;
+    border-radius: 0 0 5px 5px;
+}
+ul.topnav li {
+    /*float: left;*/
+    display: inline-block;
+    margin: 0;	
+    padding: 0 15px 0 0;
+    position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+ul.topnav li a{
+    padding: 3px 5px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+ul.topnav li a:hover, ul.topnav li a.active{
+    background: url(images/menu_bg1.png) no-repeat center -4px;
+/*    border-radius: 5px;*/
+}
+ul.topnav li span { /*--Drop down trigger styles--*/
+    width: 17px;
+    height: 26px;
+    float: left;
+    background: url(images/subnav_btn.gif) no-repeat;
+    background-position: 0 -2px;
+    cursor: pointer;
+}
+ul.topnav li span:hover {background-position: 0 -37px; } /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+    list-style: none;
+    position: absolute; 
+    left: 0; top: 26px;
+    background: #333;
+    margin: 0; padding: 0;
+    display: none;
+    float: left;
+    width: 170px;
+    /*border: 1px solid #111;*/
+    border-radius: 5px;
+    text-align: left;
+}
+ul.topnav li ul.subnav li{
+    margin: 0; padding: 0;
+    height: 26px; 
+/*    border-top: 1px solid #252525; --Create bevel effect--
+    border-bottom: 1px solid #444; --Create bevel effect--*/
+    clear: both;
+    /*width: 170px;*/
+}
+html ul.topnav li ul.subnav li a {
+    /*float: left;*/
+    margin: 0;
+    width: 155px;
+    padding: 5px;
+    /*background: #333 url(images/dropdown_linkbg.gif) no-repeat 10px center;*/
+    padding-left: 10px;
+}
+html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+    background: #222 /*url(images/dropdown_linkbg.gif) no-repeat 10px center*/;
+    border-radius: 5px;
+    margin: 0;
+}
+
+#login_link, #logout_link {
+    float: right;
+    margin-right: 5px;
+    margin-top: 1px;
+}
+
+/*******************************
+----------MENU RIGHT------------
+*******************************/
+
+aside#right{
+    width: 230px;
+    margin-left: -210px;
+    position: absolute;
+    padding: 10px 0;
+    left:0px;
+    top: 180px;
+    border: 1px solid #297024;
+    border-left: none;
+    border-top-right-radius: 10px;  
+    border-bottom-right-radius: 10px;
+    -moz-border-radius-bottomright: 10px;
+    -moz-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-top-right-radius: 10px;
+}
+
+aside#right nav{
+    margin: 10px 20px;
+}
+
+aside#right nav #hide_right{
+    position: absolute;
+    right: 5px;
+    margin-top: -20px;
+    cursor: pointer;
+}
+
+/*aside#right nav ul{
+    list-style: none;
+    margin-left: 0;
+}*/
+
+aside#right nav ul li{
+    /*margin-bottom: 10px;*/ 
+}
+
+aside#right nav ul li a{
+    color: #333;
+}
+
+aside#right a:hover{
+    color: #297024;
+}
+
+/*******************************
+------------forms------------
+*******************************/
+
+form {
+    margin: 25px auto;
+}
+
+.form_label label{
+    font-size: 14px;
+    margin-left: 35px;
+}
+
+.form_edit{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.error_list{
+    list-style: none;
+    margin: 0;
+}
+
+form .buttons {
+    margin: 50px auto;
+}
+
+form .row{
+    margin-bottom: 15px;
+}
+
+#signin_form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#made_by {
+    color: #eee;
+    float: right;
+    margin-right: 10px;
+    margin-top: -14px;
+}
+
+#made_by a{
+    text-decoration: none;
+    color: #eee;
+    font-weight: bold;
+}
+
+#made_by:hover{
+    color: #ccc;
+}
+
+#made_by a:hover{
+    color: #3b3b1f;
+}
+
+/*******************************
+------------helpers------------
+*******************************/
+.alert{
+    width: 50%;
+    margin: 0 auto;
+}
+
+[class^="icon-"], [class*=" icon-"] {margin-top: 1px;}
+
+#login_link [class^="icon-"], #login_link [class*=" icon-"] { margin-top: 3px; }

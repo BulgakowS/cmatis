@@ -1,0 +1,28 @@
+About:
+  base_1:
+    Translation:
+      ru:
+        adress: адрес
+        description: описание
+        metatags: метатеги
+        keywords: ключевые слова
+        title: Cmatis
+        text: текст О нас
+      uk:
+        adress: адрес
+        description: описание
+        metatags: метатеги
+        keywords: ключевые слова
+        title: Cmatis
+        text: текст О нас
+      en:
+        adress: adress
+        description: description
+        metatags: metatags
+        keywords: keywords
+        title: Cmatis
+        text: text
+    phone: phone
+    icq: icq
+    skype: skype
+    email: email

@@ -1,0 +1,74 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+# default rules
+new_article:
+  url:   /new_article
+  param: { module: article, action: add }
+    
+new_category:
+  url:   /new_category
+  param: { module: category, action: add }
+
+edit_article:
+  url:   /edit_article/:url
+  param: { module: article, action: edit }    
+
+edit_category:
+  url:   /edit_category/:url
+  param: { module: category, action: edit }    
+    
+about:
+  url:   /:sf_culture/about
+  param: { module: about, action: index }
+  requirements:
+    sf_culture: (?:ru|uk|en)    
+    
+edit_about:
+  url:   /edit_about
+  param: { module: about, action: edit }    
+    
+article:
+  url:  /:sf_culture/:category/:url
+  param: { module: article, action: index }
+  requirements:
+    sf_culture: (?:ru|uk|en)
+
+login:
+  url:   /:sf_culture/login
+  param: { module: sfGuardAuth, action: signin }
+  requirements:
+    sf_culture: (?:ru|uk|en)
+
+logout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+
+category:
+  url:  /:sf_culture/:category
+  param: { module: category, action: index }
+  requirements:
+    sf_culture: (?:ru|uk|en)
+
+change_language:
+  url:   /change_language/:language
+  param: { module: language, action: changeLanguage }
+
+homepage:
+  url:   /
+  param: { module: home, action: index }
+
+localized_homepage:
+  url:   /:sf_culture/
+  param: { module: home, action: index }
+  requirements:
+    sf_culture: (?:ru|uk|en)
+
+# generic rules
+# please, remove them by adding more specific rules
+#default_index:
+#  url:   /:module
+#  param: { action: index }
+
+#default:
+#  url:   /:module/:action/*

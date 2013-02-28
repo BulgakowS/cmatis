@@ -1,0 +1,59 @@
+Category:
+  actAs:
+    I18n:
+      fields: [name, description]
+    NestedSet:
+      hasManyRoots: true
+      rootColumnName: parent_id
+  columns:
+    name:         { type: string(255), notnull: true }
+    url:          { type: string(255), notnull: true, unique: true }
+    position:     { type: integer, notnull: false, default: 1 }
+    description:    { type: string(50000), notnull: false }
+ 
+Article:
+  actAs:
+    Timestampable: ~
+    I18n:
+      fields: [title, content, tags]
+  columns:
+    category_id:  { type: integer, notnull: true }
+    url:          { type: string(255), notnull: true, unique: true }
+    author:       { type: string(100), notnull: false }
+#    type:         { type: enum, values: [статья, пример работ, партнер], default: статья, notnull: true }
+    logo:         { type: string(255), notnull: false }
+    title:        { type: string(255), notnull: true }
+    content:      { type: string(50000), notnull: true }
+    price:        { type: float, notnull: false }
+    terms:        { type: string(100), notnull: false }
+    enabled:      { type: boolean, notnull: true, default: true }
+    tags:         { type: string(255), notnull: false }    
+    views:        { type: integer, default: 0, notnull: false }
+  relations:
+    Category:     { onDelete: CASCADE, type: one, local: category_id, foreign: id} 
+
+About:
+  actAs:
+    I18n:
+      fields: [adress, description, metatags, keywords, title, text]
+  columns:
+    adress:          { type: string(255), notnull: false }
+    phone:           { type: string(255), notnull: false }
+    fax:             { type: string(255), notnull: false }
+    icq:             { type: string(255), notnull: false }
+    skype:           { type: string(255), notnull: false }
+    email:           { type: string(255), notnull: false }
+    description:    { type: string(15000), notnull: false }
+    metatags:        { type: string(255), notnull: false }
+    keywords:        { type: string(255), notnull: false }
+    title:						{ type: string(255), notnull: false }
+    
+Reclame:
+  actAs:
+    I18n:
+      fields: [title]
+  columns:
+    html:							{ type: string(15000) }
+    enabled:					{ type: boolean, default: false }
+    position:					{ type: integer, default: 0 }
+    title:						{ type: string(40) }
