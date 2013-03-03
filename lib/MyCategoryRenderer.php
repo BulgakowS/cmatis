@@ -17,7 +17,7 @@ class MyCategoryRenderer extends sfWidgetFormSelect
         $categories = Doctrine_core::getTable('Category')->createQuery('c')
                     ->leftJoin('c.Translation t')
                     ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
-                    ->orderBy('t.name')
+                    ->orderBy('c.position')
                     ->execute();
 
         $out = "<select {$attributesString}>";

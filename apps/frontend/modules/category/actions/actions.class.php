@@ -31,10 +31,7 @@ class categoryActions extends sfActions
           
         $this->form->bind($request->getParameter($this->form->getName())); 
         if ($this->form->isValid()) {
-            $cat = $this->form->save();
-            $cat->setUrl(myClass::makeUrl($cat->getUrl()));
-            $cat->save();
-            
+            $cat = $this->form->save();            
             $this->getUser()->setFlash('success', __('category_added'));
 
             $this->redirect('@homepage');

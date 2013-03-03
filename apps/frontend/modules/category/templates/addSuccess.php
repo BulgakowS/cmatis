@@ -1,4 +1,4 @@
-<h3><?php echo __('add_category');  ?></h3>
+<div class="title"><?php echo __('add_category');  ?></div>
 <form action="<?php echo url_for('@new_category'); ?>" method="POST" name="<?php echo $form->getName() ?>">
     <?php 
         echo $form->renderHiddenFields();

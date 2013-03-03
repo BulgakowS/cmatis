@@ -17,4 +17,13 @@ class CategoryTable extends Doctrine_Table
         return Doctrine_Core::getTable('Category');
     }
     
+    public static function getSubs($id, $cu)
+    {
+        return Doctrine::getTable('category')->createQuery('c')
+                ->addWhere('id = ?', $id)
+//                ->leftJoin('c.translation with lang = ?', $cu)
+                ->orderBy('position')
+                ->execute();
+    }
+    
 }

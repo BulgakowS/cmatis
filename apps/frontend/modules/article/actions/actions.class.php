@@ -30,10 +30,11 @@ class articleActions extends sfActions
      $this->article = $article;
      $this->form = new ArticleForm($article);
      
-     if ( $request->isMethod('POST') ) {
-        $this->form->bind($request->getParameter($this->form->getName()),
-                          $request->getFiles($this->form->getName())
-        ); 
+     if ( $request->isMethod('POST') ) { 
+        $this->form->bind(
+                $request->getParameter($this->form->getName()),
+                $request->getFiles($this->form->getName())
+        );
         if ($this->form->isValid()) {
             $article = $this->form->save();
             $this->getUser()->setFlash('success', __('changed_saved'));

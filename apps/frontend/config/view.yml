@@ -3,13 +3,13 @@ default:
     content-type: text/html
 
   metas:
-    title:        cmatis
+    title:        Компания Матис
 #    description:  
 #    keywords:     
 #    language:     ru, ua, en
     robots:       index, follow
 
-  stylesheets:    [jquery-ui.css, bootstrap.min.css, main.css ]
+  stylesheets:    [jquery-ui.css, ../js/ckeditor/contents.css, bootstrap.min.css, main.css ]
 
   javascripts:    [jquery/jquery.min.js, jquery/jquery-ui.js, bootstrap/bootstrap.min.js, bootstrap/bootstrap-modal.js, ckeditor/ckeditor.js, main.js]
 

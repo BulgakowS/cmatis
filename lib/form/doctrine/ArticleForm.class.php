@@ -15,35 +15,12 @@ class ArticleForm extends BaseArticleForm
       $this->disableCSRFProtection();
       unset( $this['created_at'], $this['updated_at'] );
       
-      $this->setWidget('category_id', new sfWidgetFormDoctrineChoiceNestedSet(array(
+      $this->setWidget('category_id', new sfWidgetFormDoctrineChoice(array(
         'model'     => 'Category',
         'add_empty' => false
       )));
 
-      if ($this->getObject()->getCategoryId())
-      {
-        $this->setDefault('category_id', $this->getObject()->getCategoryId());
-      }
-
-      $this->widgetSchema->setLabels(array(
-        'name'   => 'Category'
-      ));
-      
-      $this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(
-            array(
-                'file_src'  => '/uploads/logos/'.$this->getObject()->getLogo(),
-                'edit_mode' => !$this->isNew(),
-                'is_image'  => true,
-                'template'  => '<div class="span6">%file%<BR /><div class="form_label">%delete% '.__('delete').'</div></div><div class="span6">%input%</div>'
-            )
-      );
-      $this->validatorSchema['logo'] = new sfValidatorFile(
-              array(
-                'required' => false,
-                'mime_types' => 'web_images',
-                'path' => sfConfig::get('sf_upload_dir').'/logos',
-              )
-      );
+      $this->widgetSchema['parent_id']->addOption('renderer_class', 'MyCategoryRenderer'); 
       
       $this->embedI18n(array('ru', 'uk', 'en'));
       
@@ -66,9 +43,9 @@ class ArticleForm extends BaseArticleForm
     
     $this->getObject()->setUrl( myClass::makeUrl($this->getValue('url')) )->save();
     
-    if ($this->getValue('logo')){
+    if ($this->getValue('logo')) {
         $url = sfConfig::get('sf_upload_dir').'/logos/'.$this->getValue('logo');
-        if (is_file($url) ){
+        if (is_file($url) ) {
             $img = new sfImage($url, mime_content_type($url));
             $img->thumbnail(150,150);
             $img->setQuality(100);

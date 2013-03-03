@@ -1,4 +1,4 @@
-<h3><?php echo __('edit_article') . ' "' . $article->getTitle() . '"'; ?> </h3>
+<div class="title"><?php echo __('edit_article') . ' "' . $article->getTitle() . '"'; ?> </div>
 <form action="<?php echo url_for('@edit_article?url='.$article->getUrl()); ?>" method="POST" name="<?php echo $form->getName() ?>" enctype="multipart/form-data">
     <?php 
         echo $form->renderHiddenFields();

@@ -1,9 +1,9 @@
-<h2 class="title">
+<div class="title">
     <?php echo $cat->getName(); ?>
     <?php if ($sf_user->hasCredential('admin')): ?>
     <?php echo link_to('<i class="icon-edit"></i>', '@edit_category?url='.$cat->geturl()); ?>
     <?php endif; ?>
-</h2>
+</div>
 
 <?php if ( $cat->getDescription() ): ?>
     <div class="description">

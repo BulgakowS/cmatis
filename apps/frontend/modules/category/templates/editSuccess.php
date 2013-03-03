@@ -1,4 +1,4 @@
-<h3><?php echo __('editing_category') . ' "' . $cat->getName() .'"';  ?></h3>
+<div class="title"><?php echo __('editing_category') . ' "' . $cat->getName() .'"';  ?></div>
 <form action="<?php echo url_for('@edit_category?url='.$cat->getUrl()); ?>" method="POST" name="<?php echo $form->getName() ?>">
     <?php 
         echo $form->renderHiddenFields();

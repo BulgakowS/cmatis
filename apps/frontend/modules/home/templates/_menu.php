@@ -13,19 +13,19 @@
 		<?php echo $cat->getName(); ?> 
 	    </a>
             <?php 
-                $subs = $cat->getNode()->getChildren(); 
-                if ($subs && count($subs) > 0 ): 
+//                $subs = $cat->getNode()->getChildren(); 
+//                if ($subs && count($subs) > 0 ): 
             ?>
             <ul class="subnav">
-                <?php foreach($subs as $sub): ?>
+                <?php // foreach($subs as $sub): ?>
                 <li>
                     <a href="<?php echo url_for('@category?category='.$sub->getUrl()); ?>" > 
                         <i class="icon-bookmark icon-white"></i> <?php echo $sub->getName(); ?> 
                     </a>
                 </li>
-                <?php endforeach; ?>
+                <?php // endforeach; ?>
             </ul>
-            <?php endif; ?>
+            <?php // endif; ?>
 	</li>
     <?php endforeach; ?>
     

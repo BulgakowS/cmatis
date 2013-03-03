@@ -1,6 +1,6 @@
-<h2 class="title">
+<div class="title">
     <?php echo __('about'); ?>
-</h2>
+</div>
 <form action="<?php echo url_for('@edit_about'); ?>" method="POST" name="<?php echo $form->getName() ?>">
     <?php 
         echo $form->renderHiddenFields();

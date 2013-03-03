@@ -1,10 +1,10 @@
 <article id="about">
-    <h2 class="title">
+    <div class="title">
         <?php echo __('about'); ?>
         <?php if ($sf_user->hasCredential('admin')): ?>
         <?php echo link_to('<i class="icon-edit"></i>', '@edit_about'); ?>
         <?php endif; ?>
-    </h2>
+    </div>
 
     <div class="description">
         <?php echo htmlspecialchars_decode($about->getDescription());?>

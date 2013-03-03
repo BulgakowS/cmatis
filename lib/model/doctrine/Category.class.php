@@ -18,14 +18,26 @@ class Category extends BaseCategory
         return CategoryTable::getSubs($this->getId(), $cu);
     }
     
-    public function isSubcategory(){
+    public function isSubcategory()
+    {
         return $this->parent_id != 0;
     }
     
-    public function getLastArticles(){
+    public function getLvl($lvl = 0, $cat = false)
+    {
+        $cat = $cat ? $cat : $this;
+        if ( $cat->getParentId() == 0 ) {
+            return $lvl;
+        } else {
+            $this->getLvl($lvl++, $this);
+        }
+    }
+    
+    public function getLastArticles($lim = 5){
         return Doctrine::getTable('Article')->createQuery('a')
+                ->addWhere('category_id = ?', $this->getId())
                 ->orderBy('updated_at')
-                ->limit(5)
+                ->limit($lim)
                 ->execute();
     }
 }

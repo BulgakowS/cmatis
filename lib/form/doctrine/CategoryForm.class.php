@@ -14,29 +14,13 @@ class CategoryForm extends BaseCategoryForm
       $this->disableCSRFProtection();
       unset( $this['created_at'], $this['updated_at'] );
       
-    $this->setWidget('parent_id', new sfWidgetFormDoctrineChoiceNestedSet(array(
+    $this->setWidget('parent_id', new sfWidgetFormDoctrineChoice(array(
       'model'     => 'Category',
       'add_empty' => __('main')
     )));
+    
+    $this->widgetSchema['parent_id']->addOption('renderer_class', 'MyCategoryRenderer');    
 
-    if ($this->getObject()->getNode()->getParent())
-    {
-      $this->setDefault('parent_id', $this->getObject()->getNode()->getParent()->getId());
-    }
- 
-    $this->widgetSchema->setLabels(array(
-      'name'   => 'Category',
-      'parent' => 'Parent category'
-    ));
- 
-    $this->setValidator('parent_id', new sfValidatorDoctrineChoiceNestedSet(array(
-      'required' => false,
-      'model'    => 'Category',
-      'node'     => $this->getObject()
-    )));
- 
-    $this->getValidator('parent_id')->setMessage('node', __('A category cannot be made a descendent of itself.'));
-             
     $this->embedI18n(array('ru', 'uk', 'en'));
 
     $this->widgetSchema['ru']['name']->setLabel('name_ru');
@@ -55,23 +39,24 @@ class CategoryForm extends BaseCategoryForm
     $cat = $this->getObject();
     $cat->setUrl( myClass::makeUrl($this->getValue('url')) );
     
-    if ($this->getValue('parent_id'))
-    {
-      $parent = Doctrine::getTable('Category')->find($this->getValue('parent_id'));
-      if ( $this->isNew() ) {
-        $cat->getNode()->insertAsLastChildOf($parent);
-      } else {
-        $cat->getNode()->moveAsLastChildOf($parent);
-      }
-      $parent->refresh();
-    } else {
-      $categoryTree = Doctrine::getTable('Category')->getTree();
-      if ( $this->isNew() ) {
-        $categoryTree->createRoot($cat);
-      } else {
-        $cat->getNode()->makeRoot($cat->getId());
-      }
-    }
+//    if ($this->getValue('parent_id'))
+//    {
+//      $parent = Doctrine::getTable('Category')->find($this->getValue('parent_id'));
+//      if ( $this->isNew() ) {
+//        $cat->getNode()->insertAsLastChildOf($parent);
+//      } else {
+//        $cat->getNode()->moveAsLastChildOf($parent);
+//      }
+//      $parent->refresh();
+//    } else {
+//      $categoryTree = Doctrine::getTable('Category')->getTree();
+//      if ( $this->isNew() ) {
+//        $categoryTree->createRoot($cat);
+//      } else {
+//        $cat->getNode()->makeRoot($cat->getId());
+//      }
+//    }
+    
     $cat->save();
   }
 

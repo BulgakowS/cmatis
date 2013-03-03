@@ -1,4 +1,4 @@
-<h3><?php echo __('add_article');  ?></h3>
+<div class="title"><?php echo __('add_article');  ?></div>
 <form action="<?php echo url_for('@new_article'); ?>" method="POST" name="<?php echo $form->getName() ?>" enctype="multipart/form-data">
     <?php 
         echo $form->renderHiddenFields();

@@ -17,21 +17,15 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'        => new sfWidgetFormInputHidden(),
       'url'       => new sfWidgetFormInputText(),
-      'position'  => new sfWidgetFormInputText(),
       'parent_id' => new sfWidgetFormInputText(),
-      'lft'       => new sfWidgetFormInputText(),
-      'rgt'       => new sfWidgetFormInputText(),
-      'level'     => new sfWidgetFormInputText(),
+      'position'  => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
       'id'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'url'       => new sfValidatorString(array('max_length' => 255)),
-      'position'  => new sfValidatorInteger(array('required' => false)),
       'parent_id' => new sfValidatorInteger(array('required' => false)),
-      'lft'       => new sfValidatorInteger(array('required' => false)),
-      'rgt'       => new sfValidatorInteger(array('required' => false)),
-      'level'     => new sfValidatorInteger(array('required' => false)),
+      'position'  => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(

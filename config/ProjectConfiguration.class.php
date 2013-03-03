@@ -13,7 +13,6 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfDoctrineGuardPlugin');
     $this->enablePlugins('sfFormExtraPlugin');
     $this->enablePlugins('sfJqueryWidgetsPlugin');
-    $this->enablePlugins('sfDoctrineNestedSetPlugin');
     $this->enablePlugins('sfOrmBreadcrumbsPlugin');
     $this->enablePlugins('sfImageTransformPlugin');
     

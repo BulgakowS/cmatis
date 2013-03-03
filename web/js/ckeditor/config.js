@@ -12,6 +12,7 @@ CKEDITOR.editorConfig = function( config ) {
         config.defaultLanguage = 'ru';
         config.language = getLanguage();
         config.width = '90%';
+        config.contentsCss = '../../css/main.css';
 	// %REMOVE_END%
 
 	// Define changes to default configuration here. For example:

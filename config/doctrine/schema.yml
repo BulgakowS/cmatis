@@ -2,14 +2,12 @@ Category:
   actAs:
     I18n:
       fields: [name, description]
-    NestedSet:
-      hasManyRoots: true
-      rootColumnName: parent_id
   columns:
-    name:         { type: string(255), notnull: true }
-    url:          { type: string(255), notnull: true, unique: true }
+    name:          { type: string(255), notnull: true }
+    url:           { type: string(255), notnull: true, unique: true }
+    parent_id:    { type: integer, notnull: true, default: 0 }
     position:     { type: integer, notnull: false, default: 1 }
-    description:    { type: string(50000), notnull: false }
+    description:  { type: string(50000), notnull: false }
  
 Article:
   actAs:

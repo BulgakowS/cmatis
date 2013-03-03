@@ -7,17 +7,20 @@
  * 
  * @property string $name
  * @property string $url
+ * @property integer $parent_id
  * @property integer $position
  * @property string $description
  * @property Doctrine_Collection $Article
  * 
  * @method string              getName()        Returns the current record's "name" value
  * @method string              getUrl()         Returns the current record's "url" value
+ * @method integer             getParentId()    Returns the current record's "parent_id" value
  * @method integer             getPosition()    Returns the current record's "position" value
  * @method string              getDescription() Returns the current record's "description" value
  * @method Doctrine_Collection getArticle()     Returns the current record's "Article" collection
  * @method Category            setName()        Sets the current record's "name" value
  * @method Category            setUrl()         Sets the current record's "url" value
+ * @method Category            setParentId()    Sets the current record's "parent_id" value
  * @method Category            setPosition()    Sets the current record's "position" value
  * @method Category            setDescription() Sets the current record's "description" value
  * @method Category            setArticle()     Sets the current record's "Article" collection
@@ -42,6 +45,11 @@ abstract class BaseCategory extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 255,
+             ));
+        $this->hasColumn('parent_id', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => true,
+             'default' => 0,
              ));
         $this->hasColumn('position', 'integer', null, array(
              'type' => 'integer',
@@ -69,11 +77,6 @@ abstract class BaseCategory extends sfDoctrineRecord
               1 => 'description',
              ),
              ));
-        $nestedset0 = new Doctrine_Template_NestedSet(array(
-             'hasManyRoots' => true,
-             'rootColumnName' => 'parent_id',
-             ));
         $this->actAs($i18n0);
-        $this->actAs($nestedset0);
     }
 }

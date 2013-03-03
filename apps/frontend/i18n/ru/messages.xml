@@ -184,6 +184,10 @@
         <source>changed_saved</source>
         <target>Изменения сохранены</target>
       </trans-unit>
+      <trans-unit>
+        <source>updated_at</source>
+        <target>Обновлено: </target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
