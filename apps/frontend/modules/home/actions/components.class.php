@@ -4,7 +4,7 @@ class homeComponents extends sfComponents
 {
   public function executeMenu(sfWebRequest $request)
   {
-    $this->categories = Doctrine::getTable('category');//->getTree()->fetchRoots();
+    $this->categories = CategoryTable::getRoots();
     $this->en_cat = $request->getParameter('category');
     $this->module =  sfContext::getInstance()->getRouting()->getCurrentRouteName();
   }

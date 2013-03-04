@@ -19,7 +19,7 @@ class categoryActions extends sfActions
   {
       $this->cat = Doctrine_Core::getTable('Category')->findOneByUrl($request->getParameter('category'));
       $this->forward404If(!$this->cat);
-      $this->subCats = $this->cat->getNode()->getChildren();
+      $this->subCats = $this->cat->getSubs();
       $this->articles = $this->cat->getArticle();
   }
   

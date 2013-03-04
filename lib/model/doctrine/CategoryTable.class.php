@@ -17,13 +17,27 @@ class CategoryTable extends Doctrine_Table
         return Doctrine_Core::getTable('Category');
     }
     
+    public static function getRoots()
+    {
+        return Doctrine_Core::getTable('Category')->createQuery('c')
+                    ->addWhere('parent_id = ?', 0)
+                    ->leftJoin('c.Translation t')
+                    ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                    ->orderBy('c.position')
+                    ->execute();
+    }
+    
     public static function getSubs($id, $cu)
     {
-        return Doctrine::getTable('category')->createQuery('c')
-                ->addWhere('id = ?', $id)
-//                ->leftJoin('c.translation with lang = ?', $cu)
-                ->orderBy('position')
-                ->execute();
+        return Doctrine_core::getTable('Category')->createQuery('c')
+                    ->addWhere('parent_id = ?', $id)
+                    ->leftJoin('c.Translation t')
+                    ->AndWhere('t.lang = ?', $cu)
+                    ->addSelect('(SELECT count(*) FROM category WHERE parent_id = '.$id.') AS c.chieldscount')
+                    ->orderBy('c.position')
+                    ->execute();
     }
+    
+    
     
 }

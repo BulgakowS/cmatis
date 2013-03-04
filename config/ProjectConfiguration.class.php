@@ -26,5 +26,10 @@ class ProjectConfiguration extends sfProjectConfiguration
     sfValidatorBase::setDefaultMessage('post_max_size', 'Переданные данные невозможно обработать. Возможно Вы загрузили слижком большой файл!');
     sfValidatorBase::setDefaultMessage('min', 'Минимальное значение %min%');
     sfValidatorBase::setDefaultMessage('max', 'Максимальное значение %max%');
+    sfValidatorBase::setDefaultMessage('mime_types', 'Неверный тип файла (%mime_type%).');
+    sfValidatorBase::setDefaultMessage('partial', 'Загруженный файл был загружен лишь частично.');
+    sfValidatorBase::setDefaultMessage('no_tmp_dir', 'Отсутствует временная папки.');
+    sfValidatorBase::setDefaultMessage('cant_write', 'Не удалось записать файл на диск.');
+    sfValidatorBase::setDefaultMessage('extension', 'Загрузка файла остановлено из-за расширения.');
   }
 }

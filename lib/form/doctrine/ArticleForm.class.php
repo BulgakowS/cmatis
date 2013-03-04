@@ -20,7 +20,24 @@ class ArticleForm extends BaseArticleForm
         'add_empty' => false
       )));
 
-      $this->widgetSchema['parent_id']->addOption('renderer_class', 'MyCategoryRenderer'); 
+      $this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(
+            array(
+                'file_src'  => '/uploads/logos/'.$this->getObject()->getLogo(),
+                'edit_mode' => !$this->isNew(),
+                'is_image'  => true,
+                'template'  => '<div class="span6">%file%<BR /><div class="form_label">%delete% '.__('delete').'</div></div><div class="span6">%input%</div>'
+            )
+      );
+
+      $this->validatorSchema['logo'] = new sfValidatorFile(
+              array(
+                'required' => false,
+                'mime_types' => 'web_images',
+                'path' => sfConfig::get('sf_upload_dir').'/logos',
+              )
+      );
+      
+      $this->widgetSchema['category_id']->addOption('renderer_class', 'MyCategoryRenderer'); 
       
       $this->embedI18n(array('ru', 'uk', 'en'));
       

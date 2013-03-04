@@ -1,4 +1,5 @@
-<?php if ($about){ 
+<?php 
+if ($about){ 
     $all = '';
     if ( $about->getPhone() ){
         $all .= ' <span class="contact-phone">' . $about->getPhone() . '</span>';
