@@ -12,6 +12,8 @@
  */
 class Category extends BaseCategory
 {
+    private $lvl = 0;
+    
     public function getSubs()
     {
         $cu = substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2);
@@ -20,19 +22,26 @@ class Category extends BaseCategory
     
     public function isSubcategory()
     {
-        return $this->parent_id != 0;
+        return (bool)($this->parent_id != 0);
     }
     
-    public function getLvl($lvl = 0, $cat = false)
+    public function getCategoryById($id) 
     {
-        $cat = $cat ? $cat : $this;
-        if ( $cat->getParentId() == 0 ) {
-            return $lvl;
-        } else {
-            $this->getLvl($lvl++, $this);
-        }
+        return Doctrine_Core::getTable('Category')->find($id);
     }
-    
+
+
+    public function getLvl($c = false, $l = 0)
+    {
+        $c = $c ? $c : $this;
+        if ( $c->isSubcategory() ) {
+            $l++;
+            $this->getLvl( $this->getCategoryById($c->parent_id), $l );
+        } 
+        return $l;
+    }
+
+
     public function getLastArticles($lim = 5){
         return Doctrine::getTable('Article')->createQuery('a')
                 ->addWhere('category_id = ?', $this->getId())

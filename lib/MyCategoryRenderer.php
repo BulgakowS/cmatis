@@ -25,17 +25,27 @@ class MyCategoryRenderer extends sfWidgetFormSelect
         {
             $selected = $this->_getSelected($category->getId(), $value);
             $out .= "<option value='{$category->getId()}' {$selected}>{$category->getName()}</option>";
-            $this->renderSubs($category);
+            $out .= $this->renderSubs($category, $value);
         }
         $out .= "</select>";
         return $out;
     }
     
-    private function renderSubs($cat)
+    private function renderSubs($cat, $selected_id)
     {
-        if ( $cat->chieldcount > 0 ){
-            
+        $out = '';
+        if ( $cat->getChieldscount() > 0 ) {
+            foreach ( $cat->getSubs() as $sub ) {
+                $selected = $this->_getSelected($sub->getId(), $selected_id);
+                $out .= "<option value='{$sub->getId()}' {$selected}>";
+                for($i=0;$i<=$sub->getLvl();$i++){
+                    $out .= '&nbsp';
+                }
+                $out .= "{$sub->getName()}</option>";
+            }
         }
+
+        return $out;
     }
     
     // Специальный метод, который возвращает значение атрибута selected.

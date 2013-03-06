@@ -6,18 +6,16 @@
     </li>
     <?php foreach($categories as $cat): ?>
         <li>
-            <a 
-            href="<?php echo url_for('@category?category='.$cat->getUrl()); ?>"
-            <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?> 
+            <a href="<?php echo url_for('@category?category='.$cat->getUrl()); ?>"
+                <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?> 
             > 
-            <?php echo $cat->getName(); ?> 
+                <?php echo $cat->getName(); ?> 
             </a>
             <?php 
-                $subs = $cat->getSubs(); 
-                if ($subs && count($subs) > 0 ): 
+                if ( $cat->getChieldscount() > 0 ): 
             ?>
             <ul class="subnav">
-                <?php foreach($subs as $sub): ?>
+                <?php foreach($cat->getSubs() as $sub): ?>
                 <li>
                     <a href="<?php echo url_for('@category?category='.$sub->getUrl()); ?>" > 
                         <i class="icon-bookmark icon-white"></i> <?php echo $sub->getName(); ?> 

@@ -5,6 +5,7 @@ class homeComponents extends sfComponents
   public function executeMenu(sfWebRequest $request)
   {
     $this->categories = CategoryTable::getRoots();
+//    echo '<pre>';print_r($this->categories->toArray());exit;
     $this->en_cat = $request->getParameter('category');
     $this->module =  sfContext::getInstance()->getRouting()->getCurrentRouteName();
   }

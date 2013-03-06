@@ -14,15 +14,23 @@ class CategoryTable extends Doctrine_Table
      */
     public static function getInstance()
     {
-        return Doctrine_Core::getTable('Category');
+        return Doctrine_Core::getTable('Category')->createQuery('c')
+                ->select('*')
+                ->leftJoin('c.Translation t')
+                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
+                ->orderBy('c.position')
+                ->execute();
     }
     
     public static function getRoots()
     {
         return Doctrine_Core::getTable('Category')->createQuery('c')
+                    ->select('*')
                     ->addWhere('parent_id = ?', 0)
                     ->leftJoin('c.Translation t')
                     ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                    ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
                     ->orderBy('c.position')
                     ->execute();
     }
@@ -30,10 +38,11 @@ class CategoryTable extends Doctrine_Table
     public static function getSubs($id, $cu)
     {
         return Doctrine_core::getTable('Category')->createQuery('c')
+                    ->select('*')
                     ->addWhere('parent_id = ?', $id)
                     ->leftJoin('c.Translation t')
                     ->AndWhere('t.lang = ?', $cu)
-                    ->addSelect('(SELECT count(*) FROM category WHERE parent_id = '.$id.') AS c.chieldscount')
+                    ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
                     ->orderBy('c.position')
                     ->execute();
     }
