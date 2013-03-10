@@ -1,6 +1,6 @@
 <article>
     <?php if ($article->getlogo()):?>
-        <div class="article_logo">
+        <div class="article_logo_full">
             <img src="/uploads/logos/<?php echo $article->getlogo() ?>" />
         </div>
     <?php endif; ?>

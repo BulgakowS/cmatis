@@ -25,26 +25,30 @@ class Category extends BaseCategory
         return (bool)($this->parent_id != 0);
     }
     
-    public function getCategoryById($id) 
+    public static function getCategoryById($id) 
     {
-        return Doctrine_Core::getTable('Category')->find($id);
+        return CategoryTable::getById($id);
     }
-
-
-    public function getLvl($c = false, $l = 0)
+    
+    public function updateLevel()
     {
-        $c = $c ? $c : $this;
-        if ( $c->isSubcategory() ) {
-            $l++;
-            $this->getLvl( $this->getCategoryById($c->parent_id), $l );
-        } 
-        return $l;
+        if ( $this->parent_id != 0 ) {
+            $this->setLevel( $this->getParent()->getLevel() + 1 );
+            $this->save();
+        } else {
+            $this->setLevel(0);
+            $this->save();
+        }
     }
-
+    
+    public function getParent()
+    {
+        return Doctrine::getTable('Category')->find( $this->parent_id );
+    }
 
     public function getLastArticles($lim = 5){
-        return Doctrine::getTable('Article')->createQuery('a')
-                ->addWhere('category_id = ?', $this->getId())
+        return ArticleTable::getQuery()
+                ->addWhere('a.category_id = ?', $this->getId())
                 ->orderBy('updated_at')
                 ->limit($lim)
                 ->execute();

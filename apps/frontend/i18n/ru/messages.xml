@@ -188,6 +188,10 @@
         <source>updated_at</source>
         <target>Обновлено: </target>
       </trans-unit>
+      <trans-unit>
+        <source>Logo</source>
+        <target>Логотип</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

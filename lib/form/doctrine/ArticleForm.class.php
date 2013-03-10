@@ -22,10 +22,10 @@ class ArticleForm extends BaseArticleForm
 
       $this->widgetSchema['logo'] = new sfWidgetFormInputFileEditable(
             array(
-                'file_src'  => '/uploads/logos/'.$this->getObject()->getLogo(),
-                'edit_mode' => !$this->isNew(),
+                'file_src'  => '/uploads'.DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$this->getObject()->getLogo(),
+                'edit_mode' => !$this->isNew() && is_file(sfConfig::get('sf_upload_dir').'/logos/'.$this->getObject()->getLogo()),
                 'is_image'  => true,
-                'template'  => '<div class="span6">%file%<BR /><div class="form_label">%delete% '.__('delete').'</div></div><div class="span6">%input%</div>'
+                'template'  => '<div class="span6 photo">%file%<BR /><div class="form_label">%delete% '.__('delete').'</div></div><div class="span6">%input%</div>'
             )
       );
 
@@ -33,7 +33,7 @@ class ArticleForm extends BaseArticleForm
               array(
                 'required' => false,
                 'mime_types' => 'web_images',
-                'path' => sfConfig::get('sf_upload_dir').'/logos',
+                'path' => sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos',
               )
       );
       
@@ -44,7 +44,7 @@ class ArticleForm extends BaseArticleForm
       $this->widgetSchema['ru']['title']->setLabel('title_ru');
       $this->widgetSchema['uk']['title']->setLabel('title_uk');
       $this->widgetSchema['en']['title']->setLabel('title_en');
-
+      
       $this->widgetSchema['ru']['content']->setLabel('content_ru');
       $this->widgetSchema['uk']['content']->setLabel('content_uk');
       $this->widgetSchema['en']['content']->setLabel('content_en');
@@ -59,12 +59,12 @@ class ArticleForm extends BaseArticleForm
     parent::doSave($con);
     
     $this->getObject()->setUrl( myClass::makeUrl($this->getValue('url')) )->save();
-    
-    if ($this->getValue('logo')) {
-        $url = sfConfig::get('sf_upload_dir').'/logos/'.$this->getValue('logo');
-        if (is_file($url) ) {
-            $img = new sfImage($url, mime_content_type($url));
-            $img->thumbnail(150,150);
+
+    if ( $this->getObject()->getLogo() ) {
+        $url = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'logos'.DIRECTORY_SEPARATOR.$this->getObject()->getLogo();
+        if ( is_file($url) ) {
+            $img = new sfImage( $url, mime_content_type($url) );
+            $img->resize(300, null, true, true);
             $img->setQuality(100);
             $img->save();
         }

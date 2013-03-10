@@ -14,12 +14,14 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'url'       => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'level'     => new sfWidgetFormFilterInput(),
       'parent_id' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'position'  => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
       'url'       => new sfValidatorPass(array('required' => false)),
+      'level'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'parent_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'position'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
@@ -43,6 +45,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
     return array(
       'id'        => 'Number',
       'url'       => 'Text',
+      'level'     => 'Number',
       'parent_id' => 'Number',
       'position'  => 'Number',
     );

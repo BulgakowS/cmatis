@@ -14,6 +14,29 @@ class ArticleTable extends Doctrine_Table
      */
     public static function getInstance()
     {
-        return Doctrine_Core::getTable('Article');
+        return self::getQuery()
+                ->execute();
+    }
+    
+    public static function getQuery() {
+        return Doctrine_Core::getTable('Article')->createQuery('a')
+                ->select('a.*, t.*')
+                ->leftJoin('a.Translation t');
+//                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+    }
+    
+    public static function getByUrl($url)
+    {
+        return self::getQuery()
+                ->andWhere('a.url = ?', $url)
+                ->fetchOne();
+    }
+    
+    public static function getLast($lim = 10)
+    {
+        return self::getQuery()
+                ->orderBy('a.updated_at DESC')
+                ->limit($lim)
+                ->execute();
     }
 }

@@ -17,14 +17,18 @@ class categoryActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $this->cat = Doctrine_Core::getTable('Category')->findOneByUrl($request->getParameter('category'));
+      $this->cat = CategoryTable::getByUrl($request->getParameter('category'));
       $this->forward404If(!$this->cat);
       $this->subCats = $this->cat->getSubs();
       $this->articles = $this->cat->getArticle();
+      $response = $this->getResponse();
+      $response->addMeta('title', $this->cat->getName() . ' - Cmatis'  );
+      $response->addMeta('keywords', $this->cat->getName());
   }
   
   public function executeAdd(sfWebRequest $request)
   {
+      $this->forward404If(!$this->getUser()->isAuthenticated());
       $this->form = new CategoryForm();
       
       if ( $request->isMethod('POST') ) {
@@ -34,16 +38,17 @@ class categoryActions extends sfActions
             $cat = $this->form->save();            
             $this->getUser()->setFlash('success', __('category_added'));
 
-            $this->redirect('@homepage');
+            $this->redirect('@category?category='.$cat->getUrl());
         } 
       }
   }
   
   public function executeEdit(sfWebRequest $request)
   {     
+      $this->forward404If(!$this->getUser()->isAuthenticated());
       $this->forward404If(!$request->hasParameter('url'));
       
-      $cat = Doctrine_Core::getTable('Category')->findOneByUrl($request->getParameter('url'));
+      $cat = CategoryTable::getByUrl($request->getParameter('url'));
       $this->forward404If(!$cat);
       
       $this->cat = $cat;
@@ -57,7 +62,7 @@ class categoryActions extends sfActions
             
             $this->getUser()->setFlash('success', __('changed_saved'));
             
-            $this->redirect('@homepage');
+            $this->redirect('@category?category='.$cat->getUrl());
         } 
       }
   }

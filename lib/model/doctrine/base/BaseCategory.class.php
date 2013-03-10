@@ -7,6 +7,7 @@
  * 
  * @property string $name
  * @property string $url
+ * @property integer $level
  * @property integer $parent_id
  * @property integer $position
  * @property string $description
@@ -14,12 +15,14 @@
  * 
  * @method string              getName()        Returns the current record's "name" value
  * @method string              getUrl()         Returns the current record's "url" value
+ * @method integer             getLevel()       Returns the current record's "level" value
  * @method integer             getParentId()    Returns the current record's "parent_id" value
  * @method integer             getPosition()    Returns the current record's "position" value
  * @method string              getDescription() Returns the current record's "description" value
  * @method Doctrine_Collection getArticle()     Returns the current record's "Article" collection
  * @method Category            setName()        Sets the current record's "name" value
  * @method Category            setUrl()         Sets the current record's "url" value
+ * @method Category            setLevel()       Sets the current record's "level" value
  * @method Category            setParentId()    Sets the current record's "parent_id" value
  * @method Category            setPosition()    Sets the current record's "position" value
  * @method Category            setDescription() Sets the current record's "description" value
@@ -45,6 +48,11 @@ abstract class BaseCategory extends sfDoctrineRecord
              'notnull' => true,
              'unique' => true,
              'length' => 255,
+             ));
+        $this->hasColumn('level', 'integer', null, array(
+             'type' => 'integer',
+             'notnull' => false,
+             'default' => 0,
              ));
         $this->hasColumn('parent_id', 'integer', null, array(
              'type' => 'integer',

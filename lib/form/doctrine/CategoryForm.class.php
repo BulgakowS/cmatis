@@ -32,32 +32,27 @@ class CategoryForm extends BaseCategoryForm
     $this->widgetSchema['en']['description']->setLabel('description_en');      
   }
  
-  public function doSave($con = null)
-  {
-    parent::doSave($con);
-    
-    $cat = $this->getObject();
-    $cat->setUrl( myClass::makeUrl($this->getValue('url')) );
-    
-//    if ($this->getValue('parent_id'))
-//    {
-//      $parent = Doctrine::getTable('Category')->find($this->getValue('parent_id'));
-//      if ( $this->isNew() ) {
-//        $cat->getNode()->insertAsLastChildOf($parent);
-//      } else {
-//        $cat->getNode()->moveAsLastChildOf($parent);
-//      }
-//      $parent->refresh();
-//    } else {
-//      $categoryTree = Doctrine::getTable('Category')->getTree();
-//      if ( $this->isNew() ) {
-//        $categoryTree->createRoot($cat);
-//      } else {
-//        $cat->getNode()->makeRoot($cat->getId());
-//      }
-//    }
-    
-    $cat->save();
-  }
+    public function doSave($con = null)
+    {
+      parent::doSave($con);
 
+      $cat = $this->getObject();
+      $cat->setUrl( myClass::makeUrl($this->getValue('url')) )->save();
+
+      $this->updateChieldsLevel($cat->getId());
+    }
+  
+    public function updateChieldsLevel($id)
+    {
+        $c = Category::getCategoryById( $id );
+        $c->updateLevel();
+        if ( $c->getChieldscount() > 0 ) {
+            foreach ($c->getSubs() as $sc){
+                $sc->updateLevel();
+                if ( $sc->getChieldscount() > 0 ) 
+                    $this->updateChieldsLevel($sc->getId());
+            }
+        }
+    }
+  
 }

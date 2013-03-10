@@ -14,6 +14,15 @@ body, html {
     /*overflow-x: hidden;*/
 }
 
+a{
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #297024;
+}
+
 .clr{
     clear: both;
 }
@@ -42,10 +51,36 @@ body, html {
     max-height: 100px;
 }
 
-.article_logo img{
+article .content p{
+    margin: 0;
+    padding: 10px;
+}
+
+article .article_logo_full img{
     max-width: 100px;
     max-height: 100px;
     float: right;
+}
+
+a .article_logo_wrap{
+    width: 50px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+}
+
+a .text{
+    padding: 15px;
+}
+
+a .article_logo{
+    max-width: 50px;
+    max-height: 50px;
+    display:inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
 }
 
 .article-info{
@@ -61,6 +96,72 @@ body, html {
 .cke_reset{
     margin: 0 auto !important;
 }
+
+.last_by_cats{
+    margin: 10px auto;
+    width: 100%;
+}
+
+.last_by_cats .main_cats:nth-child(odd){
+    width: 48%;
+    float: left;
+    margin: 5px;
+}
+
+.last_by_cats .main_cats:nth-child(even){
+    width: 48%;
+    float: right;
+    margin: 5px;
+}
+
+.last_by_cats .main_cats .name a{
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.last_by_cats .main_cats ul{
+    margin: 5px 15px;
+    list-style: none;
+}
+
+.last_by_cats .main_cats ul li a{
+    text-decoration: none;
+}
+
+.last_by_cats .main_cats .name{
+    background: #eee;
+    height: 20px;
+    /*width: 100%;*/
+    display: block;
+    padding: 3px 15px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    overflow: hidden;
+}
+
+#last_articles{
+    margin: 15px auto;
+    padding-left: 40px;
+}
+
+#last_articles ul li{
+    list-style: none;
+    margin: 5px 0;
+}
+
+#last_articles a{
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+#last_articles a:hover{
+    color: #297024;
+    font-weight: bold;
+}
+
 /*******************************
 -------------HEADER-------------
 *******************************/
@@ -233,18 +334,46 @@ h2.title {
     margin: 10px auto;
 }
 
+.cat_articles ul{
+    margin: 25px 10px 25px;
+}
+
 .cat_articles ul li {
     list-style: none;
     margin: 10px 15px;
+    margin-bottom: 3px;
+    height: 50px;
 }
 
 .cat_articles ul li a {
     color: #333;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .cat_articles ul li a:hover{
     color: #297024;
+}
+
+.cat_articles ul li a .text{
+    padding: 15px;
+}
+
+.cat_logo_in_list_div {
+    width: 50px;
+    height: 50px;
+    float: left;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.cat_logo_in_list{
+    max-width: 50px;
+    max-height: 50px;
+    display:inline-block;
+    vertical-align: middle;
+    text-align: center;
+    border: none;
 }
 
 #about .contacts {
@@ -371,35 +500,39 @@ ul.topnav li span { /*--Drop down trigger styles--*/
     background-position: 0 -2px;
     cursor: pointer;
 }
-ul.topnav li span:hover {background-position: 0 -37px; } /*--Hover effect for trigger--*/
+ul.topnav li span:hover {
+    background-position: 0 -37px; 
+} 
 ul.topnav li ul.subnav {
     list-style: none;
     position: absolute; 
-    left: 0; top: 26px;
+    right: 0; top: 26px;
     background: #333;
     margin: 0; padding: 0;
     display: none;
     float: left;
-    width: 170px;
+    min-width: 250px;
     /*border: 1px solid #111;*/
     border-radius: 5px;
     text-align: left;
 }
 ul.topnav li ul.subnav li{
     margin: 0; padding: 0;
-    height: 26px; 
+    display: block;
+    /*height: 26px;*/ 
 /*    border-top: 1px solid #252525; --Create bevel effect--
     border-bottom: 1px solid #444; --Create bevel effect--*/
     clear: both;
-    /*width: 170px;*/
 }
 html ul.topnav li ul.subnav li a {
     /*float: left;*/
     margin: 0;
-    width: 155px;
+    min-width: 235px;
     padding: 5px;
     /*background: #333 url(images/dropdown_linkbg.gif) no-repeat 10px center;*/
     padding-left: 10px;
+    display: block;
+    /*height: 26px;*/ 
 }
 html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
     background: #222 /*url(images/dropdown_linkbg.gif) no-repeat 10px center*/;
@@ -470,7 +603,7 @@ form {
     margin: 25px auto;
 }
 
-.form_label label{
+.form_label label, form label{
     font-size: 14px;
     margin-left: 35px;
 }
@@ -478,6 +611,10 @@ form {
 .form_edit{
     text-align: center;
     margin-bottom: 10px;
+}
+
+.cke{
+    margin-bottom: 20px !important;
 }
 
 .error_list{
@@ -491,6 +628,15 @@ form .buttons {
 
 form .row{
     margin-bottom: 15px;
+}
+
+form .row img{
+    max-height: 150px;
+    max-width: 150px;
+}
+
+.span6.photo{
+    text-align: center;
 }
 
 #signin_form {

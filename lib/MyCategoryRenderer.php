@@ -1,9 +1,11 @@
 <?php
 class MyCategoryRenderer extends sfWidgetFormSelect
-
 {
-     public function render($name, $value = null, $attributes = array(), $errors = array())
-     {
+    private $out = '';
+
+
+    public function render($name, $value = null, $attributes = array(), $errors = array())
+    {
         $choices = $this->getChoices();
         $attributes = array_merge(array('name' => $name), $attributes);
         $attributes = $this->fixFormId($attributes);
@@ -26,26 +28,26 @@ class MyCategoryRenderer extends sfWidgetFormSelect
             $selected = $this->_getSelected($category->getId(), $value);
             $out .= "<option value='{$category->getId()}' {$selected}>{$category->getName()}</option>";
             $out .= $this->renderSubs($category, $value);
+            $this->out = '';
         }
         $out .= "</select>";
         return $out;
     }
     
-    private function renderSubs($cat, $selected_id)
+    private function renderSubs($cat, $selected_id, $out='')
     {
-        $out = '';
         if ( $cat->getChieldscount() > 0 ) {
             foreach ( $cat->getSubs() as $sub ) {
                 $selected = $this->_getSelected($sub->getId(), $selected_id);
-                $out .= "<option value='{$sub->getId()}' {$selected}>";
-                for($i=0;$i<=$sub->getLvl();$i++){
-                    $out .= '&nbsp';
-                }
-                $out .= "{$sub->getName()}</option>";
+                $this->out .= "<option value='{$sub->getId()}' {$selected}>";
+                $this->out .= str_repeat ( '-' , $sub->getLevel() ) . '&nbsp';
+                $this->out .= "{$sub->getName()}</option>";
+                if ( $sub->getChieldscount() > 0 )
+                    $this->renderSubs ($sub, $selected_id, $this->out);
             }
         }
 
-        return $out;
+        return $this->out;
     }
     
     // Специальный метод, который возвращает значение атрибута selected.

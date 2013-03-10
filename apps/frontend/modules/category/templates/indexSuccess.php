@@ -30,8 +30,18 @@
         <ul>
         <?php foreach($articles as $article): ?>
             <li>
-                <i class="icon-hand-right"></i>
-                <?php echo link_to($article->getTitle(), '@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl()); ?>
+                <a href="<?php echo url_for('@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl()); ?>" >
+                    <div class="cat_logo_in_list_div">
+                        <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getLogo() )): ?>
+                            <img src="/uploads/logos/<?php echo $article->getLogo(); ?>" class="cat_logo_in_list"/>
+                        <?php else: ?>
+                            <img src="/uploads/default-no-image.png" class="cat_logo_in_list"/>
+                        <?php endif; ?>
+                    </div>
+                    <div class="text">
+                        <?php echo $article->getTitle(); ?>
+                    </div>
+                </a>
             </li>
         <?php endforeach; ?>
         </ul>

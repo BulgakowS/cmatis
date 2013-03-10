@@ -5,6 +5,7 @@ Category:
   columns:
     name:          { type: string(255), notnull: true }
     url:           { type: string(255), notnull: true, unique: true }
+    level:         { type: integer, notnull: false, default: 0 }
     parent_id:    { type: integer, notnull: true, default: 0 }
     position:     { type: integer, notnull: false, default: 1 }
     description:  { type: string(50000), notnull: false }

@@ -19,23 +19,25 @@ class homeActions extends sfActions
   {
 	if ( !$request->hasParameter('sf_culture') )
 	{
-          $user = $this->getUser();
+      $user = $this->getUser();
 	  if ($user->isFirstRequest())
 	  {
 	    $culture = $request->getPreferredCulture(array('ru', 'uk', 'en'));
 	    $user->setCulture($culture);
 	    $user->isFirstRequest(false);
-	  }
-	  else
-	  {
+	  } else {
 	    $culture = $user->getCulture();
 	  }
-          $user->setFlash('error', $user->getFlash('error'));
-          $user->setFlash('success', $user->getFlash('success'));
+      $user->setFlash('error', $user->getFlash('error'));
+      $user->setFlash('success', $user->getFlash('success'));
 	  $this->redirect('localized_homepage');
 	}   
+    
+    $this->lastArticles = ArticleTable::getLast();
+    $this->lastCategories = CategoryTable::getLastByLevel();
+    
 	$response = $this->getResponse();
 	$response->addMeta('title', 'Cmatis');
-        $response->addMeta('keywords', '');
+    $response->addMeta('keywords', '');
   }
 }

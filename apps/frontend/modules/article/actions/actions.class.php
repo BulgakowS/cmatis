@@ -16,16 +16,20 @@ class articleActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $article = Doctrine_Core::getTable('Article')->findOneByUrl($request->getParameter('url'));
+      $article = ArticleTable::getByUrl($request->getParameter('url'));
       $this->forward404If(!$article);
       $article->setViews( $article->getViews() + 1 );
       $article->save();
       $this->article = $article;
+      $response = $this->getResponse();
+      $response->addMeta('title', $this->article->getTitle() . ' - Cmatis'  );
+      $response->addMeta('keywords', $this->article->getTags());
   }
   
   public function executeEdit(sfWebRequest $request)
   {
-     $article = Doctrine_Core::getTable('article')->findOneByUrl($request->getParameter('url'));
+     $this->forward404If(!$this->getUser()->isAuthenticated());
+     $article = ArticleTable::getByUrl($request->getParameter('url'));
      $this->forward404If(!$article);
      $this->article = $article;
      $this->form = new ArticleForm($article);
@@ -45,6 +49,7 @@ class articleActions extends sfActions
   
   public function executeAdd(sfWebRequest $request)
   {
+      $this->forward404If(!$this->getUser()->isAuthenticated());
       $this->form = new ArticleForm();
       
       if ( $request->isMethod('POST') ) {

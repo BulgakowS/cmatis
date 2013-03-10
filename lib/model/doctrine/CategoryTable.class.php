@@ -14,37 +14,57 @@ class CategoryTable extends Doctrine_Table
      */
     public static function getInstance()
     {
-        return Doctrine_Core::getTable('Category')->createQuery('c')
-                ->select('*')
-                ->leftJoin('c.Translation t')
-                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
-                ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
-                ->orderBy('c.position')
+        return self::getQuery()
                 ->execute();
+    }
+    
+    public static function getQuery()
+    {
+        return Doctrine_Core::getTable('Category')->createQuery('c')
+                ->select('c.*, t.*')
+                ->leftJoin('c.Translation t')
+//                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
+                ->orderBy('c.position');
+    }
+
+    public static function getById($id)
+    {
+        return self::getQuery()
+                ->andWhere('c.id = ?', $id)
+                ->fetchOne();
+    }
+
+    public static function getByUrl($url)
+    {
+        return self::getQuery()
+                ->andWhere('c.url = ?', $url)
+                ->fetchOne();
     }
     
     public static function getRoots()
     {
-        return Doctrine_Core::getTable('Category')->createQuery('c')
-                    ->select('*')
-                    ->addWhere('parent_id = ?', 0)
-                    ->leftJoin('c.Translation t')
-                    ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
-                    ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
-                    ->orderBy('c.position')
-                    ->execute();
+        return self::getQuery()
+                ->andWhere('parent_id = ?', 0)
+                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->execute();
+    }
+    
+    public static function getLastByLevel($lim = 6)
+    {
+        return self::getQuery()
+                ->orderBy('level ASC')
+                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->limit($lim)
+                ->execute();
     }
     
     public static function getSubs($id, $cu)
     {
-        return Doctrine_core::getTable('Category')->createQuery('c')
-                    ->select('*')
-                    ->addWhere('parent_id = ?', $id)
-                    ->leftJoin('c.Translation t')
-                    ->AndWhere('t.lang = ?', $cu)
-                    ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
-                    ->orderBy('c.position')
-                    ->execute();
+        return self::getQuery()
+                ->andWhere('parent_id = ?', $id)
+                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->execute();
     }
     
     

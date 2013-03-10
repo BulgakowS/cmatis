@@ -30,7 +30,10 @@ $('document').ready(function(){
    //menu 
    $("ul.subnav").parent().append("<span></span>");
    $("ul.topnav li span").click(showSubMenu)
-    .hover(function() { $(this).addClass("subhover"); }, function(){ $(this).removeClass("subhover"); });
+    .hover(
+        function() { $(this).addClass("subhover"); }, 
+        function(){ $(this).removeClass("subhover"); }
+    );
    $("ul.topnav li a").hover(showSubMenu);
    
    //alerts
@@ -39,11 +42,11 @@ $('document').ready(function(){
 
 function showSubMenu () {
    if ( $(this).parent().find("ul.subnav").css('display') != 'block' ) {
-    $(this).parent().find("ul.subnav").slideDown('fast').show(); 
+    $(this).parent().find("ul.subnav").slideDown(250).show(); 
 
     $(this).parent().hover(function() {
     }, function(){	
-            $(this).parent().find("ul.subnav").slideUp('slow'); 
+            $(this).parent().find("ul.subnav").slideUp(400); 
     });
    }
 } 
