@@ -17,6 +17,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'level'     => new sfWidgetFormFilterInput(),
       'parent_id' => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'position'  => new sfWidgetFormFilterInput(),
+      'on_main'   => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
@@ -24,6 +25,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'level'     => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'parent_id' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'position'  => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'on_main'   => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('category_filters[%s]');
@@ -48,6 +50,7 @@ abstract class BaseCategoryFormFilter extends BaseFormFilterDoctrine
       'level'     => 'Number',
       'parent_id' => 'Number',
       'position'  => 'Number',
+      'on_main'   => 'Boolean',
     );
   }
 }

@@ -17,6 +17,14 @@ edit_article:
 edit_category:
   url:   /edit_category/:url
   param: { module: category, action: edit }    
+
+delete_article:
+  url:   /del_article/:url
+  param: { module: article, action: delete }    
+
+delete_category:
+  url:   /del_category/:url
+  param: { module: category, action: delete }     
     
 about:
   url:   /:sf_culture/about

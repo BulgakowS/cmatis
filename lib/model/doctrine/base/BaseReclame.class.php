@@ -50,12 +50,6 @@ abstract class BaseReclame extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $i18n0 = new Doctrine_Template_I18n(array(
-             'fields' => 
-             array(
-              0 => 'title',
-             ),
-             ));
-        $this->actAs($i18n0);
+        
     }
 }

@@ -93,6 +93,18 @@
         <target>Описание (Английский)</target>
       </trans-unit>
       <trans-unit>
+        <source>description_main_en</source>
+        <target>Описание на главной (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_ru</source>
+        <target>Описание на главной (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_uk</source>
+        <target>Описаине на главной (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
         <source>Url</source>
         <target>Адрес (URL)</target>
       </trans-unit>
@@ -191,6 +203,58 @@
       <trans-unit>
         <source>Logo</source>
         <target>Логотип</target>
+      </trans-unit>
+      <trans-unit>
+        <source>On main</source>
+        <target>На главной</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_deleted</source>
+        <target>Категория удалена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_deleted</source>
+        <target>Статья удалена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>are_youshure_delete</source>
+        <target>Вы действительно подтверждаете удаление?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>views</source>
+        <target>Просмотров: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Phone</source>
+        <target>Телефон</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Fax</source>
+        <target>Факс</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_ru</source>
+        <target>Ключевые слова (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_uk</source>
+        <target>Ключевые слова (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_en</source>
+        <target>Ключевые слова (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_ru</source>
+        <target>Адрес (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_uk</source>
+        <target>Адрес (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_en</source>
+        <target>Адрес (Английский)</target>
       </trans-unit>
     </body>
   </file>

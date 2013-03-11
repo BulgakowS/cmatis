@@ -33,8 +33,9 @@ class homeActions extends sfActions
 	  $this->redirect('localized_homepage');
 	}   
     
-    $this->lastArticles = ArticleTable::getLast();
-    $this->lastCategories = CategoryTable::getLastByLevel();
+    $this->lastArticles = ArticleTable::getLastForMain();
+    $this->lastCategories = CategoryTable::getLastForMain();
+    $this->about = AboutTable::getAbout();
     
 	$response = $this->getResponse();
 	$response->addMeta('title', 'Cmatis');

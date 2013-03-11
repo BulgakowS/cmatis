@@ -33,6 +33,14 @@
                     <?php echo $form['url']->render(array('style'=>'width:80%;')); ?>
                 </div>
             </div>
+            <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['on_main']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['on_main']->render(array('style'=>'width:80%;')); ?>
+                </div>
+            </div>
         </div>
         <div class="span6">
             <div class="form_row <?php if ($form['ru']['name']->rendererror()) echo 'control-group error' ?>">

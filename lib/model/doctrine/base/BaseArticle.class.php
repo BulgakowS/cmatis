@@ -16,6 +16,7 @@
  * @property boolean $enabled
  * @property string $tags
  * @property integer $views
+ * @property boolean $on_main
  * @property Category $Category
  * 
  * @method integer  getCategoryId()  Returns the current record's "category_id" value
@@ -29,6 +30,7 @@
  * @method boolean  getEnabled()     Returns the current record's "enabled" value
  * @method string   getTags()        Returns the current record's "tags" value
  * @method integer  getViews()       Returns the current record's "views" value
+ * @method boolean  getOnMain()      Returns the current record's "on_main" value
  * @method Category getCategory()    Returns the current record's "Category" value
  * @method Article  setCategoryId()  Sets the current record's "category_id" value
  * @method Article  setUrl()         Sets the current record's "url" value
@@ -41,6 +43,7 @@
  * @method Article  setEnabled()     Sets the current record's "enabled" value
  * @method Article  setTags()        Sets the current record's "tags" value
  * @method Article  setViews()       Sets the current record's "views" value
+ * @method Article  setOnMain()      Sets the current record's "on_main" value
  * @method Article  setCategory()    Sets the current record's "Category" value
  * 
  * @package    cmatis
@@ -80,7 +83,7 @@ abstract class BaseArticle extends sfDoctrineRecord
              ));
         $this->hasColumn('content', 'string', 50000, array(
              'type' => 'string',
-             'notnull' => true,
+             'notnull' => false,
              'length' => 50000,
              ));
         $this->hasColumn('price', 'float', null, array(
@@ -106,6 +109,10 @@ abstract class BaseArticle extends sfDoctrineRecord
              'type' => 'integer',
              'default' => 0,
              'notnull' => false,
+             ));
+        $this->hasColumn('on_main', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => true,
              ));
     }
 

@@ -17,14 +17,14 @@ class aboutActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $this->about = Doctrine::getTable('about')->find(1);
+      $this->about = AboutTable::getAbout();
       $this->redirectIf(!$this->about, '@homepage');
   }
   
   public function executeEdit(sfWebRequest $request)
   {
       $this->forward404If(!$this->getUser()->hasCredential('admin'));
-      $about = Doctrine::getTable('about')->find(1);
+      $about = AboutTable::getAbout();
       
       $this->form = new AboutForm($about);
       

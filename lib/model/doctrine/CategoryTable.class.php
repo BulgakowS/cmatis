@@ -59,6 +59,16 @@ class CategoryTable extends Doctrine_Table
                 ->execute();
     }
     
+    public static function getLastForMain($lim = 6)
+    {
+        return self::getQuery()
+                ->andWhere('c.on_main = ?', true)
+                ->orderBy('level ASC')
+                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->limit($lim)
+                ->execute();
+    }
+    
     public static function getSubs($id, $cu)
     {
         return self::getQuery()

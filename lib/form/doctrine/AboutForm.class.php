@@ -25,9 +25,13 @@ class AboutForm extends BaseAboutForm
       $this->widgetSchema['uk']['description']->setLabel('description_uk');
       $this->widgetSchema['en']['description']->setLabel('description_en');
       
-      $this->widgetSchema['ru']['metatags']->setLabel('metatags_ru');
-      $this->widgetSchema['uk']['metatags']->setLabel('metatags_uk');
-      $this->widgetSchema['en']['metatags']->setLabel('metatags_en');
+      $this->widgetSchema['ru']['description_on_main']->setLabel('description_main_ru');
+      $this->widgetSchema['uk']['description_on_main']->setLabel('description_main_uk');
+      $this->widgetSchema['en']['description_on_main']->setLabel('description_main_en');
+      
+//      $this->widgetSchema['ru']['metatags']->setLabel('metatags_ru');
+//      $this->widgetSchema['uk']['metatags']->setLabel('metatags_uk');
+//      $this->widgetSchema['en']['metatags']->setLabel('metatags_en');
       
       $this->widgetSchema['ru']['keywords']->setLabel('keywords_ru');
       $this->widgetSchema['uk']['keywords']->setLabel('keywords_uk');

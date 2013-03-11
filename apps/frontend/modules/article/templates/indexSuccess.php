@@ -12,6 +12,7 @@
     </div> 
     
     <div class="article-info" >
+        <small><?php echo __('views') . $article->getViews() ?></small>
         <small><?php echo __('updated_at') . $article->getUpdatedAt() ?></small>
     </div>
     

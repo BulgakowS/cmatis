@@ -67,4 +67,24 @@ class categoryActions extends sfActions
       }
   }
   
+  public function executeDelete(sfWebRequest $request)
+  {     
+      $this->forward404If(!$this->getUser()->isAuthenticated());
+      $this->forward404If(!$request->hasParameter('url'));
+      
+      $cat = CategoryTable::getByUrl($request->getParameter('url'));
+      $this->forward404If(!$cat);
+      
+      if ( $cat->getChieldscount() > 0 ) {
+          foreach ( $cat->getSubs() as $sc ) {
+              $sc->setParentId( $cat->getParentId() );
+          }
+      }
+      
+      $cat->delete();
+      
+      $this->getUser()->setFlash('success', __('category_deleted'));
+      $this->redirect('@homepage');
+      $this->setTemplate(false);
+  }
 }

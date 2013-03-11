@@ -11,6 +11,7 @@
  * @property integer $parent_id
  * @property integer $position
  * @property string $description
+ * @property boolean $on_main
  * @property Doctrine_Collection $Article
  * 
  * @method string              getName()        Returns the current record's "name" value
@@ -19,6 +20,7 @@
  * @method integer             getParentId()    Returns the current record's "parent_id" value
  * @method integer             getPosition()    Returns the current record's "position" value
  * @method string              getDescription() Returns the current record's "description" value
+ * @method boolean             getOnMain()      Returns the current record's "on_main" value
  * @method Doctrine_Collection getArticle()     Returns the current record's "Article" collection
  * @method Category            setName()        Sets the current record's "name" value
  * @method Category            setUrl()         Sets the current record's "url" value
@@ -26,6 +28,7 @@
  * @method Category            setParentId()    Sets the current record's "parent_id" value
  * @method Category            setPosition()    Sets the current record's "position" value
  * @method Category            setDescription() Sets the current record's "description" value
+ * @method Category            setOnMain()      Sets the current record's "on_main" value
  * @method Category            setArticle()     Sets the current record's "Article" collection
  * 
  * @package    cmatis
@@ -68,6 +71,10 @@ abstract class BaseCategory extends sfDoctrineRecord
              'type' => 'string',
              'notnull' => false,
              'length' => 50000,
+             ));
+        $this->hasColumn('on_main', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => true,
              ));
     }
 

@@ -1,4 +1,9 @@
-<div class="title"><?php echo __('edit_article') . ' "' . $article->getTitle() . '"'; ?> </div>
+<div class="title">
+    <?php echo __('edit_article') . ' "' . $article->getTitle() . '"'; ?> 
+    <?php if ($sf_user->hasCredential('admin')): ?>
+        <?php echo link_to('<i class="icon-trash"></i>', '@delete_article?url='.$article->geturl(), array('confirm'=>__('are_youshure_delete'))); ?>
+    <?php endif; ?>
+</div>
 <form action="<?php echo url_for('@edit_article?url='.$article->getUrl()); ?>" method="POST" name="<?php echo $form->getName() ?>" enctype="multipart/form-data">
     <?php 
         echo $form->renderHiddenFields();
@@ -30,7 +35,7 @@
                     <div class="alert alert-error"><?php echo $form['url']->rendererror(); ?></div>
                 <?php endif; ?>
                 <div class="form_edit">
-                    <?php echo $form['url']->render(array('style'=>'width:80%;')); ?>
+                    <?php echo $form['url']->render(array('style'=>'width:80%;', 'class'=>'url')); ?>
                 </div>
             </div>
             <div class="form_row">

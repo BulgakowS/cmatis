@@ -63,4 +63,19 @@ class articleActions extends sfActions
         } 
       }
   }
+  
+  public function executeDelete(sfWebRequest $request)
+  {     
+      $this->forward404If(!$this->getUser()->isAuthenticated());
+      $this->forward404If(!$request->hasParameter('url'));
+      
+      $article = ArticleTable::getByUrl($request->getParameter('url'));
+      $this->forward404If(!$article);
+      
+      $article->delete();
+      
+      $this->getUser()->setFlash('success', __('article_deleted'));
+      $this->redirect('@homepage');
+      $this->setTemplate(false);
+  }
 }

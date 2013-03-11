@@ -12,30 +12,30 @@
  * @property string $skype
  * @property string $email
  * @property string $description
- * @property string $metatags
+ * @property string $description_on_main
  * @property string $keywords
  * @property string $title
  * 
- * @method string getAdress()      Returns the current record's "adress" value
- * @method string getPhone()       Returns the current record's "phone" value
- * @method string getFax()         Returns the current record's "fax" value
- * @method string getIcq()         Returns the current record's "icq" value
- * @method string getSkype()       Returns the current record's "skype" value
- * @method string getEmail()       Returns the current record's "email" value
- * @method string getDescription() Returns the current record's "description" value
- * @method string getMetatags()    Returns the current record's "metatags" value
- * @method string getKeywords()    Returns the current record's "keywords" value
- * @method string getTitle()       Returns the current record's "title" value
- * @method About  setAdress()      Sets the current record's "adress" value
- * @method About  setPhone()       Sets the current record's "phone" value
- * @method About  setFax()         Sets the current record's "fax" value
- * @method About  setIcq()         Sets the current record's "icq" value
- * @method About  setSkype()       Sets the current record's "skype" value
- * @method About  setEmail()       Sets the current record's "email" value
- * @method About  setDescription() Sets the current record's "description" value
- * @method About  setMetatags()    Sets the current record's "metatags" value
- * @method About  setKeywords()    Sets the current record's "keywords" value
- * @method About  setTitle()       Sets the current record's "title" value
+ * @method string getAdress()              Returns the current record's "adress" value
+ * @method string getPhone()               Returns the current record's "phone" value
+ * @method string getFax()                 Returns the current record's "fax" value
+ * @method string getIcq()                 Returns the current record's "icq" value
+ * @method string getSkype()               Returns the current record's "skype" value
+ * @method string getEmail()               Returns the current record's "email" value
+ * @method string getDescription()         Returns the current record's "description" value
+ * @method string getDescriptionOnMain()   Returns the current record's "description_on_main" value
+ * @method string getKeywords()            Returns the current record's "keywords" value
+ * @method string getTitle()               Returns the current record's "title" value
+ * @method About  setAdress()              Sets the current record's "adress" value
+ * @method About  setPhone()               Sets the current record's "phone" value
+ * @method About  setFax()                 Sets the current record's "fax" value
+ * @method About  setIcq()                 Sets the current record's "icq" value
+ * @method About  setSkype()               Sets the current record's "skype" value
+ * @method About  setEmail()               Sets the current record's "email" value
+ * @method About  setDescription()         Sets the current record's "description" value
+ * @method About  setDescriptionOnMain()   Sets the current record's "description_on_main" value
+ * @method About  setKeywords()            Sets the current record's "keywords" value
+ * @method About  setTitle()               Sets the current record's "title" value
  * 
  * @package    cmatis
  * @subpackage model
@@ -82,10 +82,10 @@ abstract class BaseAbout extends sfDoctrineRecord
              'notnull' => false,
              'length' => 15000,
              ));
-        $this->hasColumn('metatags', 'string', 255, array(
+        $this->hasColumn('description_on_main', 'string', 15000, array(
              'type' => 'string',
              'notnull' => false,
-             'length' => 255,
+             'length' => 15000,
              ));
         $this->hasColumn('keywords', 'string', 255, array(
              'type' => 'string',
@@ -107,10 +107,11 @@ abstract class BaseAbout extends sfDoctrineRecord
              array(
               0 => 'adress',
               1 => 'description',
-              2 => 'metatags',
-              3 => 'keywords',
-              4 => 'title',
-              5 => 'text',
+              2 => 'description_on_main',
+              3 => 'metatags',
+              4 => 'keywords',
+              5 => 'title',
+              6 => 'text',
              ),
              ));
         $this->actAs($i18n0);

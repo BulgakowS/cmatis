@@ -9,6 +9,7 @@ Category:
     parent_id:    { type: integer, notnull: true, default: 0 }
     position:     { type: integer, notnull: false, default: 1 }
     description:  { type: string(50000), notnull: false }
+    on_main:      {type: boolean, default: true}
  
 Article:
   actAs:
@@ -22,35 +23,34 @@ Article:
 #    type:         { type: enum, values: [статья, пример работ, партнер], default: статья, notnull: true }
     logo:         { type: string(255), notnull: false }
     title:        { type: string(255), notnull: true }
-    content:      { type: string(50000), notnull: true }
+    content:      { type: string(50000), notnull: false }
     price:        { type: float, notnull: false }
     terms:        { type: string(100), notnull: false }
     enabled:      { type: boolean, notnull: true, default: true }
     tags:         { type: string(255), notnull: false }    
     views:        { type: integer, default: 0, notnull: false }
+    on_main:      {type: boolean, default: true}
   relations:
     Category:     { onDelete: CASCADE, type: one, local: category_id, foreign: id} 
 
 About:
   actAs:
     I18n:
-      fields: [adress, description, metatags, keywords, title, text]
+      fields: [adress, description, description_on_main, metatags, keywords, title, text]
   columns:
-    adress:          { type: string(255), notnull: false }
-    phone:           { type: string(255), notnull: false }
-    fax:             { type: string(255), notnull: false }
-    icq:             { type: string(255), notnull: false }
-    skype:           { type: string(255), notnull: false }
-    email:           { type: string(255), notnull: false }
-    description:    { type: string(15000), notnull: false }
-    metatags:        { type: string(255), notnull: false }
-    keywords:        { type: string(255), notnull: false }
-    title:						{ type: string(255), notnull: false }
+    adress:                 { type: string(255), notnull: false }
+    phone:                  { type: string(255), notnull: false }
+    fax:                    { type: string(255), notnull: false }
+    icq:                    { type: string(255), notnull: false }
+    skype:                  { type: string(255), notnull: false }
+    email:                  { type: string(255), notnull: false }
+    description:           { type: string(15000), notnull: false }
+    description_on_main:  { type: string(15000), notnull: false }
+#    metatags:              { type: string(255), notnull: false }
+    keywords:              { type: string(255), notnull: false }
+    title:                  { type: string(255), notnull: false }
     
 Reclame:
-  actAs:
-    I18n:
-      fields: [title]
   columns:
     html:							{ type: string(15000) }
     enabled:					{ type: boolean, default: false }

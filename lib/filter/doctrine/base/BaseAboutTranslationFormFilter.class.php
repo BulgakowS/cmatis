@@ -13,19 +13,19 @@ abstract class BaseAboutTranslationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'adress'      => new sfWidgetFormFilterInput(),
-      'description' => new sfWidgetFormFilterInput(),
-      'metatags'    => new sfWidgetFormFilterInput(),
-      'keywords'    => new sfWidgetFormFilterInput(),
-      'title'       => new sfWidgetFormFilterInput(),
+      'adress'              => new sfWidgetFormFilterInput(),
+      'description'         => new sfWidgetFormFilterInput(),
+      'description_on_main' => new sfWidgetFormFilterInput(),
+      'keywords'            => new sfWidgetFormFilterInput(),
+      'title'               => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'adress'      => new sfValidatorPass(array('required' => false)),
-      'description' => new sfValidatorPass(array('required' => false)),
-      'metatags'    => new sfValidatorPass(array('required' => false)),
-      'keywords'    => new sfValidatorPass(array('required' => false)),
-      'title'       => new sfValidatorPass(array('required' => false)),
+      'adress'              => new sfValidatorPass(array('required' => false)),
+      'description'         => new sfValidatorPass(array('required' => false)),
+      'description_on_main' => new sfValidatorPass(array('required' => false)),
+      'keywords'            => new sfValidatorPass(array('required' => false)),
+      'title'               => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('about_translation_filters[%s]');
@@ -45,13 +45,13 @@ abstract class BaseAboutTranslationFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'          => 'Number',
-      'adress'      => 'Text',
-      'description' => 'Text',
-      'metatags'    => 'Text',
-      'keywords'    => 'Text',
-      'title'       => 'Text',
-      'lang'        => 'Text',
+      'id'                  => 'Number',
+      'adress'              => 'Text',
+      'description'         => 'Text',
+      'description_on_main' => 'Text',
+      'keywords'            => 'Text',
+      'title'               => 'Text',
+      'lang'                => 'Text',
     );
   }
 }

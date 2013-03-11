@@ -9,6 +9,12 @@ document.createElement("section");
 $('document').ready(function(){
 //    $('.modal').modal('show');
 
+   $('.description a, .content a').attr('target', '_blank');
+      
+   setValidator('article_url', /^[a-zA-Z_0-9-]*$/i);
+   setValidator('category_url', /^[a-zA-Z_0-9-]*$/i);
+
+   
    CKEDITOR.replaceClass = 'editor';
    
    $('#login_link, #logout_link').tooltip({
@@ -53,4 +59,30 @@ function showSubMenu () {
 
 function getLanguage(){
     return $('#languages .flag.active').attr('data-lan');
+}
+
+function setValidator(id, regex) {
+    
+    $('#'+id).keyup(function(){
+        var val = $(this).val();
+        if ( regex.test(val) == false ) {
+            $(this).val( val.substr( 0, val.length-1 ) );
+        };
+    });
+    
+//  var element = document.getElementById(id);
+//  if (element) {
+//    var lastValue = element.value;
+//    if (!regex.test(lastValue))
+//      lastValue = '';
+//    setInterval(function() {
+//      var value = element.value;
+//      if (value != lastValue) {
+//        if (regex.test(value))
+//          lastValue = value;
+//        else
+//          element.value = lastValue;
+//      }
+//    }, 10);
+//  }
 }

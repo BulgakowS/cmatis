@@ -14,7 +14,7 @@ abstract class BaseArticleTranslationFormFilter extends BaseFormFilterDoctrine
   {
     $this->setWidgets(array(
       'title'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'content' => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'content' => new sfWidgetFormFilterInput(),
       'tags'    => new sfWidgetFormFilterInput(),
     ));
 

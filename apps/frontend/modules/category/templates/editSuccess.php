@@ -1,4 +1,9 @@
-<div class="title"><?php echo __('editing_category') . ' "' . $cat->getName() .'"';  ?></div>
+<div class="title">
+    <?php echo __('editing_category') . ' "' . $cat->getName() .'"';  ?>
+    <?php if ($sf_user->hasCredential('admin')): ?>
+        <?php echo link_to('<i class="icon-trash"></i>', '@delete_category?url='.$cat->geturl(), array('confirm'=>__('are_youshure_delete'))); ?>
+    <?php endif; ?>
+</div>
 <form action="<?php echo url_for('@edit_category?url='.$cat->getUrl()); ?>" method="POST" name="<?php echo $form->getName() ?>">
     <?php 
         echo $form->renderHiddenFields();
@@ -31,6 +36,14 @@
                 <?php endif; ?>
                 <div class="form_edit">
                     <?php echo $form['url']->render(array('style'=>'width:80%;')); ?>
+                </div>
+            </div>
+            <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['on_main']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['on_main']->render(array('style'=>'width:80%;')); ?>
                 </div>
             </div>
         </div>

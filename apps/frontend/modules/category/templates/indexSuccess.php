@@ -1,3 +1,4 @@
+
 <div class="title">
     <?php echo $cat->getName(); ?>
     <?php if ($sf_user->hasCredential('admin')): ?>
@@ -12,8 +13,8 @@
 <?php endif; ?>
 
 <?php if ( $subCats && count($subCats) > 0): ?>
-    <nav id="subCats">
-        <h4><?php echo __('sub_categoryes');?></h4>
+    <div id="subCats">
+        <h4><?php echo __('sub_categoryes');?></h4><div>
         <ul>
         <?php foreach ($subCats as $sub): ?>
             <li>
@@ -21,9 +22,11 @@
             </li>
         <?php endforeach; ?>
         </ul>
-    </nav>
-    <div class="clr"></div>
+        </div>
+    </div>
 <?php endif; ?>
+
+<div class="clr"></div>
 
 <?php if ($articles && count($articles) > 0): ?>
     <div class="cat_articles">
@@ -47,7 +50,5 @@
         </ul>
     </div>
 <?php endif; ?>
-
-
 
 

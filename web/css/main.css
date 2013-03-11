@@ -40,6 +40,7 @@ a:hover {
     font-size: 20px;
     font-weight: bold;
     padding: 20px 15px;
+    line-height: 35px;
 }
 
 .logo_edit{
@@ -63,20 +64,20 @@ article .article_logo_full img{
 }
 
 a .article_logo_wrap{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     float: left;
     text-align: center;
     margin-right: 10px;
 }
 
 a .text{
-    padding: 15px;
+    /*padding: 15px;*/
 }
 
 a .article_logo{
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 40px;
+    max-height: 40px;
     display:inline-block;
     vertical-align: middle;
     text-align: center;
@@ -91,6 +92,7 @@ a .article_logo{
 
 .article-info small{
     color: #999;
+    margin-right: 15px;
 }
 
 .cke_reset{
@@ -102,17 +104,26 @@ a .article_logo{
     width: 100%;
 }
 
-.last_by_cats .main_cats:nth-child(odd){
+.last_by_cats .main_cats{
+    background: #efffed;
     width: 48%;
+    /*margin: 5px;*/
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+}
+
+#main_categoies{
+    position: relative;
+}
+
+/*.last_by_cats .main_cats:nth-child(odd){
     float: left;
-    margin: 5px;
 }
 
 .last_by_cats .main_cats:nth-child(even){
-    width: 48%;
     float: right;
-    margin: 5px;
-}
+}*/
 
 .last_by_cats .main_cats .name a{
     font-size: 14px;
@@ -122,7 +133,18 @@ a .article_logo{
 
 .last_by_cats .main_cats ul{
     margin: 5px 15px;
+    padding: 0 0 10px 0;
     list-style: none;
+}
+
+.last_by_cats .main_cats ul li{
+    clear: both;
+    height: 40px;
+    padding: 5px;
+}
+
+.last_by_cats .main_cats ul li:hover{
+    background: #fff;
 }
 
 .last_by_cats .main_cats ul li a{
@@ -141,25 +163,52 @@ a .article_logo{
     overflow: hidden;
 }
 
+#main_articles_reclame{
+    width: 336px;
+    height: 280px;
+    padding: 0;
+    margin: 10px 5px;
+    float: right;
+    border: 1px solid #ccc;
+}
+
 #last_articles{
-    margin: 15px auto;
-    padding-left: 40px;
+    margin: 10px 0;
+    padding: 10px;
+    float: left;
+    text-align: justify;
+    width: 550px;
+    min-height: 260px;
+    background: #efffed;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
 }
 
 #last_articles ul li{
     list-style: none;
-    margin: 5px 0;
+    margin: 0;
+    clear: both;
+    padding: 5px;
+    height: 40px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#last_articles ul li:hover{
+    background: #fff;
 }
 
 #last_articles a{
     color: #333;
-    font-size: 14px;
+    font-size: 12px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #last_articles a:hover{
     color: #297024;
-    font-weight: bold;
 }
 
 /*******************************
@@ -306,6 +355,11 @@ h2.title {
 #subCats {
     width: 80%;
     margin: 5px auto;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    /*background: #efffed;*/
+    position: relative;
 }
 
 #subCats ul {
@@ -334,15 +388,31 @@ h2.title {
     margin: 10px auto;
 }
 
+.cat_articles {
+    background: #efffed;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    padding: 5px 0;
+}
+
 .cat_articles ul{
     margin: 25px 10px 25px;
 }
 
 .cat_articles ul li {
     list-style: none;
-    margin: 10px 15px;
+    margin: 5px;
     margin-bottom: 3px;
+    padding: 5px;
     height: 50px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.cat_articles ul li:hover{
+    background: #fff;
 }
 
 .cat_articles ul li a {
@@ -511,28 +581,21 @@ ul.topnav li ul.subnav {
     margin: 0; padding: 0;
     display: none;
     float: left;
-    min-width: 250px;
-    /*border: 1px solid #111;*/
+    width: 400px;
     border-radius: 5px;
     text-align: left;
 }
 ul.topnav li ul.subnav li{
     margin: 0; padding: 0;
     display: block;
-    /*height: 26px;*/ 
-/*    border-top: 1px solid #252525; --Create bevel effect--
-    border-bottom: 1px solid #444; --Create bevel effect--*/
     clear: both;
 }
 html ul.topnav li ul.subnav li a {
-    /*float: left;*/
     margin: 0;
-    min-width: 235px;
+    width: 385px;
     padding: 5px;
-    /*background: #333 url(images/dropdown_linkbg.gif) no-repeat 10px center;*/
     padding-left: 10px;
-    display: block;
-    /*height: 26px;*/ 
+    display: block; 
 }
 html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
     background: #222 /*url(images/dropdown_linkbg.gif) no-repeat 10px center*/;
@@ -552,6 +615,7 @@ html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
 
 aside#right{
     width: 230px;
+    background: #fff;
     margin-left: -210px;
     position: absolute;
     padding: 10px 0;

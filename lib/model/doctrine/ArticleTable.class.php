@@ -21,7 +21,8 @@ class ArticleTable extends Doctrine_Table
     public static function getQuery() {
         return Doctrine_Core::getTable('Article')->createQuery('a')
                 ->select('a.*, t.*')
-                ->leftJoin('a.Translation t');
+                ->leftJoin('a.Translation t')
+                ->andWhere('a.enabled = ?', true);
 //                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
     }
     
@@ -39,4 +40,14 @@ class ArticleTable extends Doctrine_Table
                 ->limit($lim)
                 ->execute();
     }
+    
+    public static function getLastForMain($lim = 5)
+    {
+        return self::getQuery()
+                ->andWhere('a.on_main = ?', true)
+                ->orderBy('a.updated_at DESC')
+                ->limit($lim)
+                ->execute();
+    }
+    
 }

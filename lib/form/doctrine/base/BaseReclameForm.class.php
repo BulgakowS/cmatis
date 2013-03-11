@@ -19,6 +19,7 @@ abstract class BaseReclameForm extends BaseFormDoctrine
       'html'     => new sfWidgetFormTextarea(),
       'enabled'  => new sfWidgetFormInputCheckbox(),
       'position' => new sfWidgetFormInputText(),
+      'title'    => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -26,6 +27,7 @@ abstract class BaseReclameForm extends BaseFormDoctrine
       'html'     => new sfValidatorString(array('max_length' => 15000, 'required' => false)),
       'enabled'  => new sfValidatorBoolean(array('required' => false)),
       'position' => new sfValidatorInteger(array('required' => false)),
+      'title'    => new sfValidatorString(array('max_length' => 40, 'required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('reclame[%s]');

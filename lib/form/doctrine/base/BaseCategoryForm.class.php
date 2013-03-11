@@ -20,6 +20,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'level'     => new sfWidgetFormInputText(),
       'parent_id' => new sfWidgetFormInputText(),
       'position'  => new sfWidgetFormInputText(),
+      'on_main'   => new sfWidgetFormInputCheckbox(),
     ));
 
     $this->setValidators(array(
@@ -28,6 +29,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'level'     => new sfValidatorInteger(array('required' => false)),
       'parent_id' => new sfValidatorInteger(array('required' => false)),
       'position'  => new sfValidatorInteger(array('required' => false)),
+      'on_main'   => new sfValidatorBoolean(array('required' => false)),
     ));
 
     $this->validatorSchema->setPostValidator(

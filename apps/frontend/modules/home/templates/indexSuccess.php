@@ -1,3 +1,9 @@
+<?php use_javascript('wookmark.min.js'); ?>
+
+<div id="main_articles_reclame">
+    <img src="http://dvs1971.ru/rek/dvs_336x280.jpg" />
+</div>
+
 <?php if ( count($lastArticles) > 0): ?>
     <div id="last_articles">
         <ul>
@@ -21,35 +27,54 @@
     </div>
 <?php endif; ?>
 
+<div class="clr"></div>
+
+<?php if ($about->getDescriptionOnMain()): ?>
+    <div class="description">
+        <?php echo htmlspecialchars_decode($about->getDescriptionOnMain()); ?>
+    </div>
+    <div class="clr"></div>
+<?php endif; ?>
+
 <?php if ( count($lastCategories) > 0 ): ?>
-    <div id="main_categoies" class="last_by_cats">
+    <ul id="main_categoies" class="last_by_cats">
         <?php foreach ( $lastCategories as $root ): ?>
             <?php 
                 $last = $root->getLastArticles();
                 if ( count($last) > 0 ): ?>
-                    <div class="main_cats">
+                    <li class="main_cats">
                         <div class="name"><?php echo link_to($root->getName(), '@category?category='.$root->getUrl()); ?></div>
                         <ul>
-                            <?php foreach($last as $art): ?>
-                                <li>
-                                    <a href="<?php echo url_for('@article?category='.$art->getCategory()->getUrl().'&url='.$art->getUrl()); ?>" >
-                                        <div class="article_logo_wrap">
-                                            <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$art->getLogo() )): ?>
-                                                <img src="/uploads/logos/<?php echo $art->getLogo(); ?>" class="article_logo"/>
-                                            <?php else: ?>
-                                                <img src="/uploads/default-no-image.png" class="article_logo"/>
-                                            <?php endif; ?>
-                                        </div>
-                                        <div class="text">
-                                            <?php echo $art->getTitle(); ?>
-                                        </div>
-                                    </a>
-                                </li>
-                            <?php endforeach; ?>
+                        <?php foreach($last as $art): ?>
+                            <li>
+                                <a href="<?php echo url_for('@article?category='.$art->getCategory()->getUrl().'&url='.$art->getUrl()); ?>" >
+                                    <div class="article_logo_wrap">
+                                        <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$art->getLogo() )): ?>
+                                            <img src="/uploads/logos/<?php echo $art->getLogo(); ?>" class="article_logo"/>
+                                        <?php else: ?>
+                                            <img src="/uploads/default-no-image.png" class="article_logo"/>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="text">
+                                        <?php echo $art->getTitle(); ?>
+                                    </div>
+                                </a>
+                            </li>
+                        <?php endforeach; ?>
                         </ul>
-                    </div>
+                    </li>
                 <?php endif; ?>
         <?php endforeach; ?>
         <div class="clr"></div>
-    </div>
+    </ul>
 <?php endif; ?>
+
+<div class="clr"></div>
+
+
+<script>
+    $('.main_cats').wookmark({
+        container: $('#main_categoies'),
+        offset: 35
+    });
+</script>

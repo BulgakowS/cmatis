@@ -16,4 +16,9 @@ class AboutTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('About');
     }
+    
+    public static function getAbout()
+    {
+        return Doctrine::getTable('about')->find(1);
+    }
 }
