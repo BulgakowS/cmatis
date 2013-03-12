@@ -22,7 +22,7 @@ Article:
     author:       { type: string(100), notnull: false }
 #    type:         { type: enum, values: [статья, пример работ, партнер], default: статья, notnull: true }
     logo:         { type: string(255), notnull: false }
-    title:        { type: string(255), notnull: true }
+    title:        { type: string(255), notnull: false }
     content:      { type: string(50000), notnull: false }
     price:        { type: float, notnull: false }
     terms:        { type: string(100), notnull: false }

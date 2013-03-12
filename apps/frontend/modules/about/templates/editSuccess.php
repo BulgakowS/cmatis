@@ -43,7 +43,14 @@
                     <div class="alert alert-error"><?php echo $form['email']->rendererror(); ?></div>
                 <?php endif; ?>
                 <div class="form_edit">
-                    <?php echo $form['email']->render(array('style'=>'width:83%;')); ?>
+                    
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on"><i class="icon-envelope"></i></span>
+                            <?php echo $form['email']->render(array('style'=>'width:83%;')); ?>
+                            <!--<input  id="inputIcon" type="text">-->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

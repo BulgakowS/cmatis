@@ -30,7 +30,7 @@
 <div class="clr"></div>
 
 <?php if ($about->getDescriptionOnMain()): ?>
-    <div class="description">
+    <div class="description" id="description-main">
         <?php echo htmlspecialchars_decode($about->getDescriptionOnMain()); ?>
     </div>
     <div class="clr"></div>

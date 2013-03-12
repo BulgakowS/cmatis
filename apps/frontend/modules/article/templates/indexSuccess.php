@@ -1,3 +1,5 @@
+<?php include_component('home','breadcrumbs'); ?>
+
 <article>
     <?php if ($article->getlogo()):?>
         <div class="article_logo_full">
@@ -15,6 +17,8 @@
         <small><?php echo __('views') . $article->getViews() ?></small>
         <small><?php echo __('updated_at') . $article->getUpdatedAt() ?></small>
     </div>
+    
+    <div class="clr"></div>
     
     <div class="content">
         <?php echo htmlspecialchars_decode($article->getContent()); ?>

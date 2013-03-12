@@ -14,10 +14,41 @@ class homeComponents extends sfComponents
     
   }
   
+  public function executeBreadcrumbs(sfWebRequest $request)
+  {
+      $route = sfContext::getInstance()->getRouting()->getCurrentRouteName(); 
+      if ( $route == 'article' ) {
+          $this->articleTitle = ArticleTable::getByUrl($request->getParameter('url'))->getTitle();
+      } else {
+          $this->articleTitle = false;
+      }
+      $thisCat = CategoryTable::getByUrl($request->getParameter('category'));
+      $this->enCatId = $thisCat->getId();
+      $this->cats = $this->BreadParents($this->enCatId);
+//      echo '<pre>';var_dump($this->cats);exit;
+//                print_r($this->BreadParents($thisCat->getId()));exit;
+  }
+  
+  private function BreadParents($id, $t = array())
+  {
+      $c = CategoryTable::getById($id);
+      $tmp = array(
+          'id' => $c->getId(),
+          'name' => $c->getName(),
+          'url' => $c->getUrl(),
+          );
+      array_unshift($t, $tmp);
+      unset($tmp);
+      $pId = $c->getParentId();
+      if ( $pId != 0 ) {    
+          $this->BreadParents($pId, $t);
+      } 
+      return $t;
+  }
+  
   public function executeContacts(sfWebRequest $request)
   {
-      $about = Doctrine::getTable('about')->find(1);
-      $this->about = $about;
+      $this->about = Doctrine::getTable('about')->find(1);
   }
 }
 

@@ -39,7 +39,7 @@ a:hover {
 .title{
     font-size: 20px;
     font-weight: bold;
-    padding: 20px 15px;
+    padding: 0px 15px;
     line-height: 35px;
 }
 
@@ -383,9 +383,18 @@ h2.title {
     color: #297024;
 }
 
+#description-main{
+    border-bottom: 1px solid #efffed;
+    border-top: 1px solid #efffed;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
 .description, .cat_articles {
     width: 95%;
-    margin: 10px auto;
+    margin: 0 auto;
+    padding: 10px;
 }
 
 .cat_articles {
@@ -394,6 +403,7 @@ h2.title {
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     padding: 5px 0;
+    margin: 10px auto;
 }
 
 .cat_articles ul{
@@ -521,6 +531,29 @@ header #languages .flag.en{
 header #languages .flag.ru{
     background: url(images/ru.png) top left no-repeat;
     background-size: 25px 25px;
+}
+
+/*******************************
+------------Breadcrumps---------
+*******************************/
+#breadcrumps{
+  background: #efffed;
+  margin: 0 auto 20px;
+  padding: 3px 20px;
+  list-style: none;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#breadcrumps li{
+  float: left;
+}
+
+#breadcrumps li a{
+    color: #000;
 }
 
 /*******************************
@@ -740,3 +773,5 @@ form .row img{
 [class^="icon-"], [class*=" icon-"] {margin-top: 1px;}
 
 #login_link [class^="icon-"], #login_link [class*=" icon-"] { margin-top: 3px; }
+
+.form_edit .input-prepend { width: 92%; }

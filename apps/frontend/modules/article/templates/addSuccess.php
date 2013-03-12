@@ -10,7 +10,7 @@
     </div>
     <?php endif; ?>
     <div class="row">
-        <div class="span6 offset1">
+        <div class="span6">
             <div class="form_row <?php if ($form['logo']->rendererror()) echo 'control-group error' ?>">
                 <div class="form_label">
                     <?php echo $form['logo']->renderLabel(); ?>
@@ -21,6 +21,14 @@
                 <div class="form_edit">
                     <?php echo $form['logo']->render(); ?>
                 </div>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="form_label">
+                <?php echo $form['on_main']->renderLabel(); ?>
+            </div>
+            <div class="form_edit">
+                <?php echo $form['on_main']->render(); ?>
             </div>
         </div>
     </div>

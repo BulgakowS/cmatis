@@ -15,7 +15,17 @@
     </div>
     <?php endif; ?>
     <div class="row">
-        <?php echo $form['logo']->renderRow(); ?>
+        <div class="span6">
+            <?php echo $form['logo']->renderRow(); ?>
+        </div>
+        <div class="span6">
+            <div class="form_label">
+                <?php echo $form['on_main']->renderLabel(); ?>
+            </div>
+            <div class="form_edit">
+                <?php echo $form['on_main']->render(); ?>
+            </div>
+        </div>
     </div>
     <div class="row">
         <div class="span4">
