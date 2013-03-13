@@ -6,14 +6,44 @@ document.createElement("nav");
 document.createElement("menu"); 
 document.createElement("section");
 
+function checklanguageArticle( form_name, lan ){
+    
+    if ( $('#'+form_name+'_'+lan+'_lan_enable').is(':checked') ) {
+        $('#'+form_name+'_'+lan+'_title, #'+form_name+'_'+lan+'_name, #'+form_name+'_' + lan + '_tags').attr('disabled', false); 
+        $('#'+form_name+'_'+lan+'_content, #'+form_name+'_'+lan+'_description').parents('.form_row').slideDown();
+        $('#'+form_name+'_'+lan+'_title, #'+form_name+'_'+lan+'_name').attr('required', true);
+    } else {
+        $('#'+form_name+'_'+lan+'_title, #'+form_name+'_'+lan+'_name, #'+form_name+'_' + lan + '_tags').attr('disabled', true);
+        $('#'+form_name+'_'+lan+'_content, #'+form_name+'_'+lan+'_description').parents('.form_row').slideUp();
+        $('#'+form_name+'_'+lan+'_title, #'+form_name+'_'+lan+'_name').attr('required', false);
+    }
+}
+
 $('document').ready(function(){
 //    $('.modal').modal('show');
 
+   if ( $('form[name="article"]').length > 0 ) {
+       $.each(['ru','uk','en'], function(n,v) {
+           checklanguageArticle( 'article',  v);
+           $('#article_' + v + '_lan_enable').click(function(){
+               checklanguageArticle( 'article', v );
+           });
+       });        
+   } 
+   
+   if ( $('form[name="category"]').length > 0 ) {
+       $.each(['ru','uk','en'], function(n,v) {
+           checklanguageArticle( 'category',  v);
+           $('#category_' + v + '_lan_enable').click(function(){
+               checklanguageArticle( 'category', v );
+           });
+       });        
+   } 
+
    $('.description a, .content a').attr('target', '_blank');
       
-   setValidator('article_url', /^[a-zA-Z_0-9-]*$/i);
-   setValidator('category_url', /^[a-zA-Z_0-9-]*$/i);
-
+   setValidator('article_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
+   setValidator('category_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
    
    CKEDITOR.replaceClass = 'editor';
    

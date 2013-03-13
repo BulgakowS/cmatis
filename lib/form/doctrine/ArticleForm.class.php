@@ -52,6 +52,10 @@ class ArticleForm extends BaseArticleForm
       $this->widgetSchema['ru']['tags']->setLabel('tags_ru');
       $this->widgetSchema['uk']['tags']->setLabel('tags_uk');
       $this->widgetSchema['en']['tags']->setLabel('tags_en'); 
+      
+      $this->widgetSchema['ru']['lan_enable']->setLabel('lan_enable_ru');
+      $this->widgetSchema['uk']['lan_enable']->setLabel('lan_enable_uk');
+      $this->widgetSchema['en']['lan_enable']->setLabel('lan_enable_en'); 
   }
   
   public function doSave($con = null)
@@ -59,13 +63,26 @@ class ArticleForm extends BaseArticleForm
     parent::doSave($con);
     
     $this->getObject()->setUrl( myClass::makeUrl($this->getValue('url')) )->save();
-
+    
     if ( $this->getObject()->getLogo() ) {
-        $url = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'logos'.DIRECTORY_SEPARATOR.$this->getObject()->getLogo();
+//        $old_logo = $this->
+        
+        
+        $dir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'logos';
+        $big_dir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'big_logos';
+        if ( !is_dir($dir) ) {
+            mkdir($dir, 0777, true);
+        }
+        if ( !is_dir($big_dir) ) {
+            mkdir($big_dir, 0777, true);
+        }
+        $url = $dir.DIRECTORY_SEPARATOR.$this->getObject()->getLogo();
+        $url_big = $big_dir.DIRECTORY_SEPARATOR.$this->getObject()->getLogo();
         if ( is_file($url) ) {
             $img = new sfImage( $url, mime_content_type($url) );
-            $img->resize(300, null, true, true);
+            $img->saveAs($url_big);
             $img->setQuality(100);
+            $img->resize(300, null, true, true);
             $img->save();
         }
     }

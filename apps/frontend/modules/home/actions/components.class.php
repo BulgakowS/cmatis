@@ -25,8 +25,6 @@ class homeComponents extends sfComponents
       $thisCat = CategoryTable::getByUrl($request->getParameter('category'));
       $this->enCatId = $thisCat->getId();
       $this->cats = $this->BreadParents($this->enCatId);
-//      echo '<pre>';var_dump($this->cats);exit;
-//                print_r($this->BreadParents($thisCat->getId()));exit;
   }
   
   private function BreadParents($id, $t = array())
@@ -41,7 +39,7 @@ class homeComponents extends sfComponents
       unset($tmp);
       $pId = $c->getParentId();
       if ( $pId != 0 ) {    
-          $this->BreadParents($pId, $t);
+          $this->BreadParents($pId, &$t);
       } 
       return $t;
   }

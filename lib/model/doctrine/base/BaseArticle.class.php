@@ -17,6 +17,7 @@
  * @property string $tags
  * @property integer $views
  * @property boolean $on_main
+ * @property boolean $lan_enable
  * @property Category $Category
  * 
  * @method integer  getCategoryId()  Returns the current record's "category_id" value
@@ -31,6 +32,7 @@
  * @method string   getTags()        Returns the current record's "tags" value
  * @method integer  getViews()       Returns the current record's "views" value
  * @method boolean  getOnMain()      Returns the current record's "on_main" value
+ * @method boolean  getLanEnable()   Returns the current record's "lan_enable" value
  * @method Category getCategory()    Returns the current record's "Category" value
  * @method Article  setCategoryId()  Sets the current record's "category_id" value
  * @method Article  setUrl()         Sets the current record's "url" value
@@ -44,6 +46,7 @@
  * @method Article  setTags()        Sets the current record's "tags" value
  * @method Article  setViews()       Sets the current record's "views" value
  * @method Article  setOnMain()      Sets the current record's "on_main" value
+ * @method Article  setLanEnable()   Sets the current record's "lan_enable" value
  * @method Article  setCategory()    Sets the current record's "Category" value
  * 
  * @package    cmatis
@@ -78,7 +81,7 @@ abstract class BaseArticle extends sfDoctrineRecord
              ));
         $this->hasColumn('title', 'string', 255, array(
              'type' => 'string',
-             'notnull' => true,
+             'notnull' => false,
              'length' => 255,
              ));
         $this->hasColumn('content', 'string', 50000, array(
@@ -114,6 +117,10 @@ abstract class BaseArticle extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => true,
              ));
+        $this->hasColumn('lan_enable', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => true,
+             ));
     }
 
     public function setUp()
@@ -131,6 +138,7 @@ abstract class BaseArticle extends sfDoctrineRecord
               0 => 'title',
               1 => 'content',
               2 => 'tags',
+              3 => 'lan_enable',
              ),
              ));
         $this->actAs($timestampable0);

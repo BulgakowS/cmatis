@@ -256,6 +256,18 @@
         <source>adress_en</source>
         <target>Адрес (Английский)</target>
       </trans-unit>
+      <trans-unit>
+        <source>lan_enable_ru</source>
+        <target>Доступен Русский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_uk</source>
+        <target>Доступен Украинский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_en</source>
+        <target>Доступен Английский</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -13,15 +13,17 @@ abstract class BaseArticleTranslationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'title'   => new sfWidgetFormFilterInput(array('with_empty' => false)),
-      'content' => new sfWidgetFormFilterInput(),
-      'tags'    => new sfWidgetFormFilterInput(),
+      'title'      => new sfWidgetFormFilterInput(),
+      'content'    => new sfWidgetFormFilterInput(),
+      'tags'       => new sfWidgetFormFilterInput(),
+      'lan_enable' => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
-      'title'   => new sfValidatorPass(array('required' => false)),
-      'content' => new sfValidatorPass(array('required' => false)),
-      'tags'    => new sfValidatorPass(array('required' => false)),
+      'title'      => new sfValidatorPass(array('required' => false)),
+      'content'    => new sfValidatorPass(array('required' => false)),
+      'tags'       => new sfValidatorPass(array('required' => false)),
+      'lan_enable' => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('article_translation_filters[%s]');
@@ -41,11 +43,12 @@ abstract class BaseArticleTranslationFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'      => 'Number',
-      'title'   => 'Text',
-      'content' => 'Text',
-      'tags'    => 'Text',
-      'lang'    => 'Text',
+      'id'         => 'Number',
+      'title'      => 'Text',
+      'content'    => 'Text',
+      'tags'       => 'Text',
+      'lan_enable' => 'Boolean',
+      'lang'       => 'Text',
     );
   }
 }

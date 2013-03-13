@@ -36,6 +36,8 @@ class ArticleTable extends Doctrine_Table
     public static function getLast($lim = 10)
     {
         return self::getQuery()
+                ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
                 ->orderBy('a.updated_at DESC')
                 ->limit($lim)
                 ->execute();
@@ -45,6 +47,8 @@ class ArticleTable extends Doctrine_Table
     {
         return self::getQuery()
                 ->andWhere('a.on_main = ?', true)
+                ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
                 ->orderBy('a.updated_at DESC')
                 ->limit($lim)
                 ->execute();

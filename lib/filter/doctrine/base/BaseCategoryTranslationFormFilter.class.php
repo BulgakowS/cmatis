@@ -15,11 +15,13 @@ abstract class BaseCategoryTranslationFormFilter extends BaseFormFilterDoctrine
     $this->setWidgets(array(
       'name'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
       'description' => new sfWidgetFormFilterInput(),
+      'lan_enable'  => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));
 
     $this->setValidators(array(
       'name'        => new sfValidatorPass(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
+      'lan_enable'  => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
     ));
 
     $this->widgetSchema->setNameFormat('category_translation_filters[%s]');
@@ -42,6 +44,7 @@ abstract class BaseCategoryTranslationFormFilter extends BaseFormFilterDoctrine
       'id'          => 'Number',
       'name'        => 'Text',
       'description' => 'Text',
+      'lan_enable'  => 'Boolean',
       'lang'        => 'Text',
     );
   }

@@ -47,6 +47,7 @@ class CategoryTable extends Doctrine_Table
         return self::getQuery()
                 ->andWhere('parent_id = ?', 0)
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
                 ->execute();
     }
     
@@ -55,6 +56,7 @@ class CategoryTable extends Doctrine_Table
         return self::getQuery()
                 ->orderBy('level ASC')
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
                 ->limit($lim)
                 ->execute();
     }
@@ -65,6 +67,7 @@ class CategoryTable extends Doctrine_Table
                 ->andWhere('c.on_main = ?', true)
                 ->orderBy('level ASC')
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
                 ->limit($lim)
                 ->execute();
     }
@@ -73,7 +76,8 @@ class CategoryTable extends Doctrine_Table
     {
         return self::getQuery()
                 ->andWhere('parent_id = ?', $id)
-                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
                 ->execute();
     }
     

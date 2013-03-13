@@ -29,7 +29,11 @@ class CategoryForm extends BaseCategoryForm
 
     $this->widgetSchema['ru']['description']->setLabel('description_ru');
     $this->widgetSchema['uk']['description']->setLabel('description_uk');
-    $this->widgetSchema['en']['description']->setLabel('description_en');      
+    $this->widgetSchema['en']['description']->setLabel('description_en');  
+    
+    $this->widgetSchema['ru']['lan_enable']->setLabel('lan_enable_ru');
+    $this->widgetSchema['uk']['lan_enable']->setLabel('lan_enable_uk');
+    $this->widgetSchema['en']['lan_enable']->setLabel('lan_enable_en'); 
   }
  
     public function doSave($con = null)

@@ -12,6 +12,7 @@
  * @property integer $position
  * @property string $description
  * @property boolean $on_main
+ * @property boolean $lan_enable
  * @property Doctrine_Collection $Article
  * 
  * @method string              getName()        Returns the current record's "name" value
@@ -21,6 +22,7 @@
  * @method integer             getPosition()    Returns the current record's "position" value
  * @method string              getDescription() Returns the current record's "description" value
  * @method boolean             getOnMain()      Returns the current record's "on_main" value
+ * @method boolean             getLanEnable()   Returns the current record's "lan_enable" value
  * @method Doctrine_Collection getArticle()     Returns the current record's "Article" collection
  * @method Category            setName()        Sets the current record's "name" value
  * @method Category            setUrl()         Sets the current record's "url" value
@@ -29,6 +31,7 @@
  * @method Category            setPosition()    Sets the current record's "position" value
  * @method Category            setDescription() Sets the current record's "description" value
  * @method Category            setOnMain()      Sets the current record's "on_main" value
+ * @method Category            setLanEnable()   Sets the current record's "lan_enable" value
  * @method Category            setArticle()     Sets the current record's "Article" collection
  * 
  * @package    cmatis
@@ -76,6 +79,10 @@ abstract class BaseCategory extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => true,
              ));
+        $this->hasColumn('lan_enable', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => true,
+             ));
     }
 
     public function setUp()
@@ -90,6 +97,7 @@ abstract class BaseCategory extends sfDoctrineRecord
              array(
               0 => 'name',
               1 => 'description',
+              2 => 'lan_enable',
              ),
              ));
         $this->actAs($i18n0);

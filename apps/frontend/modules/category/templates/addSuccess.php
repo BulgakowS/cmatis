@@ -30,7 +30,7 @@
                     <div class="alert alert-error"><?php echo $form['url']->rendererror(); ?></div>
                 <?php endif; ?>
                 <div class="form_edit">
-                    <?php echo $form['url']->render(array('style'=>'width:80%;')); ?>
+                    <?php echo $form['url']->render(array('style'=>'width:80%;', 'required'=>'required')); ?>
                 </div>
             </div>
             <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
@@ -78,6 +78,34 @@
             </div>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="span4">
+            <div class="form_label">
+                    <?php echo $form['ru']['lan_enable']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['ru']['lan_enable']->render(); ?>
+                </div>
+        </div>
+        <div class="span4">
+            <div class="form_label">
+                    <?php echo $form['uk']['lan_enable']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['uk']['lan_enable']->render(); ?>
+                </div>
+        </div>
+        <div class="span4">
+            <div class="form_label">
+                    <?php echo $form['en']['lan_enable']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['en']['lan_enable']->render(); ?>
+                </div>
+        </div>
+    </div>
+    
     <div class="row">
         <div class="form_row <?php if ($form['ru']['description']->rendererror()) echo 'control-group error' ?>">
             <div class="form_label" style="margin-top: 20px;">
