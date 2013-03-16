@@ -4,7 +4,8 @@
         <a href="<?php echo url_for('@homepage'); ?>"><i class="icon-home"></i></a>
         <span class="divider">/</span>
     </li>
-    <?php if ($cats) foreach( $cats as $cat ): ?>
+    
+    <?php if (isset($cats) && !empty($cats)) foreach( $cats as $cat ): ?>
         <?php if ( ($cat['id'] == $enCatId) && !$articleTitle ): ?>
             <li class="active" ><?php echo $cat['name'] ?></li>
         <?php else: ?>
@@ -14,7 +15,12 @@
             </li>
         <?php endif; ?>
     <?php endforeach; ?>
-    <?php if ($articleTitle): ?>
+            
+    <?php if (isset($articleTitle) && !empty($articleTitle)): ?>
         <li class="active" ><?php echo $articleTitle; ?></li>
+    <?php endif; ?>
+
+    <?php if ( isset($static) && !empty($static) ): ?>
+        <li class="active" ><?php echo $static; ?></li>
     <?php endif; ?>
 </ul>

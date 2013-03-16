@@ -41,4 +41,18 @@ class homeActions extends sfActions
 	$response->addMeta('title', 'Cmatis');
     $response->addMeta('keywords', '');
   }
+  
+    /**
+     * Executes page404 action
+     *
+     * You can also use $this->forward404If() to force a 404 to this action.
+     *
+     * @param void
+     * @return void
+     * @access public
+     */
+    public function executePage404(sfWebRequest $request) 
+    {
+        $this->setLayout('layout');
+    }
 }

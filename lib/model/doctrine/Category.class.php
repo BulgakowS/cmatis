@@ -46,11 +46,13 @@ class Category extends BaseCategory
         return Doctrine::getTable('Category')->find( $this->parent_id );
     }
 
-    public function getLastArticles($lim = 5){
+    public function getLastArticles()
+    { 
         return ArticleTable::getQuery()
                 ->addWhere('a.category_id = ?', $this->getId())
+                ->andWhere('a.on_main = ?', true)
                 ->orderBy('updated_at')
-                ->limit($lim)
+                ->limit(sfConfig::get( 'app_category_news' ))
                 ->execute();
     }
 }

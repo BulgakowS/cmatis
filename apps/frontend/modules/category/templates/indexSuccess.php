@@ -1,4 +1,3 @@
-<?php include_component('home','breadcrumbs'); ?>
 
 <div class="title">
     <?php echo $cat->getName(); ?>

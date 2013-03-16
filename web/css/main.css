@@ -10,17 +10,17 @@ body, html {
     min-height: 100% !important;
     height: 100%;
     color: #333;
-    /*background: url(images/body_bg.png) repeat-x;*/
-    /*overflow-x: hidden;*/
+    /*background: url(images/body_bg.png) repeat-x;
+    overflow-x: hidden;*/
 }
 
-a{
+a {
     color: #333;
     text-decoration: none;
 }
 
 a:hover {
-    color: #297024;
+    /*color: #297024;*/
 }
 
 .clr{
@@ -39,7 +39,8 @@ a:hover {
 .title{
     font-size: 20px;
     font-weight: bold;
-    padding: 0px 15px;
+    padding: 0;
+    padding-right: 120px;
     line-height: 35px;
 }
 
@@ -52,9 +53,13 @@ a:hover {
     max-height: 100px;
 }
 
-article .content p{
-    margin: 0;
-    padding: 10px;
+article .content {
+    margin-bottom: 40px;
+}
+
+article .content img{
+    max-height: 300px;
+    max-width: 300px;
 }
 
 article .article_logo_full img{
@@ -72,7 +77,7 @@ a .article_logo_wrap{
 }
 
 a .text{
-    /*padding: 15px;*/
+    height: 40px;
 }
 
 a .article_logo{
@@ -105,7 +110,7 @@ a .article_logo{
 }
 
 .last_by_cats .main_cats{
-    background: #efffed;
+    background: #F8F8F8;
     width: 48%;
     /*margin: 5px;*/
     border-radius: 15px;
@@ -144,7 +149,7 @@ a .article_logo{
 }
 
 .last_by_cats .main_cats ul li:hover{
-    background: #fff;
+    background: #eee;
 }
 
 .last_by_cats .main_cats ul li a{
@@ -152,7 +157,7 @@ a .article_logo{
 }
 
 .last_by_cats .main_cats .name{
-    background: #eee;
+    background: #ccc;
     height: 20px;
     /*width: 100%;*/
     display: block;
@@ -177,12 +182,16 @@ a .article_logo{
     padding: 10px;
     float: left;
     text-align: justify;
-    width: 550px;
+    width: 560px;
     min-height: 260px;
-    background: #efffed;
+    background: #F8F8F8;
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
+}
+
+#last_articles ul{
+    margin: 0 5px 10px;
 }
 
 #last_articles ul li{
@@ -197,7 +206,7 @@ a .article_logo{
 }
 
 #last_articles ul li:hover{
-    background: #fff;
+    background: #eee;
 }
 
 #last_articles a{
@@ -208,7 +217,7 @@ a .article_logo{
 }
 
 #last_articles a:hover{
-    color: #297024;
+    /*color: #297024;*/
 }
 
 /*******************************
@@ -264,7 +273,7 @@ header #contacts{
 
 footer #contacts{
     color: #333;
-    margin: 20px auto 0;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -309,17 +318,41 @@ header #contacts span, footer #contacts span {
 }
 
 .page-buffer {
-    height: 52px;
+    height: 30px;
 }
 
-#wrapper {
+#wrapper, #wrapper_404 {
     min-width: 960px;
     width: 960px;
     max-width: 960px;
     margin: 0 auto;
     height: auto; 
     min-height: 100%;
-    margin-bottom: -52px;
+    margin-bottom: -35px;
+}
+
+#wrapper_404 h1{
+    margin: 30px auto;
+    text-align: center;
+    color: firebrick;
+    text-shadow: 1px 2px 2px #666;
+}
+
+#wrapper_404 .links{
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+}
+
+#wrapper_404 .links a{
+    font-size: 16px;
+    color: #333;
+    margin-right: 15px;
+}
+
+#wrapper_404 .links a:hover{
+    font-size: 16px;
+    color: #297024;
 }
 
 * html .page-wrapper {
@@ -340,12 +373,12 @@ footer{
     width: 960px;
     max-width: 960px;
     margin: 0 auto;
-    height: 50px;
+    height: 30px;
     background: URL(images/footer_bg.png) repeat-x;
     box-sizing: border-box;
-    border-top-left-radius: 20px;
+/*    border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    border: 1px solid #ccc;
+    sborder: 1px solid #ccc;*/
 }
 
 h2.title {
@@ -358,7 +391,7 @@ h2.title {
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    /*background: #efffed;*/
+    /*background: #F8F8F8;*/
     position: relative;
 }
 
@@ -380,25 +413,26 @@ h2.title {
 }
 
 #subCats ul li a:hover {
-    color: #297024;
+    /*color: #297024;*/
 }
 
 #description-main{
-    border-bottom: 1px solid #efffed;
-    border-top: 1px solid #efffed;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
+    background: #F8F8F8;
+    border-bottom: 1px solid #F8F8F8;
+    border-top: 1px solid #F8F8F8;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
 }
 
 .description, .cat_articles {
     width: 95%;
     margin: 0 auto;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 .cat_articles {
-    background: #efffed;
+    background: #F8F8F8;
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
@@ -422,7 +456,7 @@ h2.title {
 }
 
 .cat_articles ul li:hover{
-    background: #fff;
+    background: #eee;
 }
 
 .cat_articles ul li a {
@@ -432,11 +466,12 @@ h2.title {
 }
 
 .cat_articles ul li a:hover{
-    color: #297024;
+    /*color: #297024;*/
 }
 
 .cat_articles ul li a .text{
     padding: 15px;
+    height: 40px;
 }
 
 .cat_logo_in_list_div {
@@ -537,15 +572,18 @@ header #languages .flag.ru{
 ------------Breadcrumps---------
 *******************************/
 #breadcrumps{
-  background: #efffed;
+  background: #F8F8F8;
   margin: 0 auto 20px;
-  padding: 3px 20px;
+  padding: 3px 35px;
   list-style: none;
-  width: 90%;
+  width: 92%;
   overflow: hidden;
-  border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
+  border-bottom-left-radius: 55px;
+  border-bottom-right-radius: 55px;
+  -moz-border-radius-bottomleft: 55px;
+  -moz-border-radius-bottomright: 55px;
+  -webkit-border-bottom-left-radius: 55px;
+  -webkit-border-bottom-right-radius: 55px;
 }
 
 #breadcrumps li{
@@ -650,7 +688,7 @@ aside#right{
     width: 230px;
     background: #fff;
     margin-left: -210px;
-    position: absolute;
+    position: fixed;
     padding: 10px 0;
     left:0px;
     top: 180px;
@@ -742,15 +780,15 @@ form .row img{
 }
 
 #made_by {
-    color: #eee;
+    color: #F8F8F8;
     float: right;
     margin-right: 10px;
-    margin-top: -14px;
+    margin-top: -5px;
 }
 
 #made_by a{
     text-decoration: none;
-    color: #eee;
+    color: #F8F8F8;
     font-weight: bold;
 }
 

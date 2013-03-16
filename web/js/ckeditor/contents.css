@@ -88,8 +88,8 @@ img.left {
 }
 
 img:hover {
-	opacity: .9;
-	filter: alpha(opacity = 90);
+/*	opacity: .9;
+	filter: alpha(opacity = 90);*/
 }
 
 pre

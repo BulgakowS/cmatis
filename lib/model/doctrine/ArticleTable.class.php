@@ -33,24 +33,24 @@ class ArticleTable extends Doctrine_Table
                 ->fetchOne();
     }
     
-    public static function getLast($lim = 10)
+    public static function getLast()
     {
         return self::getQuery()
                 ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
                 ->orderBy('a.updated_at DESC')
-                ->limit($lim)
+                ->limit(sfConfig::get( 'app_articleNews' ))
                 ->execute();
     }
     
-    public static function getLastForMain($lim = 5)
+    public static function getLastForMain()
     {
         return self::getQuery()
                 ->andWhere('a.on_main = ?', true)
                 ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
                 ->orderBy('a.updated_at DESC')
-                ->limit($lim)
+                ->limit( sfConfig::get( 'app_article_news' ) )
                 ->execute();
     }
     

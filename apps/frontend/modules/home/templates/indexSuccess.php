@@ -40,12 +40,12 @@
     <ul id="main_categoies" class="last_by_cats">
         <?php foreach ( $lastCategories as $root ): ?>
             <?php 
-                $last = $root->getLastArticles();
-                if ( count($last) > 0 ): ?>
+                $lasts = $root->getLastArticles();
+                if ( count($lasts) > 0 ): ?>
                     <li class="main_cats">
                         <div class="name"><?php echo link_to($root->getName(), '@category?category='.$root->getUrl()); ?></div>
                         <ul>
-                        <?php foreach($last as $art): ?>
+                        <?php foreach($lasts as $art): ?>
                             <li>
                                 <a href="<?php echo url_for('@article?category='.$art->getCategory()->getUrl().'&url='.$art->getUrl()); ?>" >
                                     <div class="article_logo_wrap">

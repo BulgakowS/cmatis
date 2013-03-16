@@ -35,10 +35,13 @@
             </aside>
         <?php  endif; ?>
         
+        <?php include_component('home','breadcrumbs'); ?>
+        
         <section id="content" class="container">
             <?php echo $sf_content ?>
         </section>  
-
+        
+        <div class="clr"></div>
         <div class="page-buffer"></div>
     </div>  
     <footer>

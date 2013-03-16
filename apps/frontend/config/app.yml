@@ -2,5 +2,6 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 #default values
-#all:
-#  logo_dir: logos
+all:
+  article_news: 5
+  category_news: 3

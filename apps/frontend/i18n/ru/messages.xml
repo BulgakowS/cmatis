@@ -5,8 +5,21 @@
     <header/>
     <body>
       <trans-unit>
+        <source>Page not found</source>
+        <target>Страница не найдена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>To the homepage</source>
+        <target>На главную</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Go back one page</source>
+        <target>Назад</target>
+      </trans-unit>  
+        
+      <trans-unit>
         <source>main</source>
-	<target>Главная</target>
+        <target>Главная</target>
       </trans-unit>
       <trans-unit>
         <source>about</source>

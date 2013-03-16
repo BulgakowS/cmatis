@@ -12,7 +12,6 @@ class ArticleForm extends BaseArticleForm
 {
   public function configure()
   {
-      $this->disableCSRFProtection();
       unset( $this['created_at'], $this['updated_at'] );
       
       $this->setWidget('category_id', new sfWidgetFormDoctrineChoice(array(
@@ -39,6 +38,8 @@ class ArticleForm extends BaseArticleForm
       
       $this->widgetSchema['category_id']->addOption('renderer_class', 'MyCategoryRenderer'); 
       
+      $this->widgetSchema['views'] = new sfWidgetFormInputHidden();
+      
       $this->embedI18n(array('ru', 'uk', 'en'));
       
       $this->widgetSchema['ru']['title']->setLabel('title_ru');
@@ -60,13 +61,20 @@ class ArticleForm extends BaseArticleForm
   
   public function doSave($con = null)
   {
+      
+      
     parent::doSave($con);
+    
+    
+//    $ru = $this->getValue('ru');
+//    echo '<pre>';
+//    preg_match_all('/<img [^>]*src\s*=\s*[\'\"]*?(.+)[\'\"\s>]/isU', $ru['content'], $match);
+//    print_r($match);exit;
     
     $this->getObject()->setUrl( myClass::makeUrl($this->getValue('url')) )->save();
     
     if ( $this->getObject()->getLogo() ) {
 //        $old_logo = $this->
-        
         
         $dir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'logos';
         $big_dir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'big_logos';
@@ -83,7 +91,7 @@ class ArticleForm extends BaseArticleForm
             $img->saveAs($url_big);
             $img->setQuality(100);
             $img->resize(300, null, true, true);
-            $img->save();
+            $img->saveAs($url);
         }
     }
   }

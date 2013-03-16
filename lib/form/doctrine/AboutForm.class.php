@@ -12,7 +12,6 @@ class AboutForm extends BaseAboutForm
 {
   public function configure()
   {
-      $this->disableCSRFProtection();
       $this->embedI18n(array('ru', 'uk', 'en'));
       
       $this->validatorSchema['email'] = new sfValidatorEmail(array('required' => false));

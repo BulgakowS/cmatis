@@ -22,6 +22,37 @@ function checklanguageArticle( form_name, lan ){
 $('document').ready(function(){
 //    $('.modal').modal('show');
 
+    // prepare content photos for gallery
+    if ( $('article .content').length > 0 ) {
+        
+        $.each( $('.content img'), function(n, img){
+            var new_img = '<a href="'+$(img).attr('src')+'" class="content_img">';
+            new_img += '<img src="'+$(img).attr('src')+'"';
+            if ( $(img).attr('style') != '' ) {
+                new_img += 'style="'+$(img).attr('style')+'"';
+            }
+            new_img += ' />';
+            new_img += '</a>';
+            $(img).after(new_img);
+            $(img).remove();
+        });
+        
+        // image preview
+        $('article .content .content_img').colorbox({ 
+            rel: 'content', 
+            maxWidth: '80%', 
+            maxHeight:'90%',
+            href: $(this).attr('src')
+        });
+        
+        $('#article_logo_view').colorbox({ 
+            rel: 'logo', 
+            maxWidth: '80%', 
+            maxHeight:'90%' 
+        });
+    }
+    
+    // edit/new forms
    if ( $('form[name="article"]').length > 0 ) {
        $.each(['ru','uk','en'], function(n,v) {
            checklanguageArticle( 'article',  v);
@@ -40,19 +71,30 @@ $('document').ready(function(){
        });        
    } 
 
+   // make links in articles to open in new window
    $('.description a, .content a').attr('target', '_blank');
       
+   // validators for url fields
    setValidator('article_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
    setValidator('category_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
    
+   // set CKeditor
    CKEDITOR.replaceClass = 'editor';
    
+   // tooltip for login button
    $('#login_link, #logout_link').tooltip({
        animation: true,
        placement: 'right',
        trigger: 'hover'
    });
    
+   $('#wrapper_404 .links a').tooltip({
+       animation: true,
+       placement: 'bottom',
+       trigger: 'hover'
+   });
+   
+   // right menu
    $('#hide_right').click(function(){
        if( $(this).parents('#right').css('margin-left') == '-210px' ) {
         $('#hide_right').parents('#right').animate({'margin-left': 0}, 200);
@@ -63,7 +105,7 @@ $('document').ready(function(){
        }
    });
    
-   //menu 
+   // menu 
    $("ul.subnav").parent().append("<span></span>");
    $("ul.topnav li span").click(showSubMenu)
     .hover(
@@ -72,7 +114,7 @@ $('document').ready(function(){
     );
    $("ul.topnav li a").hover(showSubMenu);
    
-   //alerts
+   // alerts hides by timeout
    setTimeout(function (){ $('#alerts').fadeOut();}, 3000);
 });
 

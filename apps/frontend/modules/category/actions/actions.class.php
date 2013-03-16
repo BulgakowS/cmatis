@@ -18,7 +18,7 @@ class categoryActions extends sfActions
   public function executeIndex(sfWebRequest $request)
   {
       $this->cat = CategoryTable::getByUrl($request->getParameter('category'));
-      $this->forward404If(!$this->cat);
+      $this->forward404Unless($this->cat);
       $this->subCats = $this->cat->getSubs();
       $this->articles = $this->cat->getArticle();
       $response = $this->getResponse();

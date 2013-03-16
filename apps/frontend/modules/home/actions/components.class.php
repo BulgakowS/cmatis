@@ -17,14 +17,19 @@ class homeComponents extends sfComponents
   public function executeBreadcrumbs(sfWebRequest $request)
   {
       $route = sfContext::getInstance()->getRouting()->getCurrentRouteName(); 
-      if ( $route == 'article' ) {
-          $this->articleTitle = ArticleTable::getByUrl($request->getParameter('url'))->getTitle();
-      } else {
-          $this->articleTitle = false;
+      if ( $route == 'category' || $route == 'article' ) {
+        if ( $route == 'article' ) {
+            $article = ArticleTable::getByUrl($request->getParameter('url'));
+            $this->articleTitle = $article ? $article->getTitle() : false;
+        } else {
+            $this->articleTitle = false;
+        }
+        $thisCat = CategoryTable::getByUrl($request->getParameter('category'));
+        $this->enCatId = $thisCat ? $thisCat->getId() : false;
+        $this->cats = $this->enCatId ? $this->BreadParents($this->enCatId) : false;
+      } else if ( $route == 'about' ) {
+        $this->static = __('about');  
       }
-      $thisCat = CategoryTable::getByUrl($request->getParameter('category'));
-      $this->enCatId = $thisCat->getId();
-      $this->cats = $this->BreadParents($this->enCatId);
   }
   
   private function BreadParents($id, $t = array())

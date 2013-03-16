@@ -9,9 +9,9 @@ default:
 #    language:     ru, ua, en
     robots:       index, follow
 
-  stylesheets:    [jquery-ui.css, ../js/ckeditor/contents.css, bootstrap.min.css, main.css ]
+  stylesheets:    [jquery-ui.css, ../js/ckeditor/contents.css, bootstrap.min.css, colorbox.css, main.css ]
 
-  javascripts:    [jquery/jquery.min.js, jquery/jquery-ui.js, bootstrap/bootstrap.min.js, bootstrap/bootstrap-transition.js, bootstrap/bootstrap-modal.js, ckeditor/ckeditor.js, main.js]
+  javascripts:    [jquery/jquery.min.js, jquery/jquery-ui.js, bootstrap/bootstrap.min.js, bootstrap/bootstrap-transition.js, bootstrap/bootstrap-modal.js, ckeditor/ckeditor.js, jquery.colorbox-min.js, main.js]
 
   has_layout:     true
   layout:         layout

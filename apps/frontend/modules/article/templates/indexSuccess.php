@@ -1,11 +1,23 @@
-<?php include_component('home','breadcrumbs'); ?>
+<?php 
+//    echo sfConfig::get( 'app_category_news' ).' - ';
+//    sfConfig::set( 'app_category_news', 55 );
+//    echo sfConfig::get( 'app_category_news' );
+?>
 
 <article>
-    <?php if ($article->getlogo()):?>
-        <div class="article_logo_full">
-            <img src="/uploads/logos/<?php echo $article->getlogo() ?>" />
-        </div>
-    <?php endif; ?>
+    <div class="article_logo_full">
+        <?php 
+            $is_big = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
+            $is_small = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'big_logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
+        ?>
+        <?php if ( $article->getlogo() ):?>
+            <a href="/uploads/<?php echo $is_big ? 'big_' : ''; ?>logos/<?php echo $article->getlogo() ?>" id="article_logo_view" >
+                <img src="/uploads/logos/<?php echo $article->getlogo() ?>" />
+            </a>
+        <?php else: ?>
+            <img src="/uploads/default-no-image.png" />
+        <?php endif; ?>
+    </div>
     <div class="title">
         <?php echo $article->getTitle(); ?>
         <?php if ($sf_user->hasCredential('admin')): ?>

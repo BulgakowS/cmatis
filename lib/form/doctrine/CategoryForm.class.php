@@ -11,8 +11,7 @@ class CategoryForm extends BaseCategoryForm
 {
   public function configure()
   {
-      $this->disableCSRFProtection();
-      unset( $this['created_at'], $this['updated_at'] );
+    unset( $this['created_at'], $this['updated_at'] );
       
     $this->setWidget('parent_id', new sfWidgetFormDoctrineChoice(array(
       'model'     => 'Category',

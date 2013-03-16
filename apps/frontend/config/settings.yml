@@ -42,3 +42,5 @@ all:
     
     enabled_modules:        [default, i18n, sfGuardGroup, sfGuardUser, sfGuardPermission, sfGuardAuth]
 
+    error_404_module:       home   
+    error_404_action:       page404  

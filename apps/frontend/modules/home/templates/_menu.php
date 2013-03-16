@@ -4,6 +4,7 @@
             <i class="icon-home icon-white"></i> <?php echo __('main'); ?> 
         </a>
     </li>
+    
     <?php foreach($categories as $cat): ?>
         <li>
             <a href="<?php echo url_for('@category?category='.$cat->getUrl()); ?>"
@@ -24,16 +25,14 @@
                 <?php endforeach; ?>
             </ul>
             <?php endif; ?>
-	</li>
+        </li>
     <?php endforeach; ?>
-    
-    
  
     <li>
-	<a href="<?php echo url_for('@about'); ?>" 
-           <?php if($module == 'about'): ?>class="active"<?php endif; ?>
-        > 
-	    <?php echo __('about'); ?> 
-	</a>
+        <a href="<?php echo url_for('@about'); ?>" 
+               <?php if($module == 'about'): ?>class="active"<?php endif; ?>
+            > 
+            <?php echo __('about'); ?> 
+        </a>
     </li>
 </ul>
