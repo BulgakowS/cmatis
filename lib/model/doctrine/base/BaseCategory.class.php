@@ -46,7 +46,7 @@ abstract class BaseCategory extends sfDoctrineRecord
         $this->setTableName('category');
         $this->hasColumn('name', 'string', 255, array(
              'type' => 'string',
-             'notnull' => true,
+             'notnull' => false,
              'length' => 255,
              ));
         $this->hasColumn('url', 'string', 255, array(
@@ -92,6 +92,7 @@ abstract class BaseCategory extends sfDoctrineRecord
              'local' => 'id',
              'foreign' => 'category_id'));
 
+        $timestampable0 = new Doctrine_Template_Timestampable();
         $i18n0 = new Doctrine_Template_I18n(array(
              'fields' => 
              array(
@@ -100,6 +101,7 @@ abstract class BaseCategory extends sfDoctrineRecord
               2 => 'lan_enable',
              ),
              ));
+        $this->actAs($timestampable0);
         $this->actAs($i18n0);
     }
 }

@@ -5,12 +5,24 @@
     <header/>
     <body>
       <trans-unit>
+        <source>Page not found</source>
+        <target>Page not found</target>
+      </trans-unit>
+      <trans-unit>
+        <source>To the homepage</source>
+        <target>To the homepage</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Go back one page</source>
+        <target>Go back</target>
+      </trans-unit>  
+      <trans-unit>
         <source>main</source>
         <target>Main</target>
       </trans-unit>
       <trans-unit>
         <source>about</source>
-        <target>About</target>
+        <target>About as</target>
       </trans-unit>
       <trans-unit>
         <source>new_category</source>
@@ -21,12 +33,297 @@
         <target>New article</target>
       </trans-unit>
       <trans-unit>
+        <source>delete</source>
+        <target>Delete</target>
+      </trans-unit>
+      <trans-unit>
         <source>adds_new</source>
         <target>Add new:</target>
       </trans-unit>
       <trans-unit>
         <source>Required</source>
         <target>Required</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_ru</source>
+        <target>Name (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_uk</source>
+        <target>Name (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_en</source>
+        <target>Name (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_ru</source>
+        <target>Title (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_uk</source>
+        <target>Title (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_en</source>
+        <target>Title (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_ru</source>
+        <target>Tags (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_uk</source>
+        <target>Tags (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_en</source>
+        <target>Tags (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_ru</source>
+        <target>Content (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_uk</source>
+        <target>Content (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_en</source>
+        <target>Content (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_ru</source>
+        <target>Description (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_uk</source>
+        <target>Description (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_en</source>
+        <target>Description (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_en</source>
+        <target>Description on main (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_ru</source>
+        <target>Description on main (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_uk</source>
+        <target>Description on main (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Url</source>
+        <target>URL</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Parent</source>
+        <target>Parent category</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add</source>
+        <target>Add</target>
+      </trans-unit>
+      <trans-unit>
+        <source>save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit>
+        <source>editing_category</source>
+        <target>Editing category</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add_category</source>
+        <target>Add category</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add_article</source>
+        <target>Add content</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_article</source>
+        <target>Editing article</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_edited</source>
+        <target>Changed in the category saved</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_added</source>
+        <target>Category added</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sub_categoryes</source>
+        <target>Subcategories:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_about</source>
+        <target>About as</target>
+      </trans-unit>
+      <trans-unit>
+        <source>info_saved</source>
+        <target>Saved</target>
+      </trans-unit>
+      <trans-unit>
+        <source>russian</source>
+        <target>Russian</target>
+      </trans-unit>
+      <trans-unit>
+        <source>ukraine</source>
+        <target>Ukrainian</target>
+      </trans-unit>
+      <trans-unit>
+        <source>english</source>
+        <target>English</target>
+      </trans-unit>
+      <trans-unit>
+        <source>login</source>
+        <target>LogIn</target>
+      </trans-unit>
+      <trans-unit>
+        <source>logout</source>
+        <target>LogOut</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A category cannot be made a descendent of itself.</source>
+        <target>Category can not be a descendant of itself.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Category</source>
+        <target>Category</target>
+      </trans-unit>    
+      <trans-unit>
+        <source>Enabled</source>
+        <target>Enabled</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_added</source>
+        <target>Article created</target>
+      </trans-unit>
+      <trans-unit>
+        <source>changed_saved</source>
+        <target>Changes saved</target>
+      </trans-unit>
+      <trans-unit>
+        <source>updated_at</source>
+        <target>Updated at: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Logo</source>
+        <target>Logo</target>
+      </trans-unit>
+      <trans-unit>
+        <source>On main</source>
+        <target>On main</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_deleted</source>
+        <target>Category deleted</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_deleted</source>
+        <target>Article deleted</target>
+      </trans-unit>
+      <trans-unit>
+        <source>are_youshure_delete</source>
+        <target>You really want to delete?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>views</source>
+        <target>Views: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Phone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Fax</source>
+        <target>Fax</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_ru</source>
+        <target>Keywords (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_uk</source>
+        <target>Keywords (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_en</source>
+        <target>Keywords (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_ru</source>
+        <target>Address (Russian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_uk</source>
+        <target>Address (Ukrainian)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_en</source>
+        <target>Address (English)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_ru</source>
+        <target>Available Russian</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_uk</source>
+        <target>Available Ukrainian</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_en</source>
+        <target>Available English</target>
+      </trans-unit>
+      <trans-unit>
+        <source>cant_add_with_no_categories</source>
+        <target>You can not add content without any categories</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_blocks</source>
+        <target>Advertising blocks</target>
+      </trans-unit>
+      
+      <trans-unit>
+        <source>on_main_big</source>
+        <target>On main page, large (to the right of the news)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>on_main_bottom</source>
+        <target>On main page, bottom</target>
+      </trans-unit>
+      <trans-unit>
+        <source>after_article</source>
+        <target>After articles</target>
+      </trans-unit>
+      <trans-unit>
+        <source>after_cat_desription</source>
+        <target>After category description</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_changed</source>
+        <target>Advertising block was changed</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_reclame</source>
+        <target>Editing advertising block</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_size</source>
+        <target>Block size</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Html</source>
+        <target>Block code (HTML)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>editing</source>
+        <target>Editing</target>
       </trans-unit>
     </body>
   </file>

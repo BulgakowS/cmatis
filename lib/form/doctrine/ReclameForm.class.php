@@ -12,5 +12,6 @@ class ReclameForm extends BaseReclameForm
 {
   public function configure()
   {
+      unset($this['position'], $this['title']);
   }
 }

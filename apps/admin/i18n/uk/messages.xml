@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="uk" datatype="plaintext" original="messages" date="2013-02-05T20:17:29Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>main</source>
+        <target>Головна</target>
+      </trans-unit>
+      <trans-unit>
+        <source>about</source>
+        <target>Про нас</target>
+      </trans-unit>
+      <trans-unit>
+        <source>new_category</source>
+        <target>Нова категор!я</target>
+      </trans-unit>
+      <trans-unit>
+        <source>new_article</source>
+        <target>Нова статья</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adds_new</source>
+        <target>Додати нов!:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Required</source>
+        <target>Обов'язкове поле</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

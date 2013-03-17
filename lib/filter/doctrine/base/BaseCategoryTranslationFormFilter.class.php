@@ -13,7 +13,7 @@ abstract class BaseCategoryTranslationFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'name'        => new sfWidgetFormFilterInput(array('with_empty' => false)),
+      'name'        => new sfWidgetFormFilterInput(),
       'description' => new sfWidgetFormFilterInput(),
       'lan_enable'  => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
     ));

@@ -5,3 +5,4 @@
 all:
   article_news: 5
   category_news: 3
+  categories_on_main: 6

@@ -24,7 +24,7 @@ class ArticleForm extends BaseArticleForm
                 'file_src'  => '/uploads'.DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$this->getObject()->getLogo(),
                 'edit_mode' => !$this->isNew() && is_file(sfConfig::get('sf_upload_dir').'/logos/'.$this->getObject()->getLogo()),
                 'is_image'  => true,
-                'template'  => '<div class="span6 photo">%file%<BR /><div class="form_label">%delete% '.__('delete').'</div></div><div class="span6">%input%</div>'
+                'template'  => '<div class="span6 photo">%file%<BR /><div class="form_label">%delete% '.sfContext::getInstance()->getI18N()->__('delete').'</div></div><div class="span6">%input%</div>'
             )
       );
 
@@ -65,6 +65,7 @@ class ArticleForm extends BaseArticleForm
       
     parent::doSave($con);
     
+    $this->getObject()->getCategory()->setUpdatedAt(date('Y-m-d H:i:s'))->save();
     
 //    $ru = $this->getValue('ru');
 //    echo '<pre>';
@@ -74,7 +75,6 @@ class ArticleForm extends BaseArticleForm
     $this->getObject()->setUrl( myClass::makeUrl($this->getValue('url')) )->save();
     
     if ( $this->getObject()->getLogo() ) {
-//        $old_logo = $this->
         
         $dir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'logos';
         $big_dir = sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR .'big_logos';

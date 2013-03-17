@@ -16,11 +16,14 @@ class articleActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $article = ArticleTable::getByUrl($request->getParameter('url'));
-      $this->forward404If(!$article);
+      $article = ArticleTable::getByUrlForShow($request->getParameter('url'));
+      $this->forward404Unless($article);
+      $t = $article->getTitle();
+      $this->forward404If( empty($t) );
       $article->setViews( $article->getViews() + 1 );
       $article->save();
       $this->article = $article;
+      $this->reclame_bottom = Doctrine::getTable('Reclame')->findOneByPosition(3);
       $response = $this->getResponse();
       $response->addMeta('title', $this->article->getTitle() . ' - Cmatis'  );
       $response->addMeta('keywords', $this->article->getTags());
@@ -50,6 +53,8 @@ class articleActions extends sfActions
   public function executeAdd(sfWebRequest $request)
   {
       $this->forward404If(!$this->getUser()->isAuthenticated());
+      $this->cat_count = Doctrine::getTable('Category')->findAll()->count();
+      
       $this->form = new ArticleForm();
       
       if ( $request->isMethod('POST') ) {

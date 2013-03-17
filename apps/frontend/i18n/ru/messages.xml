@@ -16,7 +16,6 @@
         <source>Go back one page</source>
         <target>Назад</target>
       </trans-unit>  
-        
       <trans-unit>
         <source>main</source>
         <target>Главная</target>
@@ -280,6 +279,51 @@
       <trans-unit>
         <source>lan_enable_en</source>
         <target>Доступен Английский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>cant_add_with_no_categories</source>
+        <target>Невозможно добавить контент не имея ни одной категории</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_blocks</source>
+        <target>Рекламные блоки</target>
+      </trans-unit>
+      
+      <trans-unit>
+        <source>on_main_big</source>
+        <target>На главной большая (справа от новостей)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>on_main_bottom</source>
+        <target>На главной внизу</target>
+      </trans-unit>
+      <trans-unit>
+        <source>after_article</source>
+        <target>После статьи</target>
+      </trans-unit>
+      <trans-unit>
+        <source>after_cat_desription</source>
+        <target>После описания категории</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_changed</source>
+        <target>Рекламный блок изменен</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_reclame</source>
+        <target>Редактирование рекламного блока</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_size</source>
+        <target>Размер блока</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Html</source>
+        <target>Код блока (HTML)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>editing</source>
+        <target>Редактирование</target>
       </trans-unit>
     </body>
   </file>

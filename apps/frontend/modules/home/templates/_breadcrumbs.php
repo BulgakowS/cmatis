@@ -4,13 +4,13 @@
         <a href="<?php echo url_for('@homepage'); ?>"><i class="icon-home"></i></a>
         <span class="divider">/</span>
     </li>
-    
+    <?php $enCatId = isset($enCatId) ? $enCatId : -1; ?>
     <?php if (isset($cats) && !empty($cats)) foreach( $cats as $cat ): ?>
-        <?php if ( ($cat['id'] == $enCatId) && !$articleTitle ): ?>
+        <?php if ( ($cat['id'] == $enCatId) && !isset($articleTitle) ): ?>
             <li class="active" ><?php echo $cat['name'] ?></li>
         <?php else: ?>
             <li>
-                <a href="<?php echo url_for('@category?category='.$cat['url']); ?>"><?php echo $cat['name'] ?></a>
+                <a href="<?php echo $cat['url']; ?>"><?php echo $cat['name'] ?></a>
                 <span class="divider">/</span>
             </li>
         <?php endif; ?>

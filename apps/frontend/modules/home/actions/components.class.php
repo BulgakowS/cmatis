@@ -24,27 +24,33 @@ class homeComponents extends sfComponents
         } else {
             $this->articleTitle = false;
         }
-        $thisCat = CategoryTable::getByUrl($request->getParameter('category'));
+        if ( $request->hasParameter('category') )
+            $thisCat = CategoryTable::getByUrl($request->getParameter('category'));
         $this->enCatId = $thisCat ? $thisCat->getId() : false;
         $this->cats = $this->enCatId ? $this->BreadParents($this->enCatId) : false;
       } else if ( $route == 'about' ) {
         $this->static = __('about');  
+      } else if ( $route == 'reclame' ) {
+        $this->static = __('reclame_blocks');  
+      } else if ( $route == 'edit_reclame' ) {
+        $this->cats = array(array('id'=>0, 'name'=>__('reclame_blocks'), 'url'=>url_for('@reclame')));
+        $this->static = __('editing');  
       }
   }
   
-  private function BreadParents($id, $t = array())
+  private function BreadParents($id, &$t = array())
   {
       $c = CategoryTable::getById($id);
       $tmp = array(
           'id' => $c->getId(),
           'name' => $c->getName(),
-          'url' => $c->getUrl(),
+          'url' => url_for('@category?category='.$c->getUrl()),
           );
       array_unshift($t, $tmp);
       unset($tmp);
       $pId = $c->getParentId();
       if ( $pId != 0 ) {    
-          $this->BreadParents($pId, &$t);
+          $this->BreadParents($pId, $t);
       } 
       return $t;
   }

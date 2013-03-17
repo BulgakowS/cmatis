@@ -1,7 +1,13 @@
 <?php use_javascript('wookmark.min.js'); ?>
 
 <div id="main_articles_reclame">
-    <img src="http://dvs1971.ru/rek/dvs_336x280.jpg" />
+    <?php 
+        if ( $reclame_big ) {
+            echo htmlspecialchars_decode($reclame_big->getHtml());
+        } else {
+            echo '<img src="http://dvs1971.ru/rek/dvs_336x280.jpg">';
+        }
+    ?>
 </div>
 
 <?php if ( count($lastArticles) > 0): ?>
@@ -70,6 +76,12 @@
 <?php endif; ?>
 
 <div class="clr"></div>
+
+<?php if ( $reclame_bottom->getEnabled() ): ?>
+    <div id="main_bottom_reclame" class="reclame" style="width: <?php echo $reclame_bottom->getWidth() ?>px; height: <?php echo $reclame_bottom->getHeight() ?>px;">
+        <?php echo htmlspecialchars_decode($reclame_bottom->getHtml()); ?>
+    </div>
+<?php endif; ?>
 
 
 <script>

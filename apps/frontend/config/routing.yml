@@ -62,6 +62,14 @@ change_language:
   url:   /change_language/:language
   param: { module: language, action: changeLanguage }
 
+reclame:
+  url:  /reclame
+  param: { module: reclame, action: index }
+
+edit_reclame:
+  url:  /reclame/:id
+  param: { module: reclame, action: edit }
+
 homepage:
   url:   /
   param: { module: home, action: index }

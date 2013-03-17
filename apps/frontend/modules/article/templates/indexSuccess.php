@@ -7,8 +7,8 @@
 <article>
     <div class="article_logo_full">
         <?php 
-            $is_big = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
-            $is_small = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'big_logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
+            $is_big = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'big_logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
+            $is_small = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
         ?>
         <?php if ( $article->getlogo() ):?>
             <a href="/uploads/<?php echo $is_big ? 'big_' : ''; ?>logos/<?php echo $article->getlogo() ?>" id="article_logo_view" >
@@ -35,5 +35,11 @@
     <div class="content">
         <?php echo htmlspecialchars_decode($article->getContent()); ?>
     </div>
+    
+    <?php if ( $reclame_bottom->getEnabled() ): ?>
+        <div id="article_bottom_reclame" class="reclame" style="width: <?php echo $reclame_bottom->getWidth() ?>px; height: <?php echo $reclame_bottom->getHeight() ?>px;">
+            <?php echo htmlspecialchars_decode($reclame_bottom->getHtml()); ?>
+        </div>
+    <?php endif; ?>
     
 </article>

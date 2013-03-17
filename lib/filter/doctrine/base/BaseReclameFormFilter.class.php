@@ -17,6 +17,8 @@ abstract class BaseReclameFormFilter extends BaseFormFilterDoctrine
       'enabled'  => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'position' => new sfWidgetFormFilterInput(),
       'title'    => new sfWidgetFormFilterInput(),
+      'width'    => new sfWidgetFormFilterInput(),
+      'height'   => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
@@ -24,6 +26,8 @@ abstract class BaseReclameFormFilter extends BaseFormFilterDoctrine
       'enabled'  => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'position' => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'title'    => new sfValidatorPass(array('required' => false)),
+      'width'    => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'height'   => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
     ));
 
     $this->widgetSchema->setNameFormat('reclame_filters[%s]');
@@ -48,6 +52,8 @@ abstract class BaseReclameFormFilter extends BaseFormFilterDoctrine
       'enabled'  => 'Boolean',
       'position' => 'Number',
       'title'    => 'Text',
+      'width'    => 'Number',
+      'height'   => 'Number',
     );
   }
 }

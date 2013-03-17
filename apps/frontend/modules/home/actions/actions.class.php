@@ -36,6 +36,8 @@ class homeActions extends sfActions
     $this->lastArticles = ArticleTable::getLastForMain();
     $this->lastCategories = CategoryTable::getLastForMain();
     $this->about = AboutTable::getAbout();
+    $this->reclame_big = Doctrine::getTable('Reclame')->findOneByPosition(1);
+    $this->reclame_bottom = Doctrine::getTable('Reclame')->findOneByPosition(2);
     
 	$response = $this->getResponse();
 	$response->addMeta('title', 'Cmatis');

@@ -4,6 +4,7 @@ About:
       ru:
         adress: адрес
         description: описание
+        description_on_main: описание
         metatags: метатеги
         keywords: ключевые слова
         title: Cmatis
@@ -11,6 +12,7 @@ About:
       uk:
         adress: адрес
         description: описание
+        description_on_main: описание
         metatags: метатеги
         keywords: ключевые слова
         title: Cmatis
@@ -18,6 +20,7 @@ About:
       en:
         adress: adress
         description: description
+        description_on_main: описание
         metatags: metatags
         keywords: keywords
         title: Cmatis
@@ -26,3 +29,33 @@ About:
     icq: icq
     skype: skype
     email: email
+    
+Reclame:
+  on_main_big:
+    html:							<img src="http://dvs1971.ru/rek/dvs_336x280.jpg">
+    enabled:					true
+    position:					1
+    title:						on_main_big
+    width:           336
+    height:          280
+  on_main_bottom:
+    html:							
+    enabled:					false
+    position:					2
+    title:						on_main_bottom
+    width:           728
+    height:          90
+  after_article:
+    html:							
+    enabled:					false
+    position:					3
+    title:						after_article
+    width:           728
+    height:          90
+  after_cat_desription:
+    html:							
+    enabled:					false
+    position:					4
+    title:						after_cat_desription
+    width:           728
+    height:          90

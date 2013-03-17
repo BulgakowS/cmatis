@@ -15,7 +15,7 @@ class CategoryForm extends BaseCategoryForm
       
     $this->setWidget('parent_id', new sfWidgetFormDoctrineChoice(array(
       'model'     => 'Category',
-      'add_empty' => __('main')
+      'add_empty' => sfContext::getInstance()->getI18N()->__('main')
     )));
     
     $this->widgetSchema['parent_id']->addOption('renderer_class', 'MyCategoryRenderer');    

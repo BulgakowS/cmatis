@@ -24,7 +24,7 @@ abstract class BaseCategoryTranslationForm extends BaseFormDoctrine
 
     $this->setValidators(array(
       'id'          => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
-      'name'        => new sfValidatorString(array('max_length' => 255)),
+      'name'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('max_length' => 50000, 'required' => false)),
       'lan_enable'  => new sfValidatorBoolean(array('required' => false)),
       'lang'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),

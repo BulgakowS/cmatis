@@ -15,6 +15,11 @@
             </a>
         </li>
         <li>
+            <a href="<?php echo url_for('@reclame') ?>" >
+                <i class="icon-globe"></i> <?php echo __('reclame_blocks'); ?>
+            </a>
+        </li>
+        <li>
             <a href="<?php echo url_for('@edit_about') ?>" >
                 <i class="icon-edit"></i> <?php echo __('edit_about'); ?>
             </a>

@@ -42,6 +42,15 @@ class CategoryTable extends Doctrine_Table
                 ->fetchOne();
     }
     
+    public static function getByUrlForShow($url)
+    {
+        return self::getQuery()
+                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
+                ->andWhere('c.url = ?', $url)
+                ->fetchOne();
+    }
+    
     public static function getRoots()
     {
         return self::getQuery()
@@ -51,24 +60,26 @@ class CategoryTable extends Doctrine_Table
                 ->execute();
     }
     
-    public static function getLastByLevel($lim = 6)
+    public static function getLastByLevel()
     {
         return self::getQuery()
                 ->orderBy('level ASC')
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
-                ->limit($lim)
+                ->limit(sfConfig::get( 'app_categories_on_main' ))
+                ->orderBy('t.name')
                 ->execute();
     }
     
-    public static function getLastForMain($lim = 6)
+    public static function getLastForMain()
     {
         return self::getQuery()
                 ->andWhere('c.on_main = ?', true)
                 ->orderBy('level ASC')
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
-                ->limit($lim)
+                ->limit(sfConfig::get( 'app_categories_on_main' ))
+                ->orderBy('c.updated_at DESC')
                 ->execute();
     }
     
@@ -78,6 +89,7 @@ class CategoryTable extends Doctrine_Table
                 ->andWhere('parent_id = ?', $id)
                 ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
+                ->orderBy('t.name')
                 ->execute();
     }
     

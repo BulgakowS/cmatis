@@ -15,6 +15,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfJqueryWidgetsPlugin');
     $this->enablePlugins('sfOrmBreadcrumbsPlugin');
     $this->enablePlugins('sfImageTransformPlugin');
+    $this->enablePlugins('sfAdminThemejRollerPlugin');
     
     
     sfValidatorBase::setDefaultMessage('required', 'Обязательное поле.');

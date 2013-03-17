@@ -17,10 +17,13 @@ class categoryActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-      $this->cat = CategoryTable::getByUrl($request->getParameter('category'));
+      $this->cat = CategoryTable::getByUrlForShow($request->getParameter('category'));
       $this->forward404Unless($this->cat);
+      $t = $this->cat->getName();
+      $this->forward404If( empty($t) );
       $this->subCats = $this->cat->getSubs();
       $this->articles = $this->cat->getArticle();
+      $this->after_descr_reclame = Doctrine::getTable('Reclame')->findOneByPosition(4);
       $response = $this->getResponse();
       $response->addMeta('title', $this->cat->getName() . ' - Cmatis'  );
       $response->addMeta('keywords', $this->cat->getName());

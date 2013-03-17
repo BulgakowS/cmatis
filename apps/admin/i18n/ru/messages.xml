@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+  <file source-language="EN" target-language="ru" datatype="plaintext" original="messages" date="2013-02-04T21:20:35Z" product-name="messages">
+    <header/>
+    <body>
+      <trans-unit>
+        <source>Page not found</source>
+        <target>Страница не найдена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>To the homepage</source>
+        <target>На главную</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Go back one page</source>
+        <target>Назад</target>
+      </trans-unit>  
+        
+      <trans-unit>
+        <source>main</source>
+        <target>Главная</target>
+      </trans-unit>
+      <trans-unit>
+        <source>about</source>
+        <target>О нас</target>
+      </trans-unit>
+      <trans-unit>
+        <source>new_category</source>
+        <target>Новая категория</target>
+      </trans-unit>
+      <trans-unit>
+        <source>new_article</source>
+        <target>Новая статья</target>
+      </trans-unit>
+      <trans-unit>
+        <source>delete</source>
+        <target>Удалить</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adds_new</source>
+        <target>Добавить новые:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Required</source>
+        <target>Обязательное поле</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_ru</source>
+        <target>Имя (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_uk</source>
+        <target>Имя (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_en</source>
+        <target>Имя (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_ru</source>
+        <target>Заголовок (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_uk</source>
+        <target>Заголовок (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_en</source>
+        <target>Заголовок (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_ru</source>
+        <target>Теги (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_uk</source>
+        <target>Теги (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_en</source>
+        <target>Теги (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_ru</source>
+        <target>Контент (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_uk</source>
+        <target>Контент (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_en</source>
+        <target>Контент (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_ru</source>
+        <target>Описание (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_uk</source>
+        <target>Описаине (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_en</source>
+        <target>Описание (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_en</source>
+        <target>Описание на главной (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_ru</source>
+        <target>Описание на главной (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_uk</source>
+        <target>Описаине на главной (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Url</source>
+        <target>Адрес (URL)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Parent</source>
+        <target>Категория</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add</source>
+        <target>Добавить</target>
+      </trans-unit>
+      <trans-unit>
+        <source>save</source>
+        <target>Сохранить</target>
+      </trans-unit>
+      <trans-unit>
+        <source>editing_category</source>
+        <target>Редактирование категории</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add_category</source>
+        <target>Добавление категории</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add_article</source>
+        <target>Добавление контента</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_article</source>
+        <target>Редактирование статьи</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_edited</source>
+        <target>Изменения категории сохранены</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_added</source>
+        <target>Категория добавлена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sub_categoryes</source>
+        <target>Подкатегории:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_about</source>
+        <target>О нас</target>
+      </trans-unit>
+      <trans-unit>
+        <source>info_saved</source>
+        <target>Информация сохранена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>russian</source>
+        <target>Русский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>ukraine</source>
+        <target>Украинский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>english</source>
+        <target>Английский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>login</source>
+        <target>Вход</target>
+      </trans-unit>
+      <trans-unit>
+        <source>logout</source>
+        <target>Выход</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A category cannot be made a descendent of itself.</source>
+        <target>Категория не может быть потомком самой себя.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Category</source>
+        <target>Категория</target>
+      </trans-unit>    
+      <trans-unit>
+        <source>Enabled</source>
+        <target>Активно</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_added</source>
+        <target>Статья создана</target>
+      </trans-unit>
+      <trans-unit>
+        <source>changed_saved</source>
+        <target>Изменения сохранены</target>
+      </trans-unit>
+      <trans-unit>
+        <source>updated_at</source>
+        <target>Обновлено: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Logo</source>
+        <target>Логотип</target>
+      </trans-unit>
+      <trans-unit>
+        <source>On main</source>
+        <target>На главной</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_deleted</source>
+        <target>Категория удалена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_deleted</source>
+        <target>Статья удалена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>are_youshure_delete</source>
+        <target>Вы действительно подтверждаете удаление?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>views</source>
+        <target>Просмотров: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Phone</source>
+        <target>Телефон</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Fax</source>
+        <target>Факс</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_ru</source>
+        <target>Ключевые слова (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_uk</source>
+        <target>Ключевые слова (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_en</source>
+        <target>Ключевые слова (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_ru</source>
+        <target>Адрес (Русский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_uk</source>
+        <target>Адрес (Украинский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_en</source>
+        <target>Адрес (Английский)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_ru</source>
+        <target>Доступен Русский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_uk</source>
+        <target>Доступен Украинский</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_en</source>
+        <target>Доступен Английский</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

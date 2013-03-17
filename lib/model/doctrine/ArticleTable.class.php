@@ -33,6 +33,15 @@ class ArticleTable extends Doctrine_Table
                 ->fetchOne();
     }
     
+    public static function getByUrlForShow($url)
+    {
+        return self::getQuery()
+                ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
+                ->andWhere('a.url = ?', $url)
+                ->fetchOne();
+    }
+    
     public static function getLast()
     {
         return self::getQuery()

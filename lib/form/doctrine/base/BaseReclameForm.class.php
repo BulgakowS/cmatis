@@ -20,6 +20,8 @@ abstract class BaseReclameForm extends BaseFormDoctrine
       'enabled'  => new sfWidgetFormInputCheckbox(),
       'position' => new sfWidgetFormInputText(),
       'title'    => new sfWidgetFormInputText(),
+      'width'    => new sfWidgetFormInputText(),
+      'height'   => new sfWidgetFormInputText(),
     ));
 
     $this->setValidators(array(
@@ -28,6 +30,8 @@ abstract class BaseReclameForm extends BaseFormDoctrine
       'enabled'  => new sfValidatorBoolean(array('required' => false)),
       'position' => new sfValidatorInteger(array('required' => false)),
       'title'    => new sfValidatorString(array('max_length' => 40, 'required' => false)),
+      'width'    => new sfValidatorInteger(array('required' => false)),
+      'height'   => new sfValidatorInteger(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('reclame[%s]');

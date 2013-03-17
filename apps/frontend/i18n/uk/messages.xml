@@ -5,6 +5,18 @@
     <header/>
     <body>
       <trans-unit>
+        <source>Page not found</source>
+        <target>Сторінка не знайдена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>To the homepage</source>
+        <target>На головну</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Go back one page</source>
+        <target>Назад</target>
+      </trans-unit>  
+      <trans-unit>
         <source>main</source>
         <target>Головна</target>
       </trans-unit>
@@ -14,19 +26,304 @@
       </trans-unit>
       <trans-unit>
         <source>new_category</source>
-        <target>Нова категор!я</target>
+        <target>Нова категорія</target>
       </trans-unit>
       <trans-unit>
         <source>new_article</source>
-        <target>Нова статья</target>
+        <target>Нова стаття</target>
+      </trans-unit>
+      <trans-unit>
+        <source>delete</source>
+        <target>Видалити</target>
       </trans-unit>
       <trans-unit>
         <source>adds_new</source>
-        <target>Додати нов!:</target>
+        <target>Додати нові:</target>
       </trans-unit>
       <trans-unit>
         <source>Required</source>
-        <target>Обов'язкове поле</target>
+        <target>Обов’язкове поле</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_ru</source>
+        <target>Ім’я (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_uk</source>
+        <target>Ім’я (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>name_en</source>
+        <target>Ім’я (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_ru</source>
+        <target>Заголовок (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_uk</source>
+        <target>Заголовок (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>title_en</source>
+        <target>Заголовок (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_ru</source>
+        <target>Теги (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_uk</source>
+        <target>Теги (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>tags_en</source>
+        <target>Теги (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_ru</source>
+        <target>Контент (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_uk</source>
+        <target>Контент (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>content_en</source>
+        <target>Контент (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_ru</source>
+        <target>Опис (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_uk</source>
+        <target>Опис (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_en</source>
+        <target>Опис (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_en</source>
+        <target>Опис на головній (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_ru</source>
+        <target>Опис на головній (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>description_main_uk</source>
+        <target>Опис на головній (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Url</source>
+        <target>Адреса (URL)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Parent</source>
+        <target>Категорія</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add</source>
+        <target>Додати</target>
+      </trans-unit>
+      <trans-unit>
+        <source>save</source>
+        <target>Зберегти</target>
+      </trans-unit>
+      <trans-unit>
+        <source>editing_category</source>
+        <target>Редагування категорії</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add_category</source>
+        <target>Нова категорія</target>
+      </trans-unit>
+      <trans-unit>
+        <source>add_article</source>
+        <target>Додавання контенту</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_article</source>
+        <target>Редагування контенту</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_edited</source>
+        <target>Зміни в категорії збережені</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_added</source>
+        <target>Категорію додано</target>
+      </trans-unit>
+      <trans-unit>
+        <source>sub_categoryes</source>
+        <target>Підкатегорії:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_about</source>
+        <target>Про нас</target>
+      </trans-unit>
+      <trans-unit>
+        <source>info_saved</source>
+        <target>Інформація збережена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>russian</source>
+        <target>Російською</target>
+      </trans-unit>
+      <trans-unit>
+        <source>ukraine</source>
+        <target>Українскою</target>
+      </trans-unit>
+      <trans-unit>
+        <source>english</source>
+        <target>Англійською</target>
+      </trans-unit>
+      <trans-unit>
+        <source>login</source>
+        <target>Вхід</target>
+      </trans-unit>
+      <trans-unit>
+        <source>logout</source>
+        <target>Вихід</target>
+      </trans-unit>
+      <trans-unit>
+        <source>A category cannot be made a descendent of itself.</source>
+        <target>Категорія не може бути додана до самої себе.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Category</source>
+        <target>Категорія</target>
+      </trans-unit>    
+      <trans-unit>
+        <source>Enabled</source>
+        <target>Активно</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_added</source>
+        <target>Стаття створена</target>
+      </trans-unit>
+      <trans-unit>
+        <source>changed_saved</source>
+        <target>Зміни збережено</target>
+      </trans-unit>
+      <trans-unit>
+        <source>updated_at</source>
+        <target>Оновлено: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Logo</source>
+        <target>Логотип</target>
+      </trans-unit>
+      <trans-unit>
+        <source>On main</source>
+        <target>На головній</target>
+      </trans-unit>
+      <trans-unit>
+        <source>category_deleted</source>
+        <target>Категорію видалено</target>
+      </trans-unit>
+      <trans-unit>
+        <source>article_deleted</source>
+        <target>Статтю видалено</target>
+      </trans-unit>
+      <trans-unit>
+        <source>are_youshure_delete</source>
+        <target>Ви дійсно підтвержуєте видалення?</target>
+      </trans-unit>
+      <trans-unit>
+        <source>views</source>
+        <target>Переглядів: </target>
+      </trans-unit>
+      <trans-unit>
+        <source>Phone</source>
+        <target>Телефон</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Fax</source>
+        <target>Факс</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_ru</source>
+        <target>Ключові слова (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_uk</source>
+        <target>Ключові слова (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>keywords_en</source>
+        <target>Ключові слова (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_ru</source>
+        <target>Адреса (Російською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_uk</source>
+        <target>Адреса (Українскою)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>adress_en</source>
+        <target>Адреса (Англійською)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_ru</source>
+        <target>Доступно Російською</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_uk</source>
+        <target>Доступно Українскою</target>
+      </trans-unit>
+      <trans-unit>
+        <source>lan_enable_en</source>
+        <target>Доступно Англійською</target>
+      </trans-unit>
+      <trans-unit>
+        <source>cant_add_with_no_categories</source>
+        <target>Неможливо додати контент не маючи жодної категорії</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_blocks</source>
+        <target>Рекламні блоки</target>
+      </trans-unit>
+      
+      <trans-unit>
+        <source>on_main_big</source>
+        <target>На головній велика (праворуч від новин)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>on_main_bottom</source>
+        <target>На головній внизу</target>
+      </trans-unit>
+      <trans-unit>
+        <source>after_article</source>
+        <target>Після статті</target>
+      </trans-unit>
+      <trans-unit>
+        <source>after_cat_desription</source>
+        <target>Після опису категорії</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_changed</source>
+        <target>Рекламний блок змінено</target>
+      </trans-unit>
+      <trans-unit>
+        <source>edit_reclame</source>
+        <target>Редагування рекламного блоку</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame_size</source>
+        <target>Розміри блоку</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Html</source>
+        <target>Код блоку (HTML)</target>
+      </trans-unit>
+      <trans-unit>
+        <source>editing</source>
+        <target>Редагування</target>
       </trans-unit>
     </body>
   </file>

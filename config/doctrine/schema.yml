@@ -1,5 +1,6 @@
 Category:
   actAs:
+    Timestampable: ~
     I18n:
       fields:   [name, description, lan_enable]
   columns:
@@ -58,3 +59,5 @@ Reclame:
     enabled:					{ type: boolean, default: false }
     position:					{ type: integer, default: 0 }
     title:						{ type: string(40) }
+    width:            { type: integer, default: 0, notnull: false}
+    height:           { type: integer, default: 0, notnull: false}

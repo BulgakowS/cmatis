@@ -9,15 +9,21 @@
  * @property boolean $enabled
  * @property integer $position
  * @property string $title
+ * @property integer $width
+ * @property integer $height
  * 
  * @method string  getHtml()     Returns the current record's "html" value
  * @method boolean getEnabled()  Returns the current record's "enabled" value
  * @method integer getPosition() Returns the current record's "position" value
  * @method string  getTitle()    Returns the current record's "title" value
+ * @method integer getWidth()    Returns the current record's "width" value
+ * @method integer getHeight()   Returns the current record's "height" value
  * @method Reclame setHtml()     Sets the current record's "html" value
  * @method Reclame setEnabled()  Sets the current record's "enabled" value
  * @method Reclame setPosition() Sets the current record's "position" value
  * @method Reclame setTitle()    Sets the current record's "title" value
+ * @method Reclame setWidth()    Sets the current record's "width" value
+ * @method Reclame setHeight()   Sets the current record's "height" value
  * 
  * @package    cmatis
  * @subpackage model
@@ -44,6 +50,16 @@ abstract class BaseReclame extends sfDoctrineRecord
         $this->hasColumn('title', 'string', 40, array(
              'type' => 'string',
              'length' => 40,
+             ));
+        $this->hasColumn('width', 'integer', null, array(
+             'type' => 'integer',
+             'default' => 0,
+             'notnull' => false,
+             ));
+        $this->hasColumn('height', 'integer', null, array(
+             'type' => 'integer',
+             'default' => 0,
+             'notnull' => false,
              ));
     }
 
