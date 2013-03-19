@@ -4,9 +4,12 @@
         <a href="<?php echo url_for('@homepage'); ?>"><i class="icon-home"></i></a>
         <span class="divider">/</span>
     </li>
-    <?php $enCatId = isset($enCatId) ? $enCatId : -1; ?>
-    <?php if (isset($cats) && !empty($cats)) foreach( $cats as $cat ): ?>
-        <?php if ( ($cat['id'] == $enCatId) && !isset($articleTitle) ): ?>
+    <?php 
+        $enCatId = isset($enCatId) ? $enCatId : -1;
+        if (isset($cats) && !empty($cats)) 
+            foreach( $cats as $cat ): 
+    ?>
+        <?php if ( ($cat['id'] == $enCatId) && (!isset($articleTitle) || empty($articleTitle)) ): ?>
             <li class="active" ><?php echo $cat['name'] ?></li>
         <?php else: ?>
             <li>

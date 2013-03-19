@@ -38,6 +38,7 @@
          
       <nav id="user_menu">
           <ul>
+            <li><a href="/index.php" class="btn btn-success" ><?php echo __('site'); ?></a></li>
             <li><?php echo link_to(__('users'), 'sf_guard_user', array(), array('class'=>'btn btn-warning')) ?></li>
             <li><?php echo link_to(__('logout'), 'sf_guard_signout', array(), array('class'=>'btn btn-danger')) ?></li>
           </ul>  

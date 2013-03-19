@@ -77,6 +77,23 @@
                     <?php echo $form['skype']->render(array('style'=>'width:83%;')); ?>
                 </div>
             </div>
+            <div class="form_row <?php if ($form['copyright']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['copyright']->renderLabel(); ?>
+                </div>
+                <?php if ($form['copyright']->rendererror()): ?>
+                    <div class="alert alert-error"><?php echo $form['copyright']->rendererror(); ?></div>
+                <?php endif; ?>
+                <div class="form_edit">
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">©</span>
+                            <?php echo $form['copyright']->render(array('style'=>'width:83%;')); ?>
+                            <!--<input  id="inputIcon" type="text">-->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row-fluid">

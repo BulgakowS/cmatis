@@ -15,6 +15,7 @@
  * @property string $description_on_main
  * @property string $keywords
  * @property string $title
+ * @property string $copyright
  * 
  * @method string getAdress()              Returns the current record's "adress" value
  * @method string getPhone()               Returns the current record's "phone" value
@@ -26,6 +27,7 @@
  * @method string getDescriptionOnMain()   Returns the current record's "description_on_main" value
  * @method string getKeywords()            Returns the current record's "keywords" value
  * @method string getTitle()               Returns the current record's "title" value
+ * @method string getCopyright()           Returns the current record's "copyright" value
  * @method About  setAdress()              Sets the current record's "adress" value
  * @method About  setPhone()               Sets the current record's "phone" value
  * @method About  setFax()                 Sets the current record's "fax" value
@@ -36,6 +38,7 @@
  * @method About  setDescriptionOnMain()   Sets the current record's "description_on_main" value
  * @method About  setKeywords()            Sets the current record's "keywords" value
  * @method About  setTitle()               Sets the current record's "title" value
+ * @method About  setCopyright()           Sets the current record's "copyright" value
  * 
  * @package    cmatis
  * @subpackage model
@@ -96,6 +99,11 @@ abstract class BaseAbout extends sfDoctrineRecord
              'type' => 'string',
              'notnull' => false,
              'length' => 255,
+             ));
+        $this->hasColumn('copyright', 'string', 100, array(
+             'type' => 'string',
+             'notnull' => false,
+             'length' => 100,
              ));
     }
 

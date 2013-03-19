@@ -20,100 +20,77 @@ function checklanguageArticle( form_name, lan ){
 }
 
 $('document').ready(function(){
-//    $('.modal').modal('show');
 
-    // prepare content photos for gallery
-    if ( $('article .content').length > 0 ) {
-        
+    if ( $('article .content').length > 0 ) {    
         $.each( $('.content img'), function(n, img){
-            var new_img = '<a href="'+$(img).attr('src')+'" class="content_img">';
-            new_img += '<img src="'+$(img).attr('src')+'"';
-            if ( $(img).attr('style') != '' ) {
-                new_img += 'style="'+$(img).attr('style')+'"';
-            }
-            new_img += ' />';
-            new_img += '</a>';
+            var new_img = prepareImgForGallery(img, 'content_img');
             $(img).after(new_img);
             $(img).remove();
         });
-        
-        // image preview
-        $('article .content .content_img').colorbox({ 
-            rel: 'content', 
-            maxWidth: '80%', 
-            maxHeight:'90%'
-        });
-        
-        $('#article_logo_view').colorbox({ 
-            rel: 'logo', 
-            maxWidth: '80%', 
-            maxHeight:'90%' 
-        });
+
+        $('article .content .content_img').colorbox({ rel: 'content', maxWidth: '80%', maxHeight:'90%'});
+        $('#article_logo_view').colorbox({ rel: 'logo', maxWidth: '80%', maxHeight:'90%' });
     }
     
     if ( $('#content .cat_descr').length > 0 ) {
         $.each( $('.cat_descr img'), function(n, img){
-            var new_img = '<a href="'+$(img).attr('src')+'" class="cat_descr_img">';
-            new_img += '<img src="'+$(img).attr('src')+'"';
-            if ( $(img).attr('style') != '' ) {
-                new_img += 'style="'+$(img).attr('style')+'"';
-            }
-            new_img += ' />';
-            new_img += '</a>';
+            var new_img = prepareImgForGallery(img, 'cat_descr_img');
             $(img).after(new_img);
             $(img).remove();
         });
         
-        $('.cat_descr_img').colorbox({ 
-            rel: 'cat_descr', 
-            maxWidth: '80%', 
-            maxHeight:'90%'
-        });
+        $('.cat_descr_img').colorbox({ rel: 'cat_descr', maxWidth: '80%', maxHeight:'90%'});
     }
     
-    // edit/new forms
-   if ( $('form[name="article"]').length > 0 ) {
+    if ( $('#description-main').length > 0 ) {
+        $.each( $('#description-main img'), function(n, img){
+            var newImg = prepareImgForGallery(img, 'main_descr_img');
+            $(img).after( newImg );
+            $(img).remove();
+        });
+        
+        $('.main_descr_img').colorbox({ rel: 'main_descr', maxWidth: '80%', maxHeight:'95%' });
+    }
+    
+    if ( $('form[name="article"]').length > 0 ) {
        $.each(['ru','uk','en'], function(n,v) {
            checklanguageArticle( 'article',  v);
            $('#article_' + v + '_lan_enable').click(function(){
                checklanguageArticle( 'article', v );
            });
        });        
-   } 
+    } 
    
-   if ( $('form[name="category"]').length > 0 ) {
+    if ( $('form[name="category"]').length > 0 ) {
        $.each(['ru','uk','en'], function(n,v) {
            checklanguageArticle( 'category',  v);
            $('#category_' + v + '_lan_enable').click(function(){
                checklanguageArticle( 'category', v );
            });
        });        
-   } 
+    } 
 
-   // make links in articles to open in new window
    $('.description a, .content a').attr('target', '_blank');
       
-   // validators for url fields
    setValidator('article_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
    setValidator('category_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
    
-   // set CKeditor
    CKEDITOR.replaceClass = 'editor';
    
-   // tooltip for login button
    $('#login_link, #logout_link').tooltip({
        animation: true,
        placement: 'right',
        trigger: 'hover'
    });
    
-   $('#wrapper_404 .links a').tooltip({
+   $('#sitemap_link').tooltip({
        animation: true,
        placement: 'bottom',
        trigger: 'hover'
    });
    
-   // right menu
+   $('#wrapper_404 .links a').tooltip({ animation: true, placement: 'bottom', trigger: 'hover' });
+   
    $('#hide_right').click(function(){
        if( $(this).parents('#right').css('margin-left') == '-210px' ) {
         $('#hide_right').parents('#right').animate({'margin-left': 0}, 200);
@@ -126,6 +103,9 @@ $('document').ready(function(){
    
    // menu 
    $("ul.subnav").parent().append("<span></span>");
+   
+   
+   
    $("ul.topnav li span").click(showSubMenu)
     .hover(
         function() { $(this).addClass("subhover"); }, 
@@ -137,7 +117,37 @@ $('document').ready(function(){
    setTimeout(function (){ $('#alerts').fadeOut();}, 3000);
 });
 
-function showSubMenu () {
+function prepareImgForGallery( img, imgClass ) 
+{
+    if ( $(img).attr('src') != '' ) {
+        
+        var new_img = '<a href="'+$(img).attr('src')+'" class="'+imgClass+'">';
+        new_img += '<img src="'+$(img).attr('src')+'"';
+        
+        if ( $(img).attr('style') != '' ) {
+            new_img += 'style="'+$(img).attr('style')+'"';
+        }
+        
+        if ( $(img).attr('width') ) {
+            new_img += 'width="'+$(img).attr('width')+'"';
+        }
+        
+        if ( $(img).attr('height') ) {
+            new_img += 'height="'+$(img).attr('height')+'"';
+        }
+        
+        new_img += ' />';
+        new_img += '</a>';
+        
+        return new_img;
+    } else {
+        return false;
+    }
+    
+}
+
+function showSubMenu () 
+{
    if ( $(this).parent().find("ul.subnav").css('display') != 'block' ) {
     $(this).parent().find("ul.subnav").slideDown(250).show(); 
 
@@ -148,11 +158,13 @@ function showSubMenu () {
    }
 } 
 
-function getLanguage(){
+function getLanguage()
+{
     return $('#languages .flag.active').attr('data-lan');
 }
 
-function setValidator(id, regex) {
+function setValidator(id, regex) 
+{
     
     $('#'+id).keyup(function(){
         var val = $(this).val();

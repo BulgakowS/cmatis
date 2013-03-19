@@ -24,5 +24,10 @@
                 <i class="icon-edit"></i> <?php echo __('edit_about'); ?>
             </a>
         </li>
+        <li>
+            <a href="/admin.php" target="_blank">
+                <i class="icon-cog"></i> <?php echo __('admin_panel'); ?>
+            </a>
+        </li>
     </ul>
 </nav>

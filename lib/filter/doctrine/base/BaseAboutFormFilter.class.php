@@ -13,19 +13,21 @@ abstract class BaseAboutFormFilter extends BaseFormFilterDoctrine
   public function setup()
   {
     $this->setWidgets(array(
-      'phone' => new sfWidgetFormFilterInput(),
-      'fax'   => new sfWidgetFormFilterInput(),
-      'icq'   => new sfWidgetFormFilterInput(),
-      'skype' => new sfWidgetFormFilterInput(),
-      'email' => new sfWidgetFormFilterInput(),
+      'phone'     => new sfWidgetFormFilterInput(),
+      'fax'       => new sfWidgetFormFilterInput(),
+      'icq'       => new sfWidgetFormFilterInput(),
+      'skype'     => new sfWidgetFormFilterInput(),
+      'email'     => new sfWidgetFormFilterInput(),
+      'copyright' => new sfWidgetFormFilterInput(),
     ));
 
     $this->setValidators(array(
-      'phone' => new sfValidatorPass(array('required' => false)),
-      'fax'   => new sfValidatorPass(array('required' => false)),
-      'icq'   => new sfValidatorPass(array('required' => false)),
-      'skype' => new sfValidatorPass(array('required' => false)),
-      'email' => new sfValidatorPass(array('required' => false)),
+      'phone'     => new sfValidatorPass(array('required' => false)),
+      'fax'       => new sfValidatorPass(array('required' => false)),
+      'icq'       => new sfValidatorPass(array('required' => false)),
+      'skype'     => new sfValidatorPass(array('required' => false)),
+      'email'     => new sfValidatorPass(array('required' => false)),
+      'copyright' => new sfValidatorPass(array('required' => false)),
     ));
 
     $this->widgetSchema->setNameFormat('about_filters[%s]');
@@ -45,12 +47,13 @@ abstract class BaseAboutFormFilter extends BaseFormFilterDoctrine
   public function getFields()
   {
     return array(
-      'id'    => 'Number',
-      'phone' => 'Text',
-      'fax'   => 'Text',
-      'icq'   => 'Text',
-      'skype' => 'Text',
-      'email' => 'Text',
+      'id'        => 'Number',
+      'phone'     => 'Text',
+      'fax'       => 'Text',
+      'icq'       => 'Text',
+      'skype'     => 'Text',
+      'email'     => 'Text',
+      'copyright' => 'Text',
     );
   }
 }

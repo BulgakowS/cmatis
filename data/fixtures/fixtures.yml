@@ -32,8 +32,8 @@ About:
     
 Reclame:
   on_main_big:
-    html:							<img src="http://dvs1971.ru/rek/dvs_336x280.jpg">
-    enabled:					true
+    html:							
+    enabled:					false
     position:					1
     title:						on_main_big
     width:           336

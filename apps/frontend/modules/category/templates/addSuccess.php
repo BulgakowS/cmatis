@@ -145,6 +145,45 @@
             </div>
         </div>
     </div>
+    
+    <div class="row">
+        <div class="span12">
+            <div class="form_row <?php if ($form['ru']['tags']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['ru']['tags']->renderLabel(); ?>
+                </div>
+                <?php if ($form['ru']['tags']->rendererror()): ?>
+                    <div class="alert alert-error"><?php echo $form['ru']['tags']->rendererror(); ?></div>
+                <?php endif; ?>
+                <div class="form_edit">
+                    <?php echo $form['ru']['tags']->render(array('style'=>"width: 80%;")); ?>
+                </div>
+            </div>
+            <div class="form_row <?php if ($form['uk']['tags']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['uk']['tags']->renderLabel(); ?>
+                </div>
+                <?php if ($form['uk']['tags']->rendererror()): ?>
+                    <div class="alert alert-error"><?php echo $form['uk']['tags']->rendererror(); ?></div>
+                <?php endif; ?>
+                <div class="form_edit">
+                    <?php echo $form['uk']['tags']->render(array('style'=>"width: 80%;")); ?>
+                </div>
+            </div>
+            <div class="form_row <?php if ($form['en']['tags']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['en']['tags']->renderLabel(); ?>
+                </div>
+                <?php if ($form['en']['tags']->rendererror()): ?>
+                    <div class="alert alert-error"><?php echo $form['en']['tags']->rendererror(); ?></div>
+                <?php endif; ?>
+                <div class="form_edit">
+                    <?php echo $form['en']['tags']->render(array('style'=>"width: 80%;")); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <div class="buttons">
         <button type="submit" class="btn btn-large btn-block btn-success"><?php echo __('add'); ?></button>
     </div>

@@ -19,6 +19,7 @@ abstract class BaseCategoryTranslationForm extends BaseFormDoctrine
       'name'        => new sfWidgetFormInputText(),
       'description' => new sfWidgetFormTextarea(),
       'lan_enable'  => new sfWidgetFormInputCheckbox(),
+      'tags'        => new sfWidgetFormInputText(),
       'lang'        => new sfWidgetFormInputHidden(),
     ));
 
@@ -27,6 +28,7 @@ abstract class BaseCategoryTranslationForm extends BaseFormDoctrine
       'name'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'description' => new sfValidatorString(array('max_length' => 50000, 'required' => false)),
       'lan_enable'  => new sfValidatorBoolean(array('required' => false)),
+      'tags'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'lang'        => new sfValidatorChoice(array('choices' => array($this->getObject()->get('lang')), 'empty_value' => $this->getObject()->get('lang'), 'required' => false)),
     ));
 

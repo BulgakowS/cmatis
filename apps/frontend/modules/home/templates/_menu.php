@@ -19,8 +19,21 @@
                 <?php foreach($cat->getSubs() as $sub): ?>
                 <li>
                     <a href="<?php echo url_for('@category?category='.$sub->getUrl()); ?>" > 
-                        <i class="icon-bookmark icon-white"></i> <?php echo $sub->getName(); ?> 
+                          <?php echo $sub->getName(); ?> 
                     </a>
+                    <?php 
+                        if ( $sub->getChieldscount() > 0 ): 
+                    ?>
+                    <ul>
+                        <?php foreach($sub->getSubs() as $sub1): ?>
+                        <li>
+                            <a href="<?php echo url_for('@category?category='.$sub1->getUrl()); ?>" > 
+                                  <?php echo $sub1->getName(); ?> 
+                            </a>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
                 </li>
                 <?php endforeach; ?>
             </ul>

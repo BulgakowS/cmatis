@@ -23,9 +23,9 @@ class CategoryTable extends Doctrine_Table
         return Doctrine_Core::getTable('Category')->createQuery('c')
                 ->select('c.*, t.*')
                 ->leftJoin('c.Translation t')
-//                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
-                ->orderBy('c.position');
+                ->orderBy('c.position')
+                ->orderBy('updated_at');
     }
 
     public static function getById($id)
@@ -83,7 +83,7 @@ class CategoryTable extends Doctrine_Table
                 ->execute();
     }
     
-    public static function getSubs($id, $cu)
+    public static function getSubs($id)
     {
         return self::getQuery()
                 ->andWhere('parent_id = ?', $id)
@@ -93,6 +93,18 @@ class CategoryTable extends Doctrine_Table
                 ->execute();
     }
     
+    public static function getAllRoots()
+    {
+        return self::getQuery()
+                ->andWhere('parent_id = ?', 0)
+                ->execute();
+    }
     
+    public static function getAllSubs($id)
+    {
+        return self::getQuery()
+                ->andWhere('parent_id = ?', $id)
+                ->execute();
+    }
     
 }

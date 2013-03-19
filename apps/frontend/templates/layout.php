@@ -26,6 +26,7 @@
           <?php else: ?>
             <a href="<?php echo url_for('@logout'); ?>" id="logout_link" data-title="<?php echo __('logout') ?>"><i class="icon-off icon-white"></i></a>
           <?php endif; ?>
+          <?php echo link_to('&nbsp;', '@site_map', array('data-title'=>__('site_tree'), 'id'=>"sitemap_link")); ?> 
           <?php include_component('home', 'menu'); ?>   
         </nav>
         
@@ -46,7 +47,8 @@
     </div>  
     <footer>
         <div id="contacts"><?php include_component('home', 'contacts'); ?></div>
-        <div id="made_by">made by <a href="http://www.linkedin.com/pub/sergey-bulgacov/50/948/a3" > BulgakowS</a></div>
+        <span id="made_by">made by <a href="http://www.linkedin.com/pub/sergey-bulgacov/50/948/a3" > BulgakowS</a></span>
+        <div id="copyright"><?php include_component('home', 'copyright'); ?></div>
     </footer>
   </body>
 </html>

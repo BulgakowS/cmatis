@@ -5,6 +5,38 @@
     <header/>
     <body>
       <trans-unit>
+        <source>no_in_this_lang</source>
+        <target>Нет на русском</target>
+      </trans-unit>
+      <trans-unit>
+        <source>articles</source>
+        <target>Статьи</target>
+      </trans-unit>
+      <trans-unit>
+        <source>categories</source>
+        <target>Категории</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame</source>
+        <target>Рекламные блоки</target>
+      </trans-unit>
+      <trans-unit>
+        <source>users</source>
+        <target>Пользователи</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>site</source>
+        <target>Cайт</target>
+      </trans-unit>
+      <trans-unit>
+        <source>site_tree</source>
+        <target>Карта сайта</target>
+      </trans-unit>
+      <trans-unit>
+        <source>admin_panel</source>
+        <target>Панель администратора</target>
+      </trans-unit>
+      <trans-unit>
         <source>Page not found</source>
         <target>Страница не найдена</target>
       </trans-unit>

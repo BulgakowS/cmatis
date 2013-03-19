@@ -5,6 +5,38 @@
     <header/>
     <body>
       <trans-unit>
+        <source>no_in_this_lang</source>
+        <target>Немає на українській</target>
+      </trans-unit>
+      <trans-unit>
+        <source>articles</source>
+        <target>Статті</target>
+      </trans-unit>
+      <trans-unit>
+        <source>categories</source>
+        <target>Категорії</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame</source>
+        <target>Рекламні блоки</target>
+      </trans-unit>
+      <trans-unit>
+        <source>users</source>
+        <target>Користувачі</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>site</source>
+        <target>Сайт</target>
+      </trans-unit>
+      <trans-unit>
+        <source>site_tree</source>
+        <target>Карта сайту</target>
+      </trans-unit>
+      <trans-unit>
+        <source>admin_panel</source>
+        <target>Адміністративна панель</target>
+      </trans-unit>
+      <trans-unit>
         <source>Page not found</source>
         <target>Сторінка не знайдена</target>
       </trans-unit>

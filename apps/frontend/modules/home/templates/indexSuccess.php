@@ -2,10 +2,10 @@
 
 <div id="main_articles_reclame">
     <?php 
-        if ( $reclame_big ) {
+        if ( $reclame_big->getEnabled() ) {
             echo htmlspecialchars_decode($reclame_big->getHtml());
         } else {
-            echo '<img src="http://dvs1971.ru/rek/dvs_336x280.jpg">';
+            echo '<img src="/images/big_logo.png" />';
         }
     ?>
 </div>

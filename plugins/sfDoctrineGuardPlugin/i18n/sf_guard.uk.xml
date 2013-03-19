@@ -6,27 +6,103 @@
     <body>
       <trans-unit>
         <source>Username</source>
-        <target>Nom d'utilisateur</target>
+        <target>Логін</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Username or E-Mail</source>
+        <target>Логін або E-mail</target>
       </trans-unit>
       <trans-unit>
         <source>Password</source>
-        <target>Mot de passe</target>
+        <target>Пароль</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Password again</source>
+        <target>Повторіть пароль</target>
       </trans-unit>
       <trans-unit>
         <source>Remember</source>
-        <target>Se rappeler</target>
+        <target>Запом’яти мене</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Register</source>
+        <target>Реєстрація</target>
       </trans-unit>
       <trans-unit>
         <source>Signin</source>
-        <target>Se connecter</target>
+        <target>Авторизація</target>
       </trans-unit>
       <trans-unit>
         <source>Forgot your password?</source>
-        <target>Mot de passe oublié ?</target>
+        <target>Я забув пароль</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Want to register?</source>
+        <target>Бажаете зареєструватися?</target>
       </trans-unit>
       <trans-unit>
         <source>You don't have the required permission to access this page.</source>
-        <target>Vous n'avez pas les permissions nécessaires pour accéder à cette page.</target>
+        <target>У Вас недостатньо прав для доступу до данної сторінки.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Login below to gain access</source>
+        <target>Авторизуйтесь, щоб отримати доступ до данної сторінки</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Oops! The page you asked for is secure and you do not have proper credentials.</source>
+        <target>Упс! Сторінка надоступна для Вас.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Hi %first_name%</source>
+        <target>Вітаємо, %first_name%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>This e-mail is being sent because you requested information on how to reset your password.</source>
+        <target>Цей лист відправлено вам тому, що Ви відправили запит для відновлення паролю.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>You can change your password by clicking the below link which is only valid for 24 hours:</source>
+        <target>Ви маєте можливість змінити пароль, за посиланням нижче. Посилання дійсне на протязі 24 годин:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Click to change password</source>
+        <target>Натисніть тут, для зиіни паролю.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Below you will your username and new password:</source>
+        <target>Нижче Ви знайдете ваше ім’я користувача та новий пароль:</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Do not worry, we can help you get back in to your account safely!</source>
+        <target>Не хвилюйтесь, мы допоможемо Вам повернути доступ до Вашого облікового запису!</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Fill out the form below to request an e-mail with information on how to reset your password.</source>
+        <target>Заповніть форму нижче, щоб отримати лист з інформацією про відновлення паролю.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Request</source>
+        <target>Запит</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Hello %name%</source>
+        <target>Вітаємо, %name%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Enter your new password in the form below.</source>
+        <target>Введіть Ваш новий пароль.</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Change</source>
+        <target>Змінити</target>
+      </trans-unit>
+      <trans-unit>
+        <source>Forgot Password Request for %name%</source>
+        <target>Запис на відновлення паролю для користувача %name%</target>
+      </trans-unit>
+      <trans-unit>
+        <source>New Password for %name%</source>
+        <target>Новий пароль для користувача %name%</target>
       </trans-unit>
     </body>
   </file>

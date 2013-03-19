@@ -10,39 +10,46 @@ sfContext::getInstance()->getConfiguration()->loadHelpers('I18N');
  */
 class homeActions extends sfActions
 {
- /**
-  * Executes index action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeIndex(sfWebRequest $request)
-  {
-	if ( !$request->hasParameter('sf_culture') )
-	{
-      $user = $this->getUser();
-	  if ($user->isFirstRequest())
-	  {
-	    $culture = $request->getPreferredCulture(array('ru', 'uk', 'en'));
-	    $user->setCulture($culture);
-	    $user->isFirstRequest(false);
-	  } else {
-	    $culture = $user->getCulture();
-	  }
-      $user->setFlash('error', $user->getFlash('error'));
-      $user->setFlash('success', $user->getFlash('success'));
-	  $this->redirect('localized_homepage');
-	}   
-    
-    $this->lastArticles = ArticleTable::getLastForMain();
-    $this->lastCategories = CategoryTable::getLastForMain();
-    $this->about = AboutTable::getAbout();
-    $this->reclame_big = Doctrine::getTable('Reclame')->findOneByPosition(1);
-    $this->reclame_bottom = Doctrine::getTable('Reclame')->findOneByPosition(2);
-    
-	$response = $this->getResponse();
-	$response->addMeta('title', 'Cmatis');
-    $response->addMeta('keywords', '');
-  }
+    /**
+     * Executes index action
+     *
+     * @param sfRequest $request A request object
+     */
+    public function executeIndex(sfWebRequest $request)
+    {
+          if ( !$request->hasParameter('sf_culture') )
+          {
+              $user = $this->getUser();
+              if ($user->isFirstRequest())
+              {
+                $culture = $request->getPreferredCulture(array('ru', 'uk', 'en'));
+                $user->setCulture($culture);
+                $user->isFirstRequest(false);
+              } else {
+                $culture = $user->getCulture();
+              }
+              $user->setFlash('error', $user->getFlash('error'));
+              $user->setFlash('success', $user->getFlash('success'));
+              $this->redirect('localized_homepage');
+          }   
+
+          $this->lastArticles = ArticleTable::getLastForMain();
+          $this->lastCategories = CategoryTable::getLastForMain();
+          $this->about = AboutTable::getAbout();
+          $this->reclame_big = Doctrine::getTable('Reclame')->findOneByPosition(1);
+          $this->reclame_bottom = Doctrine::getTable('Reclame')->findOneByPosition(2);
+
+          $response = $this->getResponse();
+          $response->addMeta('title', 'Cmatis');
+          $response->addMeta('keywords', '');
+    }
+  
+    public function executeSitemap(sfWebRequest $request) {
+          $this->roots = CategoryTable::getAllRoots();
+          $response = $this->getResponse();
+          $response->addMeta('title', 'Cmatis - ' . __('site_tree') );
+          $response->addMeta('keywords', __('site_tree'));
+    }
   
     /**
      * Executes page404 action

@@ -2,6 +2,12 @@
 # http://www.symfony-project.org/reference/1_4/en/10-Routing
 
 # default rules
+site_map:
+  url:   /:sf_culture/sitemap
+  param: { module: home, action: sitemap }
+  requirements:
+    sf_culture: (?:ru|uk|en)
+
 new_article:
   url:   /new_article
   param: { module: article, action: add }

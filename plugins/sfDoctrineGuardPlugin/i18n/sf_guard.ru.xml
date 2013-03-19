@@ -30,7 +30,7 @@
       </trans-unit>
       <trans-unit>
         <source>Signin</source>
-        <target>Авторизоваться</target>
+        <target>Авторизация</target>
       </trans-unit>
       <trans-unit>
         <source>Forgot your password?</source>

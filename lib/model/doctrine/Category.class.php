@@ -16,8 +16,12 @@ class Category extends BaseCategory
     
     public function getSubs()
     {
-        $cu = substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2);
-        return CategoryTable::getSubs($this->getId(), $cu);
+        return CategoryTable::getSubs($this->getId());
+    }
+    
+    public function getAllSubs()
+    {
+        return CategoryTable::getAllSubs($this->getId());
     }
     
     public function isSubcategory()
@@ -54,5 +58,50 @@ class Category extends BaseCategory
                 ->orderBy('updated_at')
                 ->limit(sfConfig::get( 'app_category_news' ))
                 ->execute();
+    }
+    
+    
+    public function renderMap()
+    {
+        $c = CategoryTable::getById($this->getId());
+        if ( $c ) {
+            echo '<ul>';
+                $root = ($c->getParentId() == 0) ? 'root' :'';
+                echo '<li class="map_category '.$root.' ">';
+                
+                    $name = !empty($root) ? '' : '<i class="icon-list"></i> ';
+                    $name .= $c->getName() ? $c->getName() : __('no_in_this_lang') . " (".$c->getUrl().")";
+                    echo link_to( $name, '@category?category='.$c->getUrl());
+                    if ( sfContext::getInstance()->getUser()->isAuthenticated() ) {
+                        echo link_to('<i class="icon-edit"></i>', '@edit_category?url='.$c->getUrl());
+                    }
+
+                    $Sart = $c->getArticle();
+                    if ( (count($Sart) > 0) || ($c->getChieldscount() > 0) ) {
+                        echo '<ul>';
+                        if ( count($Sart) > 0 )
+                            foreach ( $Sart as $art ){
+                                echo '<li class="map_article">';
+                                    
+                                    $title = $art->getTitle() ? $art->getTitle() : __('no_in_this_lang') . " (".$art->getUrl().")";     
+                                    echo link_to('<i class="icon-file"></i> '.$title, '@article?category='.$c->getUrl().'&url='.$art->getUrl());
+                                    if ( sfContext::getInstance()->getUser()->isAuthenticated() ) {
+                                        echo link_to('<i class="icon-edit"></i>', '@edit_article?category='.$c->getUrl().'&url='.$art->getUrl());
+                                    }
+                                echo '</li>';
+                            }
+                        echo '</ul>';
+                        
+                        if ( $c->getChieldscount() > 0 ) {
+                            $cs = $c->getAllSubs();
+                            foreach ( $cs as $s) {
+                                $s->renderMap();
+                            }
+                        }
+                    }
+                echo '</li>';
+            echo '</ul>';
+        }
+        
     }
 }

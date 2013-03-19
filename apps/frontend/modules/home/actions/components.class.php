@@ -59,5 +59,10 @@ class homeComponents extends sfComponents
   {
       $this->about = Doctrine::getTable('about')->find(1);
   }
+  
+  public function executeCopyright(sfWebRequest $request)
+  {
+      $this->copyright = Doctrine::getTable('about')->find(1)->getCopyright();
+  }
 }
 

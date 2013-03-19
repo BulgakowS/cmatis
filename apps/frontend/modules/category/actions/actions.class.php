@@ -26,7 +26,8 @@ class categoryActions extends sfActions
       $this->after_descr_reclame = Doctrine::getTable('Reclame')->findOneByPosition(4);
       $response = $this->getResponse();
       $response->addMeta('title', $this->cat->getName() . ' - Cmatis'  );
-      $response->addMeta('keywords', $this->cat->getName());
+      $t = $this->cat->getTags() ? $this->cat->getTags() : $this->cat->getName();
+      $response->addMeta('keywords', $t);
   }
   
   public function executeAdd(sfWebRequest $request)

@@ -5,6 +5,31 @@
     <header/>
     <body>
       <trans-unit>
+        <source>no_in_this_lang</source>
+        <target>Немає на українській</target>
+      </trans-unit>
+      <trans-unit>
+        <source>site</source>
+        <target>Сайт</target>
+      </trans-unit>
+      <trans-unit>
+        <source>articles</source>
+        <target>Статті</target>
+      </trans-unit>
+      <trans-unit>
+        <source>categories</source>
+        <target>Категорії</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame</source>
+        <target>Рекламні блоки</target>
+      </trans-unit>
+      <trans-unit>
+        <source>users</source>
+        <target>Користувачі</target>
+      </trans-unit>   
+        
+      <trans-unit>
         <source>main</source>
         <target>Головна</target>
       </trans-unit>

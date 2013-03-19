@@ -2,7 +2,7 @@ Category:
   actAs:
     Timestampable: ~
     I18n:
-      fields:   [name, description, lan_enable]
+      fields:   [name, description, lan_enable, tags]
   columns:
     name:          { type: string(255), notnull: false }
     url:           { type: string(255), notnull: true, unique: true }
@@ -12,6 +12,7 @@ Category:
     description:  { type: string(50000), notnull: false }
     on_main:      {type: boolean, default: true}
     lan_enable:   {type: boolean, default: true}
+    tags:         { type: string(255), notnull: false }
  
 Article:
   actAs:
@@ -52,6 +53,7 @@ About:
 #    metatags:              { type: string(255), notnull: false }
     keywords:              { type: string(255), notnull: false }
     title:                  { type: string(255), notnull: false }
+    copyright:              { type: string(100), notnull: false }
     
 Reclame:
   columns:

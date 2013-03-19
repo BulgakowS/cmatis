@@ -26,7 +26,7 @@ class articleActions extends sfActions
       $this->reclame_bottom = Doctrine::getTable('Reclame')->findOneByPosition(3);
       $response = $this->getResponse();
       $response->addMeta('title', $this->article->getTitle() . ' - Cmatis'  );
-      $response->addMeta('keywords', $this->article->getTags());
+      $response->addMeta('keywords', $this->article->getTags() ? $this->article->getTags() : $this->article->getTitle());
   }
   
   public function executeEdit(sfWebRequest $request)

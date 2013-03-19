@@ -5,6 +5,38 @@
     <header/>
     <body>
       <trans-unit>
+        <source>no_in_this_lang</source>
+        <target>Not in english</target>
+      </trans-unit>
+      <trans-unit>
+        <source>articles</source>
+        <target>Articles</target>
+      </trans-unit>
+      <trans-unit>
+        <source>categories</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit>
+        <source>reclame</source>
+        <target>Reclame</target>
+      </trans-unit>
+      <trans-unit>
+        <source>users</source>
+        <target>Users</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>site</source>
+        <target>Site</target>
+      </trans-unit>
+      <trans-unit>
+        <source>site_tree</source>
+        <target>Site map</target>
+      </trans-unit>
+      <trans-unit>
+        <source>admin_panel</source>
+        <target>Admin panel</target>
+      </trans-unit>
+      <trans-unit>
         <source>Page not found</source>
         <target>Page not found</target>
       </trans-unit>

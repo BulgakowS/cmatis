@@ -2,7 +2,7 @@
 <div class="title">
     <?php echo $cat->getName(); ?>
     <?php if ($sf_user->hasCredential('admin')): ?>
-    <?php echo link_to('<i class="icon-edit"></i>', '@edit_category?url='.$cat->geturl()); ?>
+    <?php echo link_to('<i class="icon-edit"></i>', '@edit_category?url='.$cat->getUrl()); ?>
     <?php endif; ?>
 </div>
 
