@@ -366,7 +366,7 @@ header #contacts span, footer #contacts span {
 }
 
 #content{
-    margin: 0 auto;
+    margin: 0 auto 15px;
     min-height: 100% !important;
     height: auto;
     text-align: justify;
