@@ -5,6 +5,23 @@
     <header/>
     <body>
       <trans-unit>
+        <source>settings</source>
+        <target>Настройки</target>
+      </trans-unit>  
+      <trans-unit>
+        <source>setting_news</source>
+        <target>Статей в новостях</target>
+      </trans-unit>
+      <trans-unit>
+        <source>setting_news_by_category</source>
+        <target>Статей по категориям</target>
+      </trans-unit>
+      <trans-unit>
+        <source>setting_categories_on_main</source>
+        <target>Категорий на главной</target>
+      </trans-unit>
+      
+      <trans-unit>
         <source>no_in_this_lang</source>
         <target>Нет на русском</target>
       </trans-unit>

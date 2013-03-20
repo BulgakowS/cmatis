@@ -63,3 +63,9 @@ Reclame:
     title:						{ type: string(40) }
     width:            { type: integer, default: 0, notnull: false}
     height:           { type: integer, default: 0, notnull: false}
+    
+Setting:
+  columns:
+    news:                { type: integer, default: 5 }
+    news_by_category:   { type: integer, default: 3 }
+    categories_on_main: { type: integer, default: 6 }

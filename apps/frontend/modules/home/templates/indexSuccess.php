@@ -10,8 +10,8 @@
     ?>
 </div>
 
-<?php if ( count($lastArticles) > 0): ?>
-    <div id="last_articles">
+<div id="last_articles">
+    <?php if ( count($lastArticles) > 0): ?>
         <ul>
         <?php foreach ( $lastArticles as $article ): ?>
             <li class="last_main">
@@ -30,8 +30,9 @@
             </li>
         <?php endforeach; ?>
         </ul>
-    </div>
-<?php endif; ?>
+    <?php endif; ?>
+</div>
+
 
 <div class="clr"></div>
 

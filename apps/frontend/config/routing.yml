@@ -31,6 +31,10 @@ delete_article:
 delete_category:
   url:   /del_category/:url
   param: { module: category, action: delete }     
+
+edit_setting:
+  url:   /edit_setting
+  param: { module: home, action: editsetting }     
     
 about:
   url:   /:sf_culture/about

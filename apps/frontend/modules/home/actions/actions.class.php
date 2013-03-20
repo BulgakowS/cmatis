@@ -50,6 +50,23 @@ class homeActions extends sfActions
           $response->addMeta('title', 'Cmatis - ' . __('site_tree') );
           $response->addMeta('keywords', __('site_tree'));
     }
+    
+    public function executeEditsetting(sfWebRequest $request) {
+          $this->forward404If(!$this->getUser()->isAuthenticated());
+          
+          $this->form = new SettingForm( SettingTable::getSetting() );
+      
+          if ( $request->isMethod('POST') ) {
+
+            $this->form->bind($request->getParameter($this->form->getName())); 
+            if ($this->form->isValid()) {
+                $cat = $this->form->save();            
+                $this->getUser()->setFlash('success', __('changed_saved'));
+
+                $this->redirect('@homepage');
+            } 
+          }
+    }
   
     /**
      * Executes page404 action

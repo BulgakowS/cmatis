@@ -1,9 +1,3 @@
-<?php 
-//    echo sfConfig::get( 'app_category_news' ).' - ';
-//    sfConfig::set( 'app_category_news', 55 );
-//    echo sfConfig::get( 'app_category_news' );
-?>
-
 <article>
     <div class="article_logo_full">
         <?php 

@@ -56,7 +56,7 @@ class Category extends BaseCategory
                 ->addWhere('a.category_id = ?', $this->getId())
                 ->andWhere('a.on_main = ?', true)
                 ->orderBy('updated_at')
-                ->limit(sfConfig::get( 'app_category_news' ))
+                ->limit( SettingTable::getNewsByCategory() ) // sfConfig::get( 'app_category_news' )
                 ->execute();
     }
     

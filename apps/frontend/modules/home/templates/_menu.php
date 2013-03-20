@@ -1,4 +1,4 @@
-<ul id="menu" class="topnav">
+<nav id="mmenu">    
     <li>
         <a href="<?php echo url_for('@homepage'); ?>" > 
             <i class="icon-home icon-white"></i> <?php echo __('main'); ?> 
@@ -48,4 +48,4 @@
             <?php echo __('about'); ?> 
         </a>
     </li>
-</ul>
+</nav>

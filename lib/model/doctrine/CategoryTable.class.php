@@ -66,7 +66,7 @@ class CategoryTable extends Doctrine_Table
                 ->orderBy('level ASC')
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
-                ->limit(sfConfig::get( 'app_categories_on_main' ))
+                ->limit( SettingTable::getCategoriesOnMain() )  //sfConfig::get( 'app_categories_on_main' )
                 ->orderBy('t.name')
                 ->execute();
     }
@@ -78,7 +78,7 @@ class CategoryTable extends Doctrine_Table
                 ->orderBy('level ASC')
                 ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
-                ->limit(sfConfig::get( 'app_categories_on_main' ))
+                ->limit( SettingTable::getCategoriesOnMain() ) //sfConfig::get( 'app_categories_on_main' )
                 ->orderBy('c.updated_at DESC')
                 ->execute();
     }

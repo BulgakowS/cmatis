@@ -25,9 +25,15 @@
             </a>
         </li>
         <li>
+            <a href="<?php echo url_for('@edit_setting') ?>" >
+                <i class="icon-edit"></i> <?php echo __('settings'); ?>
+            </a>
+        </li>
+        <li>
             <a href="/admin.php" target="_blank">
                 <i class="icon-cog"></i> <?php echo __('admin_panel'); ?>
             </a>
         </li>
     </ul>
 </nav>
+<?php // $sf_user->hasCredential('admin') ?>

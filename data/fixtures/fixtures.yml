@@ -30,6 +30,12 @@ About:
     skype: skype
     email: email
     
+Setting:
+  single:
+    news: 5
+    news_by_category: 3
+    categories_on_main: 6
+    
 Reclame:
   on_main_big:
     html:							

@@ -48,7 +48,7 @@ class ArticleTable extends Doctrine_Table
                 ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
                 ->orderBy('a.updated_at DESC')
-                ->limit(sfConfig::get( 'app_articleNews' ))
+                ->limit( SettingTable::getNews() ) //sfConfig::get( 'app_articleNews' )
                 ->execute();
     }
     
@@ -59,7 +59,7 @@ class ArticleTable extends Doctrine_Table
                 ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
                 ->andWhere('t.lan_enable = ?', true)
                 ->orderBy('a.updated_at DESC')
-                ->limit( sfConfig::get( 'app_article_news' ) )
+                ->limit( SettingTable::getNews() ) //sfConfig::get( 'app_article_news' )
                 ->execute();
     }
     

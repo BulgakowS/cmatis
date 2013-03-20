@@ -5,6 +5,22 @@
     <header/>
     <body>
       <trans-unit>
+        <source>settings</source>
+        <target>Налаштування</target>
+      </trans-unit>  
+      <trans-unit>
+        <source>setting_news</source>
+        <target>Статей в новинах</target>
+      </trans-unit>
+      <trans-unit>
+        <source>setting_news_by_category</source>
+        <target>Статей по категоріям</target>
+      </trans-unit>
+      <trans-unit>
+        <source>setting_categories_on_main</source>
+        <target>Категорій на головній</target>
+      </trans-unit>
+      <trans-unit>
         <source>no_in_this_lang</source>
         <target>Немає на українській</target>
       </trans-unit>

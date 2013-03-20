@@ -5,6 +5,22 @@
     <header/>
     <body>
       <trans-unit>
+        <source>settings</source>
+        <target>Settings</target>
+      </trans-unit>  
+      <trans-unit>
+        <source>setting_news</source>
+        <target>Articles in news</target>
+      </trans-unit>
+      <trans-unit>
+        <source>setting_news_by_category</source>
+        <target>Articles by categories</target>
+      </trans-unit>
+      <trans-unit>
+        <source>setting_categories_on_main</source>
+        <target>Categories on main</target>
+      </trans-unit>
+      <trans-unit>
         <source>no_in_this_lang</source>
         <target>Not in english</target>
       </trans-unit>
