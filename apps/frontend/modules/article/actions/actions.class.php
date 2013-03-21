@@ -32,7 +32,7 @@ class articleActions extends sfActions
   public function executeEdit(sfWebRequest $request)
   {
      $this->forward404If(!$this->getUser()->isAuthenticated());
-     $article = ArticleTable::getByUrl($request->getParameter('url'));
+     $article = ArticleTable::getByUrlEdit($request->getParameter('url'));
      $this->forward404If(!$article);
      $this->article = $article;
      $this->form = new ArticleForm($article);
@@ -45,7 +45,10 @@ class articleActions extends sfActions
         if ($this->form->isValid()) {
             $article = $this->form->save();
             $this->getUser()->setFlash('success', __('changed_saved'));
-            $this->redirect('@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl());
+            if ( $article->getEnabled() )
+                $this->redirect('@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl());
+            else
+                $this->redirect('@category?category='.$article->getCategory()->getUrl());
         } 
      }
   }

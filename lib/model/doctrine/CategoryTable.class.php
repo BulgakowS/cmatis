@@ -25,7 +25,7 @@ class CategoryTable extends Doctrine_Table
                 ->leftJoin('c.Translation t')
                 ->addSelect('(SELECT count(*) FROM category WHERE parent_id = c.id) AS chieldscount')
                 ->orderBy('c.position')
-                ->orderBy('updated_at');
+                ;
     }
 
     public static function getById($id)

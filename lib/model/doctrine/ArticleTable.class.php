@@ -26,6 +26,17 @@ class ArticleTable extends Doctrine_Table
 //                ->AndWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
     }
     
+    public static function getByUrlEdit($url)
+    {
+        return Doctrine_Core::getTable('Article')->createQuery('a')
+                ->select('a.*, t.*')
+                ->leftJoin('a.Translation t')
+                ->andWhere('a.url = ?', $url)
+                ->fetchOne();
+    }
+            
+            
+    
     public static function getByUrl($url)
     {
         return self::getQuery()

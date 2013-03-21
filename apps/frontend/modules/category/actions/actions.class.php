@@ -82,6 +82,7 @@ class categoryActions extends sfActions
       if ( $cat->getChieldscount() > 0 ) {
           foreach ( $cat->getSubs() as $sc ) {
               $sc->setParentId( $cat->getParentId() );
+              $sc->save();
           }
       }
       

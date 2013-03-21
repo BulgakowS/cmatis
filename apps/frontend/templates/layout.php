@@ -20,16 +20,7 @@
             <?php include_partial('home/flashes'); ?>
         </header>
         
-        <nav id="menu_controlls"> 
-          <?php echo link_to('&nbsp;', '@site_map', array('data-title'=>__('site_tree'), 'id'=>"sitemap_link")); ?> 
-            
-          <?php if (!$sf_user->isAuthenticated()): ?>
-            <a href="<?php echo url_for('@login'); ?>" id="login_link" data-title="<?php echo __('login') ?>"><i class="icon-off icon-white"></i></a>
-          <?php else: ?>
-            <a href="<?php echo url_for('@logout'); ?>" id="logout_link" data-title="<?php echo __('logout') ?>"><i class="icon-off icon-white"></i></a>
-          <?php endif; ?>
-        </nav>
-          <?php include_component('home', 'menu'); ?>   
+        <?php include_component('home', 'menu'); ?>   
         
         
         <?php if ($sf_user->isAuthenticated()): ?>        

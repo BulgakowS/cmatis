@@ -122,14 +122,6 @@ a .article_logo{
     position: relative;
 }
 
-/*.last_by_cats .main_cats:nth-child(odd){
-    float: left;
-}
-
-.last_by_cats .main_cats:nth-child(even){
-    float: right;
-}*/
-
 .last_by_cats .main_cats .name a{
     font-size: 14px;
     font-weight: bold;
@@ -227,11 +219,6 @@ header {
     height: 60px;
     min-width: 960px;
     width: 960px;
-/*    background: URL(images/header_bg.png) repeat-x;
-    background-size: auto 150px;*/
-/*    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;*/
-    
     background: #297024 /* Old browsers */
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjIlIiBzdG9wLWNvbG9yPSIjMmI2NzI3IiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iOCUiIHN0b3AtY29sb3I9IiMyYjY3MjciIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI2NCUiIHN0b3AtY29sb3I9IiM1ZGI0MjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI4NCUiIHN0b3AtY29sb3I9IiM2M2MxMjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNzZkNzJmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
@@ -383,9 +370,9 @@ footer{
 /*    background: URL(images/footer_bg.png) repeat-x;
     background-position-y: center;*/
     box-sizing: border-box;
-/*    border-top-left-radius: 20px;
+    border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    sborder: 1px solid #ccc;*/
+    sborder: 1px solid #ccc;
 }
 
 h2.title {
@@ -606,124 +593,11 @@ header #languages .flag.ru{
 -------------MENU--------------
 *******************************/
 
-
-/*nav#menu_nav {
-    font-size: 14px;
-    background: url(images/topnav_bg.gif) repeat-x;
+div#menu{
+    padding: 0 0 0 115px;
     text-align: center;
-    border-radius: 0 0 10px 10px;
-}
-
-ul.topnav {
-    list-style: none;
-    padding: 0 20px 0 115px;	
-    margin: 0 auto;
-  float: left;
-    width: 984px;
-    background: #222;
-    background: url(images/topnav_bg.gif) repeat-x;
-    height: 26px;
-    border-radius: 0 0 5px 5px;
-}
-ul.topnav li {
-    float: left;
-    display: inline-block;
-    margin: 0;	
-    padding: 0 15px 0 0;
-    position: relative; --Declare X and Y axis base for sub navigation--
-}
-ul.topnav li a{
-    padding: 3px 5px;
-    color: #fff;
-    display: block;
-    text-decoration: none;
-    float: left;
-}
-ul.topnav li a:hover, ul.topnav li a.active{
-    background: url(images/menu_bg1.png) no-repeat center -4px;
-    border-radius: 5px;
-}
-ul.topnav li span { --Drop down trigger styles--
-    width: 17px;
-    height: 26px;
-    float: left;
-    background: url(images/subnav_btn.gif) no-repeat;
-    background-position: 0 -2px;
-    cursor: pointer;
-}
-ul.topnav li span:hover {
-    background-position: 0 -37px; 
-} 
-ul.topnav li ul.subnav {
-    list-style: none;
-    position: absolute; 
-    right: 0; top: 26px;
-    background: #333;
-    margin: 0; padding: 0;
-    display: none;
-    float: left;
-    width: 400px;
-    border-radius: 5px;
-    text-align: left;
-}
-ul.topnav li ul.subnav li{
-    margin: 0; padding: 0;
-    display: block;
-    clear: both;
-}
-html ul.topnav li ul.subnav li a {
-    margin: 0;
-    width: 385px;
-    padding: 5px;
-    padding-left: 10px;
-    display: block; 
-}
-html ul.topnav li ul.subnav li a:hover { --Hover effect for subnav links--
-    background: #222 url(images/dropdown_linkbg.gif) no-repeat 10px center;
-    border-radius: 5px;
-    margin: 0;
-}*/
-
-#menu_controlls{
-    float: right;
-    width: auto;
-}
-
-#menu_controlls a{
-    display: inline-block;
-}
-
-#menu_controlls a i{
-    margin-top: -2px !important;
-}
-
-#menu_controlls #login_link, #menu_controlls #logout_link {
-    margin-right: 5px;
-    margin-top: 1px;
-    padding: 0;
-}
-
-#menu_controlls #sitemap_link {
-    width: 14px;
-    height: 14px;
-    background: url("images/sitemap.png") no-repeat left top;
-    background-size: 14px 14px;
-    margin: 5px;
-    padding: 0;
-}
-
-/*****new menu******/
-
-#mmenu, #mmenu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-#mmenu {
-    text-align: center;
-    width: 960px;
-    margin: 0 auto;
-    /*border: 1px solid #222;*/
+    font-family: Verdana;
+    width: 845px;
     background-color: #111;
     background-image: -moz-linear-gradient(#444, #111); 
     background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111)); 
@@ -731,161 +605,200 @@ html ul.topnav li ul.subnav li a:hover { --Hover effect for subnav links--
     background-image: -o-linear-gradient(#444, #111);
     background-image: -ms-linear-gradient(#444, #111);
     background-image: linear-gradient(#444, #111);
+    height: 26px;
     border-radius: 0 0 5px 5px;
     -moz-border-radius: 0 0 5px 5px;
     -webkit-border-radius: 0 0 5px 5px;
-    -moz-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
-    -webkit-box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
-    box-shadow: 0 1px 1px #777, 0 1px 0 #666 inset;
-}
-#mmenu:before,
-#mmenu:after {
-    content: "";
-    display: table;
-}
-#mmenu:after {
-    clear: both;
-}
-#mmenu {
-    zoom:1;
-}
-#mmenu li {
-    float: left;
-    border-right: 1px solid #222;
-    -moz-box-shadow: 1px 0 0 #444;
-    -webkit-box-shadow: 1px 0 0 #444;
-    box-shadow: 1px 0 0 #444;
-    position: relative;
-}
-#mmenu a {
-    float: left;
-    padding: 5px 10px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    /*font: bold 12px Arial, Helvetica;*/
-    text-decoration: none;
-    text-shadow: 0 1px 0 #000;
-}
-#mmenu li:hover > a {
-    color: #fafafa;
-}
-*html #mmenu li a:hover { /* IE6 only */
-    color: #fafafa;
-}
-#mmenu ul {
-    margin: 20px 0 0 0;
-    _margin: 0; /*IE6 only*/
-    opacity: 0;
-    /*visibility: hidden;*/
-    display: none;
-    position: absolute;
-    top: 35px;
-    left: 0;
-    z-index: 9999; 
-    background: #444; 
-    background: -moz-linear-gradient(#444, #111);
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#444), to(#111));
-    background: -webkit-linear-gradient(#444, #111); 
-    background: -o-linear-gradient(#444, #111); 
-    background: -ms-linear-gradient(#444, #111); 
-    background: linear-gradient(#444, #111);
-    -moz-box-shadow: 0 -1px rgba(255,255,255,.3);
-    -webkit-box-shadow: 0 -1px 0 rgba(255,255,255,.3);
-    box-shadow: 0 -1px 0 rgba(255,255,255,.3); 
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out; 
-} 
-#mmenu li:hover > ul {
-    opacity: 1;
-/*    visibility: visible;*/
-    display: block;
-    margin: 0;
-}
-#mmenu ul ul {
-    top: 0;
-    left: 150px;
-    margin: 0 0 0 20px;
-    _margin: 0; /*IE6 only*/
-    -moz-box-shadow: -1px 0 0 rgba(255,255,255,.3);
-    -webkit-box-shadow: -1px 0 0 rgba(255,255,255,.3);
-    box-shadow: -1px 0 0 rgba(255,255,255,.3); 
-}
-#mmenu ul li {
-    float: none;
-    display: block;
-    border: 0;
-    _line-height: 0; /*IE6 only*/
-    -moz-box-shadow: 0 1px 0 #111, 0 2px 0 #666;
-    -webkit-box-shadow: 0 1px 0 #111, 0 2px 0 #666;
-    box-shadow: 0 1px 0 #111, 0 2px 0 #666;
-}
-#mmenu ul li:last-child { 
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-    box-shadow: none; 
-}
-#mmenu ul a { 
-    padding: 10px;
-    /*width: 130px;*/
-    _height: 10px; /*IE6 only*/
-    display: block;
-    white-space: nowrap;
-    float: none;
-    text-transform: none;
-}
-#mmenu ul a:hover {
-    background-color: #0186ba;
-    background-image: -moz-linear-gradient(#04acec, #0186ba); 
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#04acec), to(#0186ba));
-    background-image: -webkit-linear-gradient(#04acec, #0186ba);
-    background-image: -o-linear-gradient(#04acec, #0186ba);
-    background-image: -ms-linear-gradient(#04acec, #0186ba);
-    background-image: linear-gradient(#04acec, #0186ba);
-}
-#mmenu ul li:first-child > a {
-    -moz-border-radius: 3px 3px 0 0;
-    -webkit-border-radius: 3px 3px 0 0;
-    border-radius: 3px 3px 0 0;
-}
-#mmenu ul li:first-child > a:after {
-    content: '';
-    position: absolute;
-    left: 40px;
-    top: -6px;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 6px solid #444;
-}
-#mmenu ul ul li:first-child a:after {
-    left: -6px;
-    top: 50%;
-    margin-top: -6px;
-    border-left: 0; 
-    border-bottom: 6px solid transparent;
-    border-top: 6px solid transparent;
-    border-right: 6px solid #3b3b3b;
-}
-#mmenu ul li:first-child a:hover:after {
-    border-bottom-color: #04acec; 
-}
-#mmenu ul ul li:first-child a:hover:after {
-    border-right-color: #0299d3; 
-    border-bottom-color: transparent; 
-}
-#mmenu ul li:last-child > a {
-    -moz-border-radius: 0 0 3px 3px;
-    -webkit-border-radius: 0 0 3px 3px;
-    border-radius: 0 0 3px 3px;
 }
 
-/***** /new menu ******/
+ul.topnav {
+    list-style: none;
+    margin: 0 auto;
+    /*float: left;*/
+    height: 26px;
+}
+
+ul.topnav > li {
+    float: left;
+    height: 26px;
+    display: inline-block;
+    margin: 0;	
+    padding: 0 5px 0 0;
+    position: relative; /*--Declare X and Y axis base for sub navigation--*/
+}
+
+ul.topnav li a{
+    padding: 3px 5px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+
+ul.topnav > li > a:hover, ul.topnav > li > a.active{
+    background: url(images/menu_bg1.png) no-repeat center -4px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+ul.topnav li ul.subnav {
+    list-style: none;
+    position: absolute; 
+    right: 0; 
+    top: 26px;
+    background: #333;
+    margin: 0; padding: 0;
+    display: none;
+    float: left;
+    min-width: 250px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-align: left;
+    
+    /*left: -50px !important;*/
+}
+
+ul.topnav li ul.subnav li{
+    margin: 0; padding: 0;
+    display: block;
+    clear: both;
+}
+
+html ul.topnav li ul.subnav li a {
+    margin: 0;
+    width: 100%;
+    padding: 5px 0 5px 10px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block; 
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#menu_controlls{
+    float: right;
+    width: auto;
+}
+
+#menu_controlls a{
+    width: 14px;
+    height: 14px;
+    margin: 5px;
+    padding: 0;
+    float: right;
+}
+
+#menu_controlls a i{
+    margin-top: -2px !important;
+}
+
+#menu_controlls #login_link, #menu_controlls #logout_link {
+    
+}
+
+#menu_controlls #sitemap_link {
+    background: url("images/sitemap.png") no-repeat left top;
+    background-size: 14px 14px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+
+
+.ddsmoothmenu ul{
+    z-index:100;
+    list-style-type: none;
+}
+
+.ddsmoothmenu ul li{
+    position: relative;
+    display: inline;
+    float: left;
+    height: 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+* html .ddsmoothmenu ul li a{ /*IE6 hack to get sub menu links to behave correctly*/
+    display: inline-block;
+}
+
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited{
+    color: white;
+}
+
+.ddsmoothmenu ul li a.selected { /*CSS class that's dynamically added to the currently active menu items' LI A element*/
+    background: black !important; 
+    color: white;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.ddsmoothmenu ul li a:hover{
+    background: black; /*background of menu items during onmouseover (hover state)*/
+    color: white;
+}
+	
+.ddsmoothmenu ul li ul{
+    position: absolute;
+    display: none; 
+    visibility: hidden;
+}
+
+.ddsmoothmenu ul li ul li{
+    display: list-item;
+    float: none;
+}
+
+.ddsmoothmenu ul li ul li ul{
+    top: 0;
+}
+
+.ddsmoothmenu ul li ul li a{
+    min-with: 250px;
+    width: auto;
+    padding: 5px;
+    margin: 0;
+    border-top-width: 0;
+}
+
+* html .ddsmoothmenu{height: 1%;} /*Holly Hack for IE7 and below*/
+
+.downarrowclass{
+    position: absolute;
+    top: 4px;
+    right: 7px;
+}
+
+.rightarrowclass{
+    position: absolute;
+    top: 8px;
+    right: -3px;
+}
+
+.ddshadow{ 
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    /*background-color: #ccc;  generally should be just a little lighter than the box-shadow color for CSS3 capable browsers */
+}
+
+.toplevelshadow {
+    margin: 5px 0 0 5px; /* in NON CSS3 capable browsers gives the offset of the shadow */
+    opacity: 0.8; /* shadow opacity mostly for NON CSS3 capable browsers. Doesn't work in IE */
+}
+
+.ddcss3support .ddshadow.toplevelshadow {
+    margin: 0; 
+}
 
 /*******************************
 ----------MENU RIGHT------------
@@ -919,11 +832,6 @@ aside#right nav #hide_right{
     margin-top: -20px;
     cursor: pointer;
 }
-
-/*aside#right nav ul{
-    list-style: none;
-    margin-left: 0;
-}*/
 
 aside#right nav ul li{
     /*margin-bottom: 10px;*/ 
@@ -996,7 +904,7 @@ form .row img{
 
 #made_by a{
     text-decoration: none;
-    color: #F8F8F8;
+    color: #F6F6F6;
     font-weight: bold;
 }
 

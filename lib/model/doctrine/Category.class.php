@@ -55,11 +55,30 @@ class Category extends BaseCategory
         return ArticleTable::getQuery()
                 ->addWhere('a.category_id = ?', $this->getId())
                 ->andWhere('a.on_main = ?', true)
+                ->andWhere('a.enabled = ?', true)
                 ->orderBy('updated_at')
                 ->limit( SettingTable::getNewsByCategory() ) // sfConfig::get( 'app_category_news' )
                 ->execute();
     }
     
+    public function getArticle() 
+    {
+        return ArticleTable::getQuery()
+                ->addWhere('a.category_id = ?', $this->getId())
+                ->orderBy('updated_at')
+                ->execute();
+    }
+
+    public function getAllArticle()
+    {
+        return Doctrine_Core::getTable('Article')->createQuery('a')
+                ->select('a.*, t.*')
+                ->leftJoin('a.Translation t')
+                ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->addWhere('a.category_id = ?', $this->getId())
+                ->orderBy('updated_at')
+                ->execute();
+    }
     
     public function renderMap()
     {
@@ -76,7 +95,7 @@ class Category extends BaseCategory
                         echo link_to('<i class="icon-edit"></i>', '@edit_category?url='.$c->getUrl());
                     }
 
-                    $Sart = $c->getArticle();
+                    $Sart = $c->getAllArticle();
                     if ( (count($Sart) > 0) || ($c->getChieldscount() > 0) ) {
                         echo '<ul>';
                         if ( count($Sart) > 0 )
