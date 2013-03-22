@@ -4,16 +4,16 @@
     <?php echo $form->renderHiddenFields(); ?>
     
     <div class="row-fluid">
-        <div class="span4"><label> <?php echo __('Username or E-Mail', null, 'sf_guard'); ?> </label></div>
-        <div class="span4"><?php echo $form['username']->render(); ?></div>
+        <div class="span6"><label> <?php echo __('Username or E-Mail', null, 'sf_guard'); ?> </label></div>
+        <div class="span6"><?php echo $form['username']->render(); ?></div>
     </div>
     <div class="row-fluid">
-        <div class="span4"><label> <?php echo __('Password', null, 'sf_guard'); ?> </label></div>
-        <div class="span4"><?php echo $form['password']->render(); ?></div>
+        <div class="span6"><label> <?php echo __('Password', null, 'sf_guard'); ?> </label></div>
+        <div class="span6"><?php echo $form['password']->render(); ?></div>
     </div>
     <div class="row-fluid">
         <div class="span4"><label> <?php echo __('Remember', null, 'sf_guard'); ?> </label></div>
-        <div class="span4"><?php echo $form['remember']->render(); ?></div>
+        <div class="span6"><?php echo $form['remember']->render(); ?></div>
     </div>
     <BR />
     <input type="submit" value="<?php echo __('Signin', null, 'sf_guard') ?>" class="btn btn-block btn-success" />

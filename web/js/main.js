@@ -76,6 +76,27 @@ $('document').ready(function(){
     setValidator('category_url', /^[а-яА-Яa-zA-Z_0-9-]*$/i);
 
     CKEDITOR.replaceClass = 'editor';
+    
+    if ( $('#reclame_html').length > 0 ) {
+        CKEDITOR.replace( 'reclame_html', {
+            filebrowserBrowseUrl : '/js/ckeditor/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl : '/js/ckeditor/ckfinder/ckfinder.html?type=Images',
+            filebrowserFlashBrowseUrl : '/js/ckeditor/ckfinder/ckfinder.html?type=Flash',
+            filebrowserUploadUrl : '/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserImageUploadUrl : '/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images',
+            filebrowserFlashUploadUrl : '/js/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash',
+            plugins : 'dialogui,dialog,dialogadvtab,basicstyles,bidi,blockquote,clipboard,button,panelbutton,panel,floatpanel,colorbutton,colordialog,templates,menu,contextmenu,div,resize,toolbar,elementspath,list,indent,enterkey,entities,popup,filebrowser,find,fakeobjects,flash,floatingspace,listblock,richcombo,font,forms,format,htmlwriter,horizontalrule,iframe,wysiwygarea,image,smiley,justify,link,liststyle,magicline,maximize,newpage,pagebreak,pastetext,pastefromword,preview,print,removeformat,save,selectall,showblocks,showborders,sourcearea,specialchar,menubutton,scayt,stylescombo,tab,table,tabletools,undo,wsc,htmlbuttons,maxheight,mediaembed,oembed',
+            skin : 'moono',
+            defaultLanguage : 'ru',
+            contentsLanguage : getLanguage(),
+            language : getLanguage(),
+            width : '100%',
+            contentsCss : '../css/main.css',
+            toolbarCanCollapse : true,
+            enterMode : CKEDITOR.ENTER_BR,
+            fontSize_defaultLabel : '12px'
+        });
+    }
 
     $('#login_link, #logout_link').tooltip({
         animation: true,

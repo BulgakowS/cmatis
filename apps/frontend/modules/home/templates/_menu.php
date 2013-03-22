@@ -27,7 +27,7 @@
                 > 
                     <?php echo $cat->getName(); ?> 
                 </a>
-                <?php if ( $cat->getChieldscount() > 0 ): ?>
+                <?php if ( count($cat->getSubs()) > 0 ): ?>
                     <ul class="subnav">
                         <?php foreach($cat->getSubs() as $sub): ?>
                         <li>
@@ -36,7 +36,7 @@
                                > 
                                   <?php echo $sub->getName(); ?> 
                             </a>
-                            <?php if ( $sub->getChieldscount() > 0 ): ?>
+                            <?php if ( count($sub->getSubs()) > 0 ): ?>
                                 <ul class="subnav">
                                     <?php foreach($sub->getSubs() as $sub1): ?>
                                     <li>
@@ -45,7 +45,7 @@
                                            > 
                                               <?php echo $sub1->getName(); ?> 
                                         </a>
-                                        <?php if ( $sub1->getChieldscount() > 0 ): ?>
+                                        <?php if ( count($sub1->getSubs()) > 0 ): ?>
                                             <ul class="subnav">
                                                 <?php foreach($sub1->getSubs() as $sub2): ?>
                                                 <li>

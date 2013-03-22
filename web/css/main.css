@@ -44,6 +44,11 @@ a:hover, a:focus {
     line-height: 35px;
 }
 
+.title:first-letter, #menu a:first-letter, 
+.map_category  a:first-letter, .map_article a:first-letter {
+    text-transform: uppercase;
+}
+
 .logo_edit{
     text-align: center;
 }
@@ -657,6 +662,9 @@ ul.topnav li ul.subnav {
     -webkit-border-radius: 5px;
     text-align: left;
     
+    -webkit-box-shadow:  0px 0px 5px 1px #5db429;
+    box-shadow:  0px 0px 5px 1px #5db429;
+    
     /*left: -50px !important;*/
 }
 
@@ -718,7 +726,7 @@ html ul.topnav li ul.subnav li a {
     position: relative;
     display: inline;
     float: left;
-    height: 20px;
+    height: 26px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -788,7 +796,7 @@ html ul.topnav li ul.subnav li a {
     top: 0;
     width: 0;
     height: 0;
-    /*background-color: #ccc;  generally should be just a little lighter than the box-shadow color for CSS3 capable browsers */
+   /* background-color: #5db429;  /*generally should be just a little lighter than the box-shadow color for CSS3 capable browsers */
 }
 
 .toplevelshadow {
@@ -895,16 +903,16 @@ form .row img{
 }
 
 #made_by {
-    color: #F8F8F8;
+    color: #eee;
     float: right;
     margin-right: 10px;
-    margin-top: -5px;
+    margin-top: 5px;
     float: right;
 }
 
 #made_by a{
     text-decoration: none;
-    color: #F6F6F6;
+    color: #eee;
     font-weight: bold;
 }
 
