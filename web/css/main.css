@@ -263,7 +263,14 @@ header #contacts{
     font-weight: bold;
 }
 
+footer #counters{
+    float: left;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
 footer #contacts{
+    width: 70%;
     color: #333;
     margin: 0 auto;
     text-align: center;
@@ -903,7 +910,7 @@ form .row img{
 }
 
 #made_by {
-    color: #eee;
+    color: #ccc;
     float: right;
     margin-right: 10px;
     margin-top: 5px;
@@ -912,7 +919,7 @@ form .row img{
 
 #made_by a{
     text-decoration: none;
-    color: #eee;
+    color: #ccc;
     font-weight: bold;
 }
 
