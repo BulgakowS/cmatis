@@ -1,12 +1,12 @@
 <article>
     <div class="article_logo_full">
         <?php 
-            $is_big = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'big_logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
-            $is_small = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getlogo() );
+            $is_big = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'images'.DIRECTORY_SEPARATOR.$article->getlogo() );
+            $is_small = is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'_thumbs'.DIRECTORY_SEPARATOR.$article->getlogo() );
         ?>
         <?php if ( $article->getlogo() ):?>
-            <a href="/uploads/<?php echo $is_big ? 'big_' : ''; ?>logos/<?php echo $article->getlogo() ?>" id="article_logo_view" >
-                <img src="/uploads/logos/<?php echo $article->getlogo() ?>" />
+            <a href="/uploads/<?php echo $is_big ? 'images' : '_thumbs'; ?>/<?php echo $article->getlogo() ?>" id="article_logo_view" >
+                <img src="/uploads/_thumbs/<?php echo $article->getlogo() ?>" />
             </a>
         <?php else: ?>
             <img src="/uploads/default-no-image.png" />

@@ -5,6 +5,10 @@
     <header/>
     <body>
       <trans-unit>
+        <source>The username and/or password is invalid.</source>
+        <target>Неверный Логин/Пароль</target>
+      </trans-unit>
+      <trans-unit>
         <source>Username</source>
         <target>Логин</target>
       </trans-unit>

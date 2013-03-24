@@ -97,7 +97,7 @@ $('document').ready(function(){
             fontSize_defaultLabel : '12px'
         });
     }
-
+    
     $('#login_link, #logout_link').tooltip({
         animation: true,
         placement: 'right',

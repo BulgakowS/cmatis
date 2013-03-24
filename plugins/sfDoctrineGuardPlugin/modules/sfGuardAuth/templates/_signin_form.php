@@ -2,8 +2,16 @@
 
 <form action="<?php echo url_for('@sf_guard_signin') ?>" method="post" id="signin_form">
     <?php echo $form->renderHiddenFields(); ?>
-    
-    <div class="row-fluid">
+    <?php if ($form->renderGlobalErrors()): ?>
+    <div class="alert alert-error">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <?php echo $form->renderGlobalErrors(); ?>
+    </div>
+    <?php endif; ?>
+    <?php if ($form['username']->rendererror()): ?>
+        <div class="span8 offset2 alert alert-error"><?php echo $form['username']->rendererror(); ?></div>
+    <?php endif; ?>
+    <div class="row-fluid <?php if ($form['username']->rendererror()) echo 'control-group error' ?>">
         <div class="span6"><label> <?php echo __('Username or E-Mail', null, 'sf_guard'); ?> </label></div>
         <div class="span6"><?php echo $form['username']->render(); ?></div>
     </div>

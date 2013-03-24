@@ -17,8 +17,8 @@
             <li class="last_main">
                 <a href="<?php echo url_for('@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl()); ?>" >
                     <div class="article_logo_wrap">
-                        <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getLogo() )): ?>
-                            <img src="/uploads/logos/<?php echo $article->getLogo(); ?>" class="article_logo"/>
+                        <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'_thumbs'.DIRECTORY_SEPARATOR.$article->getLogo() )): ?>
+                            <img src="/uploads/_thumbs/<?php echo $article->getLogo(); ?>" class="article_logo"/>
                         <?php else: ?>
                             <img src="/uploads/default-no-image.png" class="article_logo"/>
                         <?php endif; ?>
@@ -56,8 +56,8 @@
                             <li>
                                 <a href="<?php echo url_for('@article?category='.$art->getCategory()->getUrl().'&url='.$art->getUrl()); ?>" >
                                     <div class="article_logo_wrap">
-                                        <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$art->getLogo() )): ?>
-                                            <img src="/uploads/logos/<?php echo $art->getLogo(); ?>" class="article_logo"/>
+                                        <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'_thumbs'.DIRECTORY_SEPARATOR.$art->getLogo() )): ?>
+                                            <img src="/uploads/_thumbs/<?php echo $art->getLogo(); ?>" class="article_logo"/>
                                         <?php else: ?>
                                             <img src="/uploads/default-no-image.png" class="article_logo"/>
                                         <?php endif; ?>

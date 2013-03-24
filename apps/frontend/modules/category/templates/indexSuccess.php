@@ -44,8 +44,8 @@
                 <li>
                     <a href="<?php echo url_for('@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl()); ?>" >
                         <div class="cat_logo_in_list_div">
-                            <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'logos'.DIRECTORY_SEPARATOR.$article->getLogo() )): ?>
-                                <img src="/uploads/logos/<?php echo $article->getLogo(); ?>" class="cat_logo_in_list"/>
+                            <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'_thumbs'.DIRECTORY_SEPARATOR.$article->getLogo() )): ?>
+                                <img src="/uploads/_thumbs/<?php echo $article->getLogo(); ?>" class="cat_logo_in_list"/>
                             <?php else: ?>
                                 <img src="/uploads/default-no-image.png" class="cat_logo_in_list"/>
                             <?php endif; ?>

@@ -79,11 +79,14 @@ class categoryActions extends sfActions
       $cat = CategoryTable::getByUrl($request->getParameter('url'));
       $this->forward404If(!$cat);
       
-      if ( $cat->getChieldscount() > 0 ) {
-          foreach ( $cat->getSubs() as $sc ) {
-              $sc->setParentId( $cat->getParentId() );
-              $sc->save();
-          }
+      if ( $cat->getChieldscount() > 0 || count($cat->getArticle()) > 0  ) {
+          $this->getUser()->setFlash('error', __('category_deleted_with_chields'));
+          $this->redirect('@category?category='.$cat->getUrl());
+          
+//          foreach ( $cat->getSubs() as $sc ) {
+//              $sc->setParentId( $cat->getParentId() );
+//              $sc->save();
+//          }
       }
       
       $cat->delete();

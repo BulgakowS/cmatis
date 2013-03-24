@@ -5,6 +5,10 @@
     <header/>
     <body>
       <trans-unit>
+        <source>category_deleted_with_chields</source>
+        <target>Неможливо видалити категорію поки у неї є підкатегорії або статті.</target>
+      </trans-unit>
+      <trans-unit>
         <source>settings</source>
         <target>Налаштування</target>
       </trans-unit>  
