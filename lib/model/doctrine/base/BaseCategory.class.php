@@ -12,6 +12,7 @@
  * @property integer $position
  * @property string $description
  * @property boolean $on_main
+ * @property boolean $in_menu
  * @property boolean $lan_enable
  * @property string $tags
  * @property Doctrine_Collection $Article
@@ -23,6 +24,7 @@
  * @method integer             getPosition()    Returns the current record's "position" value
  * @method string              getDescription() Returns the current record's "description" value
  * @method boolean             getOnMain()      Returns the current record's "on_main" value
+ * @method boolean             getInMenu()      Returns the current record's "in_menu" value
  * @method boolean             getLanEnable()   Returns the current record's "lan_enable" value
  * @method string              getTags()        Returns the current record's "tags" value
  * @method Doctrine_Collection getArticle()     Returns the current record's "Article" collection
@@ -33,6 +35,7 @@
  * @method Category            setPosition()    Sets the current record's "position" value
  * @method Category            setDescription() Sets the current record's "description" value
  * @method Category            setOnMain()      Sets the current record's "on_main" value
+ * @method Category            setInMenu()      Sets the current record's "in_menu" value
  * @method Category            setLanEnable()   Sets the current record's "lan_enable" value
  * @method Category            setTags()        Sets the current record's "tags" value
  * @method Category            setArticle()     Sets the current record's "Article" collection
@@ -79,6 +82,10 @@ abstract class BaseCategory extends sfDoctrineRecord
              'length' => 50000,
              ));
         $this->hasColumn('on_main', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => true,
+             ));
+        $this->hasColumn('in_menu', 'boolean', null, array(
              'type' => 'boolean',
              'default' => true,
              ));

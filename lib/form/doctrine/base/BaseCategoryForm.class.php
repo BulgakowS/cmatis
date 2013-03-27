@@ -21,6 +21,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'parent_id'  => new sfWidgetFormInputText(),
       'position'   => new sfWidgetFormInputText(),
       'on_main'    => new sfWidgetFormInputCheckbox(),
+      'in_menu'    => new sfWidgetFormInputCheckbox(),
       'created_at' => new sfWidgetFormDateTime(),
       'updated_at' => new sfWidgetFormDateTime(),
     ));
@@ -32,6 +33,7 @@ abstract class BaseCategoryForm extends BaseFormDoctrine
       'parent_id'  => new sfValidatorInteger(array('required' => false)),
       'position'   => new sfValidatorInteger(array('required' => false)),
       'on_main'    => new sfValidatorBoolean(array('required' => false)),
+      'in_menu'    => new sfValidatorBoolean(array('required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));

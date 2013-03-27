@@ -5,6 +5,10 @@
     <header/>
     <body>
       <trans-unit>
+        <source>In menu</source>
+        <target>В меню</target>
+      </trans-unit>
+      <trans-unit>
         <source>category_deleted_with_chields</source>
         <target>Невозможно удалить категорию пока у нее есть подкатегории или статьи.</target>
       </trans-unit>

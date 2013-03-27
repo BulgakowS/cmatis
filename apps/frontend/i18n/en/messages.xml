@@ -5,6 +5,10 @@
     <header/>
     <body>
       <trans-unit>
+        <source>In menu</source>
+        <target>In menu</target>
+      </trans-unit>
+      <trans-unit>
         <source>category_deleted_with_chields</source>
         <target>Can`t delete category while it has subcategories or articles.</target>
       </trans-unit>

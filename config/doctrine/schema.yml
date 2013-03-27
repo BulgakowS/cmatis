@@ -11,6 +11,7 @@ Category:
     position:     { type: integer, notnull: false, default: 1 }
     description:  { type: string(50000), notnull: false }
     on_main:      {type: boolean, default: true}
+    in_menu:      {type: boolean, default: true}
     lan_enable:   {type: boolean, default: true}
     tags:         { type: string(255), notnull: false }
  

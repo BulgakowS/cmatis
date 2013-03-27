@@ -21,52 +21,60 @@
         </li>
 
         <?php foreach($categories as $cat): ?>
+            <?php if ( $cat->getInMenu() ): ?>
             <li>
                 <a href="<?php echo url_for('@category?category='.$cat->getUrl()); ?>"
                     <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?> 
                 > 
                     <?php echo $cat->getName(); ?> 
                 </a>
-                <?php if ( count($cat->getSubs()) > 0 ): ?>
+                <?php if ( count($cat->getSubsForMenu()) > 0 ): ?>
                     <ul class="subnav">
-                        <?php foreach($cat->getSubs() as $sub): ?>
-                        <li>
-                            <a href="<?php echo url_for('@category?category='.$sub->getUrl()); ?>" 
-                                <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?>
-                               > 
-                                  <?php echo $sub->getName(); ?> 
-                            </a>
-                            <?php if ( count($sub->getSubs()) > 0 ): ?>
-                                <ul class="subnav">
-                                    <?php foreach($sub->getSubs() as $sub1): ?>
-                                    <li>
-                                        <a href="<?php echo url_for('@category?category='.$sub1->getUrl()); ?>" 
-                                           <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?>
-                                           > 
-                                              <?php echo $sub1->getName(); ?> 
-                                        </a>
-                                        <?php if ( count($sub1->getSubs()) > 0 ): ?>
-                                            <ul class="subnav">
-                                                <?php foreach($sub1->getSubs() as $sub2): ?>
-                                                <li>
-                                                    <a href="<?php echo url_for('@category?category='.$sub2->getUrl()); ?>" 
-                                                       <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?>
-                                                       > 
-                                                          <?php echo $sub2->getName(); ?> 
-                                                    </a>
-                                                </li>
-                                                <?php endforeach; ?>
-                                            </ul>
-                                        <?php endif; ?>
-                                    </li>
-                                    <?php endforeach; ?>
-                                </ul>
+                        <?php foreach($cat->getSubsForMenu() as $sub): ?>
+                            <?php if ( $sub->getInMenu() ): ?>
+                            <li>
+                                <a href="<?php echo url_for('@category?category='.$sub->getUrl()); ?>" 
+                                    <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?>
+                                   > 
+                                      <?php echo $sub->getName(); ?> 
+                                </a>
+                                <?php if ( count($sub->getSubsForMenu()) > 0 ): ?>
+                                    <ul class="subnav">
+                                        <?php foreach($sub->getSubsForMenu() as $sub1): ?>
+                                            <?php if ( $sub1->getInMenu() ): ?>
+                                            <li>
+                                                <a href="<?php echo url_for('@category?category='.$sub1->getUrl()); ?>" 
+                                                   <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?>
+                                                   > 
+                                                      <?php echo $sub1->getName(); ?> 
+                                                </a>
+                                                <?php if ( count($sub1->getSubsForMenu()) > 0 ): ?>
+                                                    <ul class="subnav">
+                                                        <?php foreach($sub1->getSubsForMenu() as $sub2): ?>
+                                                            <?php if ( $sub2->getInMenu ): ?>
+                                                            <li>
+                                                                <a href="<?php echo url_for('@category?category='.$sub2->getUrl()); ?>" 
+                                                                   <?php if($en_cat == $cat->getUrl()): ?>class="active"<?php endif; ?>
+                                                                   > 
+                                                                      <?php echo $sub2->getName(); ?> 
+                                                                </a>
+                                                            </li>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                <?php endif; ?>
+                                            </li>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                            </li>
                             <?php endif; ?>
-                        </li>
                         <?php endforeach; ?>
                     </ul>
                 <?php endif; ?>
             </li>
+            <?php endif; ?>
         <?php endforeach; ?>
 
         <li>

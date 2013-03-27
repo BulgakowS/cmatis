@@ -5,6 +5,10 @@
     <header/>
     <body>
       <trans-unit>
+        <source>In menu</source>
+        <target>В меню</target>
+      </trans-unit>
+      <trans-unit>
         <source>category_deleted_with_chields</source>
         <target>Неможливо видалити категорію поки у неї є підкатегорії або статті.</target>
       </trans-unit>
@@ -114,7 +118,7 @@
       </trans-unit>
       <trans-unit>
         <source>title_uk</source>
-        <target>Заголовок (Українскою)</target>
+        <target>Заголовок (�країнскою)</target>
       </trans-unit>
       <trans-unit>
         <source>title_en</source>

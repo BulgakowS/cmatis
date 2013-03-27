@@ -413,6 +413,7 @@ h2.title {
 }
 
 #subCats ul li a {
+    font-weight: bold;
     text-decoration: none;
     color: #333;
     font-size: 14px;
@@ -420,6 +421,7 @@ h2.title {
 
 #subCats ul li a:hover {
     /*color: #297024;*/
+    text-decoration: underline;
 }
 
 #description-main, #site_map{

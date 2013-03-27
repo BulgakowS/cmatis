@@ -93,6 +93,17 @@ class CategoryTable extends Doctrine_Table
                 ->execute();
     }
     
+    public static function getSubsForMenu($id)
+    {
+        return self::getQuery()
+                ->andWhere('parent_id = ?', $id)
+                ->andWhere('in_menu = 1')
+                ->andWhere('t.lang = ?', substr(sfContext::getInstance()->getUser()->getCulture(), 0, 2))
+                ->andWhere('t.lan_enable = ?', true)
+                ->orderBy('t.name')
+                ->execute();
+    }
+    
     public static function getAllRoots()
     {
         return self::getQuery()

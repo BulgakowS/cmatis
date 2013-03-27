@@ -33,12 +33,24 @@
                     <?php echo $form['url']->render(array('style'=>'width:80%;', 'required'=>'required')); ?>
                 </div>
             </div>
-            <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
-                <div class="form_label">
-                    <?php echo $form['on_main']->renderLabel(); ?>
+            <div class="span2">
+                <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
+                    <div class="form_label">
+                        <?php echo $form['on_main']->renderLabel(); ?>
+                    </div>
+                    <div class="form_edit">
+                        <?php echo $form['on_main']->render(array('style'=>'width:80%;')); ?>
+                    </div>
                 </div>
-                <div class="form_edit">
-                    <?php echo $form['on_main']->render(array('style'=>'width:80%;')); ?>
+            </div>
+            <div class="span2">
+                <div class="form_row <?php if ($form['in_menu']->rendererror()) echo 'control-group error' ?>">
+                    <div class="form_label">
+                        <?php echo $form['in_menu']->renderLabel(); ?>
+                    </div>
+                    <div class="form_edit">
+                        <?php echo $form['in_menu']->render(array('style'=>'width:80%;')); ?>
+                    </div>
                 </div>
             </div>
         </div>

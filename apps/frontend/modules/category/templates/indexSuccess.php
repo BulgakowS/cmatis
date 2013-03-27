@@ -1,4 +1,3 @@
-
 <div class="title">
     <?php echo $cat->getName(); ?>
     <?php if ($sf_user->hasCredential('admin')): ?>
@@ -25,7 +24,7 @@
         <?php foreach ($subCats as $sub): ?>
             <?php  $t = $sub->getName(); if ( !empty($t) ): ?> 
                 <li>
-                    <?php echo link_to('<i class="icon-bookmark"></i>'.$sub->getName(), '@category?category='.$sub->getUrl()); ?>
+                    <?php echo link_to('<!--i class="icon-bookmark"></i-->'.$sub->getName(), '@category?category='.$sub->getUrl()); ?>
                 </li>
             <?php endif; ?>
         <?php endforeach; ?>

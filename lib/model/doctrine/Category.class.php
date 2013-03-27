@@ -19,6 +19,11 @@ class Category extends BaseCategory
         return CategoryTable::getSubs($this->getId());
     }
     
+    public function getSubsForMenu()
+    {
+        return CategoryTable::getSubsForMenu($this->getId());
+    }
+    
     public function getAllSubs()
     {
         return CategoryTable::getAllSubs($this->getId());
