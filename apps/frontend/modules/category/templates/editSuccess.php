@@ -38,24 +38,23 @@
                     <?php echo $form['url']->render(array('style'=>'width:80%;', 'required'=>'required')); ?>
                 </div>
             </div>
-            <div class="span2">
-                <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
-                    <div class="form_label">
-                        <?php echo $form['on_main']->renderLabel(); ?>
-                    </div>
-                    <div class="form_edit">
-                        <?php echo $form['on_main']->render(array('style'=>'width:80%;')); ?>
-                    </div>
+            <div class="form_row <?php if ($form['templ']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['templ']->renderLabel(); ?>
+                </div>
+                <?php if ($form['templ']->rendererror()): ?>
+                    <div class="alert alert-error"><?php echo $form['templ']->rendererror(); ?></div>
+                <?php endif; ?>
+                <div class="form_edit">
+                    <?php echo $form['templ']->render(array('style'=>'width:83%;', 'required'=>'required')); ?>
                 </div>
             </div>
-            <div class="span2">
-                <div class="form_row <?php if ($form['in_menu']->rendererror()) echo 'control-group error' ?>">
-                    <div class="form_label">
-                        <?php echo $form['in_menu']->renderLabel(); ?>
-                    </div>
-                    <div class="form_edit">
-                        <?php echo $form['in_menu']->render(array('style'=>'width:80%;')); ?>
-                    </div>
+            <div class="form_row <?php if ($form['on_main']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['on_main']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['on_main']->render(array('style'=>'width:80%;')); ?>
                 </div>
             </div>
         </div>
@@ -91,6 +90,14 @@
                 <?php endif; ?>
                 <div class="form_edit">
                     <?php echo $form['en']['name']->render(array('style'=>'width:80%;')); ?>
+                </div>
+            </div>
+            <div class="form_row <?php if ($form['in_menu']->rendererror()) echo 'control-group error' ?>">
+                <div class="form_label">
+                    <?php echo $form['in_menu']->renderLabel(); ?>
+                </div>
+                <div class="form_edit">
+                    <?php echo $form['in_menu']->render(array('style'=>'width:80%;')); ?>
                 </div>
             </div>
         </div>

@@ -5,6 +5,18 @@
     <header/>
     <body>
       <trans-unit>
+        <source>Templ</source>
+        <target>Вид</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>list</source>
+        <target>Список</target>
+      </trans-unit>  
+      <trans-unit>
+        <source>grid</source>
+        <target>Сетка лого</target>
+      </trans-unit>
+      <trans-unit>
         <source>In menu</source>
         <target>В меню</target>
       </trans-unit>

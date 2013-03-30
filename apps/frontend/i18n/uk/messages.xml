@@ -5,6 +5,18 @@
     <header/>
     <body>
       <trans-unit>
+        <source>Templ</source>
+        <target>Вид</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>list</source>
+        <target>Список</target>
+      </trans-unit>  
+      <trans-unit>
+        <source>grid</source>
+        <target>Сітка лого</target>
+      </trans-unit>
+      <trans-unit>
         <source>In menu</source>
         <target>В меню</target>
       </trans-unit>
@@ -118,7 +130,7 @@
       </trans-unit>
       <trans-unit>
         <source>title_uk</source>
-        <target>Заголовок (�країнскою)</target>
+        <target>Заголовок (��країнскою)</target>
       </trans-unit>
       <trans-unit>
         <source>title_en</source>

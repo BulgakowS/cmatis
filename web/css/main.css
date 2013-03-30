@@ -439,7 +439,7 @@ h2.title {
     padding: 10px 20px;
 }
 
-.cat_articles {
+.cat_articles.list {
     background: #F8F8F8;
     border-radius: 15px;
     -moz-border-radius: 15px;
@@ -448,11 +448,11 @@ h2.title {
     margin: 10px auto;
 }
 
-.cat_articles ul{
+.cat_articles.list ul{
     margin: 10px;
 }
 
-.cat_articles ul li {
+.cat_articles.list ul li {
     list-style: none;
     margin: 5px;
     margin-bottom: 3px;
@@ -463,24 +463,43 @@ h2.title {
     -webkit-border-radius: 5px;
 }
 
-.cat_articles ul li:hover{
+.cat_articles.list ul li:hover{
     background: #eee;
 }
 
-.cat_articles ul li a {
+.cat_articles.list ul li a {
     color: #333;
     text-decoration: none;
     font-size: 14px;
     height: 40px;
 }
 
-.cat_articles ul li a:hover{
+.cat_articles.list ul li a:hover{
     /*color: #297024;*/
 }
 
-.cat_articles ul li a .text{
+.cat_articles.list ul li a .text{
     padding: 15px;
     height: 40px;
+}
+
+.cat_articles.grid ul{
+    position: relative;
+    margin: 15px 0;
+}
+
+.cat_articles.grid ul li {
+    list-style: none;
+    margin: 5px;
+    width: 125px;
+    height: 125px;
+}
+
+.cat_articles.grid ul li .cat_logo_in_list_div img{
+    width: 125px;
+    height: 125px;
+    max-width: 125px;
+    max-height: 125px
 }
 
 .cat_logo_in_list_div {

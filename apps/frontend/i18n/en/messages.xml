@@ -5,6 +5,18 @@
     <header/>
     <body>
       <trans-unit>
+        <source>Templ</source>
+        <target>Template</target>
+      </trans-unit> 
+      <trans-unit>
+        <source>list</source>
+        <target>List</target>
+      </trans-unit>  
+      <trans-unit>
+        <source>grid</source>
+        <target>Logo grid</target>
+      </trans-unit>
+      <trans-unit>
         <source>In menu</source>
         <target>In menu</target>
       </trans-unit>

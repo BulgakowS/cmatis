@@ -1,3 +1,5 @@
+<?php use_javascript('wookmark.min.js'); ?>
+
 <div class="title">
     <?php echo $cat->getName(); ?>
     <?php if ($sf_user->hasCredential('admin')): ?>
@@ -36,11 +38,12 @@
 <div class="clr"></div>
 
 <?php if ($articles && count($articles) > 0): ?>
-    <div class="cat_articles">
-        <ul>
+    <div class="cat_articles <?php echo $cat->getTempl() == 1 ? 'list' : 'grid'; ?>">
+        <ul id="cat_articles_ul">
         <?php foreach($articles as $article): ?>
             <?php  $t = $article->getTitle(); if ( !empty($t) ): ?> 
-                <li>
+                <li class="cat_articles_li">
+                    
                     <a href="<?php echo url_for('@article?category='.$article->getCategory()->getUrl().'&url='.$article->getUrl()); ?>" >
                         <div class="cat_logo_in_list_div">
                             <?php if (is_file( sfConfig::get('sf_upload_dir').DIRECTORY_SEPARATOR.'_thumbs'.DIRECTORY_SEPARATOR.$article->getLogo() )): ?>
@@ -49,9 +52,11 @@
                                 <img src="/uploads/default-no-image.png" class="cat_logo_in_list"/>
                             <?php endif; ?>
                         </div>
-                        <div class="text">
-                            <?php echo $article->getTitle(); ?>
-                        </div>
+                        <?php if ($cat->getTempl() == 1): ?>
+                            <div class="text">
+                                <?php echo $article->getTitle(); ?>
+                            </div>
+                        <?php endif; ?>
                     </a>
                 </li>
             <?php endif; ?>
@@ -60,4 +65,13 @@
     </div>
 <?php endif; ?>
 
-
+<script>
+    $('.cat_articles_li').wookmark({
+        container: $('#cat_articles_ul'),
+        offset: 35,
+        align: "center",
+        autoResize: true,
+        itemWidth: 125,
+        itemHeight: 125
+    });
+</script>

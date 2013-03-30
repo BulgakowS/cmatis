@@ -18,6 +18,13 @@ class CategoryForm extends BaseCategoryForm
       'add_empty' => sfContext::getInstance()->getI18N()->__('main')
     )));
     
+    $this->widgetSchema['templ'] = new sfWidgetFormSelect(array('choices'=>
+            array(
+                '1'=>__('list'), 
+                '2'=>__('grid')
+                )
+    ));
+    
     $this->widgetSchema['parent_id']->addOption('renderer_class', 'MyCategoryRenderer');    
 
     $this->embedI18n(array('ru', 'uk', 'en'));
