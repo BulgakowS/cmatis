@@ -66,12 +66,14 @@
 <?php endif; ?>
 
 <script>
-    $('.cat_articles_li').wookmark({
-        container: $('#cat_articles_ul'),
-        offset: 35,
-        align: "center",
-        autoResize: true,
-        itemWidth: 125,
-        itemHeight: 125
-    });
+    if ( $('.cat_articles.grid').length > 0 ) {
+        $('.cat_articles.grid .cat_articles_li').wookmark({
+            container: $('#cat_articles_ul'),
+            offset: 35,
+            align: "center",
+            autoResize: true,
+            itemWidth: 125,
+            itemHeight: 125
+        });
+    }
 </script>
